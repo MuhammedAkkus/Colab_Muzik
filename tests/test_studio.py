@@ -1,10 +1,13 @@
 import copy
+import asyncio
+from contextlib import asynccontextmanager
 import json
 from pathlib import Path
 import shutil
 import tempfile
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import AsyncMock, Mock, patch
+from types import SimpleNamespace
 import wave
 
 import numpy as np
@@ -244,6 +247,58 @@ class StudioTests(unittest.TestCase):
         self.assertEqual(manifest["status"], "ready_for_human_review")
         self.assertNotIn("test-only", json.dumps(manifest))
         self.assertEqual(studio.execute(folder, self.cfg, self.root), 0)
+
+    def test_real_renderer_contract_and_control_evidence(self):
+        from google.genai import types
+        brief = example_brief()
+        seconds = studio.timeline(brief)[-1]["end"]
+        target = round(seconds * 48000) * 4
+        session = SimpleNamespace(set_weighted_prompts=AsyncMock(),
+                                  set_music_generation_config=AsyncMock(),
+                                  play=AsyncMock(), stop=AsyncMock())
+        async def receive():
+            for _ in range(int(seconds) + 1):
+                yield SimpleNamespace(filtered_prompt=None, server_content=SimpleNamespace(
+                    audio_chunks=[SimpleNamespace(data=b"\x00" * 192000)]))
+        session.receive = receive
+        @asynccontextmanager
+        async def connect(**kwargs):
+            yield session
+        producer = object.__new__(studio.Producer)
+        producer.types, producer.folder, producer.cfg = types, self.root, self.cfg
+        producer.client = SimpleNamespace(aio=SimpleNamespace(live=SimpleNamespace(
+            music=SimpleNamespace(connect=connect))))
+        path, duration = asyncio.run(producer.render(brief, 1))
+        with wave.open(str(path), "rb") as wav:
+            self.assertEqual(wav.getnframes() * 4, target)
+        evidence = json.loads((self.root / "steering_1.json").read_text())
+        self.assertEqual(evidence["stage"], "complete")
+        self.assertEqual({e["section"] for e in evidence["events"]}, {s[0] for s in studio.FORM})
+        self.assertEqual(session.play.await_count, 1)
+        self.assertEqual(session.stop.await_count, 1)
+
+    def test_analysis_outage_preserves_verified_preview(self):
+        folder = self.root / "2026-10-05"
+        studio.claim(folder)
+        (folder / "work").mkdir()
+        wav = self.make_wav()
+        producer = Mock()
+        producer.calls = 4
+        producer.compose.return_value = example_brief()
+        producer.render = AsyncMock(return_value=(wav, 5))
+        producer.listen.side_effect = RuntimeError("Listening service unavailable")
+        def encode(source, destination, duration):
+            destination.write_bytes(b"fixture master")
+            return {"verified": True}
+        cfg = {**self.cfg, "candidates": 1}
+        with patch.object(studio, "Producer", return_value=producer), \
+                patch.object(studio, "mastering", side_effect=encode), \
+                patch.dict("os.environ", {"GEMINI_API_KEY": "fixture-only"}):
+            self.assertEqual(studio.execute(folder, cfg, self.root), 2)
+        manifest = json.loads((folder / "manifest.json").read_text())
+        self.assertEqual(manifest["status"], "awaiting_audio_review")
+        self.assertTrue((folder / "preview.mp3").exists())
+        self.assertFalse((folder / "instrumental.mp3").exists())
 
     @unittest.skipUnless(shutil.which("ffmpeg"), "FFmpeg unavailable")
     def test_real_master_encoding(self):
