@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "status": "awaiting_audio_review",
+  "status": "quality_rejected",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
   "commercial_release": "not_approved",
@@ -16,14 +16,10 @@
   "resume_draft": true,
   "editor_status": "draft_only_human_editing_required",
   "title": "Sarı Tente",
-  "action": "Listen to the verified original preview; automatic criticism is unavailable.",
+  "action": "Listen to candidates in the workflow artifact. No master was accepted.",
   "reviewed_diagnostic_audio": [
     "6bdbb2ec59089210e8606f7029b0490b69eef859cafa66bdc571f3598154f795",
     "6bdbb2ec59089210e8606f7029b0490b69eef859cafa66bdc571f3598154f795"
   ],
-  "audio_review_recovery_count": 1,
-  "pipeline_status": "completed_with_review_pending",
-  "recovery_source": "diagnostics/37282828406",
-  "output_file": "preview.mp3",
-  "audio_sha256": "6bdbb2ec59089210e8606f7029b0490b69eef859cafa66bdc571f3598154f795"
+  "audio_review_recovery_count": 1
 }

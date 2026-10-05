@@ -10,5 +10,48 @@
     "accepted": false,
     "error_type": "RuntimeError",
     "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  },
+  {
+    "candidate": "recovered_arrangement",
+    "source": "diagnostics/37282828406",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 156.92310416666666,
+      "peak_dbfs": -0.5185474840366128,
+      "rms_dbfs": -14.705688305234803,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-13.72",
+        "input_tp": "-0.09",
+        "input_lra": "3.70",
+        "input_thresh": "-23.75",
+        "output_i": "-13.79",
+        "output_tp": "-1.50",
+        "output_lra": "3.00",
+        "output_thresh": "-23.81",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.21"
+      },
+      "encoded_master": {
+        "input_i": "-14.03",
+        "input_tp": "-0.98",
+        "input_lra": "3.10",
+        "input_thresh": "-24.07",
+        "output_i": "-14.23",
+        "output_tp": "-1.00",
+        "output_lra": "2.70",
+        "output_thresh": "-24.24",
+        "normalization_type": "dynamic",
+        "target_offset": "0.23"
+      }
+    },
+    "accepted": false,
+    "stage": "awaiting_audio_review",
+    "review_status": "Free analysis services returned 503; no listening score assigned",
+    "file": "preview.mp3"
   }
 ]
