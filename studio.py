@@ -12,6 +12,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 import unicodedata
 import wave
 from datetime import datetime
@@ -227,12 +228,25 @@ class Producer:
             api_version="v1beta", timeout=120000,
             retry_options=types.HttpRetryOptions(attempts=1)))
         self.cfg, self.folder, self.catalog = cfg, folder, catalog
-        self.calls = 0
+        self.calls = json.loads((folder / "manifest.json").read_text(encoding="utf-8")).get("request_count", 0)
+        self.text_model = cfg["text_model"]
+
+    def request(self, items, schema):
+        self.calls += 1
+        if self.calls > 6:
+            raise RuntimeError("Daily text/audio-analysis request limit reached")
+        log_path = self.folder / "api_requests.json"
+        records = json.loads(log_path.read_text(encoding="utf-8")) if log_path.exists() else []
+        records.append({"request": self.calls, "model": self.text_model,
+                        "timestamp": datetime.now(ZoneInfo("UTC")).isoformat()})
+        save_json(log_path, records)
+        return self.client.interactions.create(
+            model=self.text_model, input=items,
+            generation_config={"thinking_level": "low"},
+            response_format={"type": "text", "mime_type": "application/json",
+                             "schema": schema.model_json_schema()})
 
     def structured(self, prompt, schema, audio=None):
-        self.calls += 1
-        if self.calls > 4:
-            raise RuntimeError("Daily text/audio-analysis request limit reached")
         items = prompt
         uploaded = None
         try:
@@ -240,10 +254,18 @@ class Producer:
                 uploaded = self.client.files.upload(file=str(audio))
                 items = [{"type": "text", "text": prompt},
                          {"type": "audio", "uri": uploaded.uri, "mime_type": uploaded.mime_type}]
-            response = self.client.interactions.create(
-                model=self.cfg["text_model"], input=items,
-                response_format={"type": "text", "mime_type": "application/json",
-                                 "schema": schema.model_json_schema()})
+            try:
+                response = self.request(items, schema)
+            except Exception as exc:
+                code = getattr(exc, "code", getattr(exc, "status_code", 0))
+                server_error = (isinstance(code, int) and 500 <= code < 600) or type(exc).__name__ in (
+                    "InternalServerError", "ServerError", "ServiceUnavailableError")
+                if not server_error or self.text_model != "gemini-3.8-flash":
+                    raise
+                # Both models have free tiers. Never retry quota/auth errors or use paid music.
+                self.text_model = "gemini-3.5-flash"
+                time.sleep(10)
+                response = self.request(items, schema)
             return schema.model_validate_json(response.output_text)
         finally:
             if uploaded:
@@ -369,10 +391,19 @@ class Producer:
         return self.structured(prompt, ListeningReview, audio=mp3)
 
 
-def claim(folder):
+def claim(folder, repair_failed=False):
     folder.mkdir(parents=True, exist_ok=True)
     file = folder / "manifest.json"
     if file.exists():
+        previous = json.loads(file.read_text(encoding="utf-8"))
+        if (repair_failed and previous.get("status") == "failed"
+                and previous.get("error_type") in ("InternalServerError", "ServerError", "ServiceUnavailableError")
+                and previous.get("request_count", 6) <= 2
+                and previous.get("repair_count", 0) == 0 and not (folder / "brief.json").exists()):
+            save_json(folder / "pre_repair_manifest.json", previous)
+            previous.update(status="claimed", repair_count=1)
+            save_json(file, previous)
+            return True
         print("Today already has an attempt; no duplicate API calls.")
         return False
     save_json(file, {"date": folder.name, "status": "claimed", "cost_mode": "free_project_only",
@@ -464,6 +495,8 @@ def main():
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--catalog", type=Path, default=Path("catalog"))
     parser.add_argument("--date")
+    parser.add_argument("--repair-failed", action="store_true",
+                        help="One explicit recovery of a server failure before composition completed")
     args = parser.parse_args()
     cfg = load_config(args.config)
     day = args.date or datetime.now(ZoneInfo(cfg["timezone"])).date().isoformat()
@@ -475,7 +508,7 @@ def main():
         print("Configuration valid: free-project-only, paid music disabled.")
         return 0
     if args.mode in ("claim", "run"):
-        fresh = claim(folder)
+        fresh = claim(folder, repair_failed=args.repair_failed)
         if args.mode == "claim":
             if os.environ.get("GITHUB_OUTPUT"):
                 with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
