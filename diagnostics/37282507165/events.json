@@ -1,0 +1,34 @@
+[
+  {
+    "received_bytes": 384000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 768000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 1152000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 1536000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 1920000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 2304000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 2688000,
+    "message_type": "audio"
+  },
+  {
+    "received_bytes": 3072000,
+    "message_type": "audio"
+  }
+]
