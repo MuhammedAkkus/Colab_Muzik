@@ -14,6 +14,10 @@ on:
         description: 'Numeric diagnostic run ID, only used by review (no new music)'
         type: string
         default: ''
+      failed_review:
+        description: 'Optional failed server-error review run ID for one explicit free-model recovery'
+        type: string
+        default: ''
 permissions:
   contents: write
 concurrency:
@@ -38,7 +42,13 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TEST: ${{ inputs.test }}
           SOURCE: ${{ inputs.source }}
-        run: python diagnose.py diagnostics/${{ github.run_id }} "$TEST" "$SOURCE"
+          FAILED_REVIEW: ${{ inputs.failed_review }}
+        run: |
+          if [ -n "$FAILED_REVIEW" ]; then
+            python diagnose.py diagnostics/${{ github.run_id }} "$TEST" "$SOURCE" --retry-review-from "$FAILED_REVIEW"
+          else
+            python diagnose.py diagnostics/${{ github.run_id }} "$TEST" "$SOURCE"
+          fi
       - name: Archive diagnostic evidence
         if: always()
         run: |
