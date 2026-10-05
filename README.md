@@ -34,6 +34,8 @@ kaydedilir; MP3 adaylar 7 gunluk Actions artifact icinde tutulur. Ham WAV
 dosyalari ve onceki gunlerin arsivi tekrar artifact'e yuklenmez; depolama
 ucretsiz kotada kalsin diye gunluk sikistirilmis dosyalarla sinirlidir.
 `ready_for_human_review` ticari yayin onayi degildir. Otomatik puanlar tahmindir.
+`generation_failed` teknik ses uretimi hatasidir; bir muzik kalite puani degildir.
+`quality.json` asamayi ve anahtarlar/URL'ler temizlenmis hata ayrintisini kaydeder.
 Mastering kotu bir besteyi veya yapay bir performansi duzeltemez.
 
 ## Guvenli Kurulum
