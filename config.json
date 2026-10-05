@@ -1,0 +1,12 @@
+{
+  "free_project_confirmed": true,
+  "monthly_budget_usd": 0,
+  "text_model": "gemini-3.8-flash",
+  "music_model": "models/lyria-realtime-exp",
+  "candidates": 2,
+  "minimum_listening_score": 78,
+  "minimum_category_score": 65,
+  "timezone": "Europe/Istanbul",
+  "style": "Turkce alternatif pop; guclu sozler, canli enstruman hissi",
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release."
+}
