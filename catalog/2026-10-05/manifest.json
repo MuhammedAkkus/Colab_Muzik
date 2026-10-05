@@ -10,11 +10,14 @@
   },
   "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
   "quality_assessment": "Model estimate, not a professional guarantee",
-  "request_count": 4,
+  "request_count": 5,
   "repair_count": 1,
   "finish_draft_count": 1,
   "resume_draft": true,
   "editor_status": "draft_only_human_editing_required",
   "title": "Sarı Tente",
-  "action": "Listen to candidates in the workflow artifact. No master was accepted."
+  "action": "Listen to candidates in the workflow artifact. No master was accepted.",
+  "reviewed_diagnostic_audio": [
+    "6bdbb2ec59089210e8606f7029b0490b69eef859cafa66bdc571f3598154f795"
+  ]
 }
