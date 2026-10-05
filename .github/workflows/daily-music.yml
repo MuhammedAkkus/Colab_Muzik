@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '17 6 * * *' # 09:17 Europe/Istanbul (UTC+3)
   workflow_dispatch:
+    inputs:
+      repair_failed:
+        description: 'One recovery of a server failure before any music was produced'
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -43,7 +48,14 @@ jobs:
           fi
       - name: Reserve today's single attempt
         id: claim
-        run: python studio.py claim
+        env:
+          REPAIR_FAILED: ${{ inputs.repair_failed }}
+        run: |
+          if [ "$REPAIR_FAILED" = 'true' ]; then
+            python studio.py claim --repair-failed
+          else
+            python studio.py claim
+          fi
       - name: Persist reservation before API requests
         if: steps.claim.outputs.fresh == 'true'
         run: |
@@ -70,7 +82,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: music-production-${{ github.run_id }}
-          path: catalog/
+          path: |
+            catalog/${{ steps.claim.outputs.day }}/*.json
+            catalog/${{ steps.claim.outputs.day }}/*.txt
+            catalog/${{ steps.claim.outputs.day }}/*.md
+            catalog/${{ steps.claim.outputs.day }}/*.mp3
+            catalog/${{ steps.claim.outputs.day }}/work/*.mp3
           retention-days: 7
           if-no-files-found: warn
           include-hidden-files: false
