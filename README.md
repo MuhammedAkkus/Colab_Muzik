@@ -44,6 +44,8 @@ Soz yazimi, editor, ses motoru, teknik kontrol, mastering, dinleme ve arsiv
 ayri asamalardir. Editor sunucu hatasi taslagi kaybettirmez. Dinleme servisi
 calismazsa teknik olarak dogrulanmis MP3 `preview.mp3` olarak korunur ve
 `awaiting_audio_review` isaretlenir; kalite onayi verilmis gibi davranilmaz.
+Bu durum tamamlanmis teknik uretimdir, otomatik dinleme onayi degildir; workflow
+basarili biter ve MP3 arsivlenir. Gercek dusuk kalite puani yine reddedilir.
 `steering_N.json` her bolumun istemini, ayarlari ve alinan ses suresini kaydeder.
 Istek sayaci API cagrisindan once kalici yazilir. Arsiv push'undan once rebase,
 es zamanli kod guncellemesi yuzunden muzik kaydinin kaybolmasini onler.
@@ -54,7 +56,10 @@ bagimsiz teknik testtir. `probe` 15 saniyelik ses baglantisini sinar;
 alanindaki sayisal test run ID'sinin mevcut MP3'unu degerlendirir; yeni muzik
 uretmez. Ayni test kaydi sadece bir kez puanlanabilir; gunluk alti metin/ses
 analiz istegi siniri korunur. Kabul edilen kurtarma gunluk katalogda, eski
-hata raporlari silinmeden saklanir. Bunlar otomatik retry dongusu degildir.
+hata raporlari silinmeden saklanir. `archive_preview`, puanlama servisi
+kullanilamiyorsa dogrulanmis tam uzunluktaki kaydi kalite onayi iddia etmeden
+gunluk katalogda `preview.mp3` olarak saklar. API istegi yapmaz.
+Bunlar otomatik retry dongusu degildir.
 
 ## Guvenli Kurulum
 
