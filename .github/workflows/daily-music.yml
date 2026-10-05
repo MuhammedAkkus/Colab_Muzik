@@ -8,6 +8,10 @@ on:
         description: 'One recovery of a server failure before any music was produced'
         type: boolean
         default: false
+      finish_draft:
+        description: 'Finish a preserved draft after editor server failure; no new composition'
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -50,8 +54,11 @@ jobs:
         id: claim
         env:
           REPAIR_FAILED: ${{ inputs.repair_failed }}
+          FINISH_DRAFT: ${{ inputs.finish_draft }}
         run: |
-          if [ "$REPAIR_FAILED" = 'true' ]; then
+          if [ "$FINISH_DRAFT" = 'true' ]; then
+            python studio.py claim --finish-draft
+          elif [ "$REPAIR_FAILED" = 'true' ]; then
             python studio.py claim --repair-failed
           else
             python studio.py claim
