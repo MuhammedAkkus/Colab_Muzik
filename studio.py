@@ -144,6 +144,17 @@ def is_server_error(exc):
         "InternalServerError", "ServerError", "ServiceUnavailableError")
 
 
+def safe_error(exc):
+    message = str(exc)
+    secret = os.environ.get("GEMINI_API_KEY")
+    if secret:
+        message = message.replace(secret, "[redacted]")
+    message = re.sub(r"https?://\S+", "[url redacted]", message)
+    message = re.sub(r"(?i)(authorization|x-goog-api-key|api[_-]?key)\s*[:=]\s*\S+",
+                     r"\1=[redacted]", message)
+    return message[:500]
+
+
 def check_originality(brief, catalog, exclude):
     fresh = ngrams(lyric_text(brief))
     for path in sorted(catalog.glob("*/brief.json")):
@@ -374,6 +385,9 @@ class Producer:
             while len(chunks) < target_bytes:
                 message = await asyncio.wait_for(anext(receiver), timeout=30)
                 if getattr(message, "filtered_prompt", None):
+                    filtered = message.filtered_prompt
+                    save_json(self.folder / f"filter_{candidate}.json", {
+                        "reason": getattr(filtered, "filtered_reason", "Unavailable")})
                     raise RuntimeError("Generation prompt was filtered; candidate rejected")
                 content = getattr(message, "server_content", None)
                 if not content:
@@ -477,25 +491,32 @@ def execute(folder, cfg, catalog):
         folder.joinpath("lyrics.md").write_text(lyrics, encoding="utf-8")
         candidates = []
         for number in range(1, cfg["candidates"] + 1):
-            record = {"candidate": number, "accepted": False}
+            if producer.calls >= 6:
+                break
+            record = {"candidate": number, "accepted": False, "stage": "render"}
             try:
                 # Total timeout also bounds continuous metadata/no-audio streams.
                 async def bounded_render():
                     return await asyncio.wait_for(producer.render(brief, number), timeout=360)
                 wav, duration = asyncio.run(bounded_render())
+                record["stage"] = "technical_qc"
                 qc = wav_qc(wav, duration)
                 record["technical"] = qc
                 if qc["passed"]:
                     mp3 = folder / "work" / f"candidate_{number}.mp3"
+                    record["stage"] = "mastering"
                     record["mastering"] = mastering(wav, mp3, duration)
+                    record["stage"] = "listening_review"
                     review = producer.listen(mp3, brief)
                     record["listening"] = review.model_dump()
                     record["score"] = review.average()
                     record["accepted"] = meets_quality(qc, review, cfg)
                     record["file"] = mp3.name
+                    record["stage"] = "evaluated"
             except Exception as exc:
                 # Do not serialize raw API errors/URLs: they can contain credentials or input data.
                 record["error_type"] = type(exc).__name__
+                record["error_message"] = safe_error(exc)
                 record["action"] = "Check quota/model availability and local logs; no paid fallback or retry"
             candidates.append(record)
             save_json(folder / "quality.json", candidates)
@@ -512,7 +533,8 @@ def execute(folder, cfg, catalog):
             state.update(status="ready_for_human_review", title=brief.title,
                          selected_candidate=best["candidate"], audio_sha256=digest)
         else:
-            state.update(status="quality_rejected", title=brief.title,
+            status = "quality_rejected" if any(c.get("technical") or c.get("listening") for c in candidates) else "generation_failed"
+            state.update(status=status, title=brief.title,
                          action="Listen to candidates in the workflow artifact. No master was accepted.")
         state["request_count"] = producer.calls
         save_json(state_path, state)
@@ -520,6 +542,7 @@ def execute(folder, cfg, catalog):
         return 0 if approved else 2
     except Exception as exc:
         state.update(status="failed", error_type=type(exc).__name__,
+                     error_message=safe_error(exc),
                      action="Check free quota/model access. Paid fallback is disabled.",
                      request_count=producer.calls if producer else 0)
         save_json(state_path, state)
