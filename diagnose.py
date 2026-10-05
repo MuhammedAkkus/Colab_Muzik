@@ -8,7 +8,7 @@ from pathlib import Path
 import sys
 import wave
 
-from studio import Producer, load_config, mastering, safe_error, save_json, wav_qc
+from studio import Brief, Producer, load_config, mastering, safe_error, save_json, wav_qc
 
 
 async def probe(producer, folder):
@@ -55,8 +55,19 @@ def main():
     producer = None
     try:
         producer = Producer(os.environ["GEMINI_API_KEY"], load_config(Path("config.json")), folder, Path("catalog"))
-        asyncio.run(asyncio.wait_for(probe(producer, folder), timeout=100))
-        save_json(folder / "manifest.json", {"status": "audio_verified", "seconds": 15, "release": "diagnostic_only"})
+        if len(sys.argv) > 2 and sys.argv[2] == "arranged":
+            brief = Brief.model_validate_json(Path("catalog/2026-10-05/brief.json").read_text(encoding="utf-8"))
+            save_json(folder / "brief.json", brief.model_dump())
+            wav, duration = asyncio.run(asyncio.wait_for(producer.render(brief, 1), timeout=360))
+            qc = wav_qc(wav, duration)
+            save_json(folder / "technical.json", qc)
+            if not qc["passed"]:
+                raise ValueError("Arranged audio failed technical checks")
+            save_json(folder / "mastering.json", mastering(wav, folder / "instrumental.mp3", duration))
+        else:
+            duration = 15
+            asyncio.run(asyncio.wait_for(probe(producer, folder), timeout=100))
+        save_json(folder / "manifest.json", {"status": "audio_verified", "seconds": duration, "release": "diagnostic_only"})
         print("Real music stream and encoded MP3 verified")
         return 0
     except Exception as exc:
