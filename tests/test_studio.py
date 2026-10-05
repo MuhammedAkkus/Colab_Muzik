@@ -115,6 +115,21 @@ class StudioTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             producer.request("test", studio.Brief)
         producer.client.interactions.create.assert_not_called()
+        self.assertEqual(producer.calls, 6)
+
+    def test_existing_draft_can_finish_once_without_new_composition(self):
+        folder = self.root / "2026-10-05"
+        studio.save_json(folder / "manifest.json", {"status": "failed", "error_type": "InternalServerError",
+                                                   "request_count": 4, "repair_count": 1})
+        (folder / "editing_prompt.txt").write_text("Editor prompt. " + example_brief().model_dump_json()
+                                                   + " Required order: []", encoding="utf-8")
+        self.assertTrue(studio.claim(folder, finish_draft=True))
+        self.assertTrue((folder / "draft_brief.json").exists())
+        data = json.loads((folder / "manifest.json").read_text())
+        self.assertEqual(data["request_count"], 4)
+        data["status"] = "failed"
+        studio.save_json(folder / "manifest.json", data)
+        self.assertFalse(studio.claim(folder, finish_draft=True))
 
     def test_fixed_arrangement_and_duration(self):
         brief = example_brief()
