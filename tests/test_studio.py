@@ -108,6 +108,28 @@ class StudioTests(unittest.TestCase):
             producer.structured("test", studio.Brief)
         self.assertEqual(producer.request.call_count, 1)
 
+    def test_real_sdk_has_no_hidden_quota_retries(self):
+        import httpx
+        from google import genai
+        count = []
+        def handler(request):
+            count.append(request)
+            return httpx.Response(429, json={"error": {"code": 429, "message": "fixture quota error",
+                                                       "status": "RESOURCE_EXHAUSTED"}})
+        original = genai.Client
+        def client_factory(**kwargs):
+            kwargs["http_options"].httpx_client = httpx.Client(transport=httpx.MockTransport(handler))
+            return original(**kwargs)
+        studio.claim(self.root)
+        with patch.object(genai, "Client", side_effect=client_factory):
+            producer = studio.Producer("fixture-only", self.cfg, self.root, self.root)
+        try:
+            with self.assertRaises(Exception):
+                producer.structured("No real network request", studio.Brief)
+            self.assertEqual(len(count), 1)
+        finally:
+            producer.client.close()
+
     def test_request_cap_before_network(self):
         producer = object.__new__(studio.Producer)
         producer.calls = 6
@@ -116,6 +138,13 @@ class StudioTests(unittest.TestCase):
             producer.request("test", studio.Brief)
         producer.client.interactions.create.assert_not_called()
         self.assertEqual(producer.calls, 6)
+
+    def test_diagnostics_redact_secrets_and_urls(self):
+        with patch.dict("os.environ", {"GEMINI_API_KEY": "secret-fixture-value"}):
+            result = studio.safe_error(RuntimeError(
+                "x-goog-api-key: secret-fixture-value https://example.test/?key=secret-fixture-value"))
+        self.assertNotIn("secret-fixture-value", result)
+        self.assertNotIn("https://", result)
 
     def test_existing_draft_can_finish_once_without_new_composition(self):
         folder = self.root / "2026-10-05"
