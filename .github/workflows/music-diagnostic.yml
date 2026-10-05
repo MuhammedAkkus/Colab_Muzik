@@ -9,6 +9,7 @@ on:
           - probe
           - arranged
           - review
+          - archive_preview
         default: probe
       source:
         description: 'Numeric diagnostic run ID, only used by review (no new music)'
