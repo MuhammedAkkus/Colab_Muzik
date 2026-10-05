@@ -91,6 +91,10 @@ API isteginden once commit edilir; runner kesilse de kor tekrar uretim yapilmaz.
 Kota/erisim hatasini duzeltmeden rezervasyonu elle silmeyin. Beste henuz
 olusmadan sunucu hatasi alinirsa Run workflow > repair_failed ile sadece
 bir kurtarma denemesi yapilabilir; onceki istek sayaci korunur.
+Taslak olustuktan sonra editor sunucu hatasi alirsa taslak korunur ve
+`draft_only_human_editing_required` olarak isaretlenir. Eski basarisiz
+calismalarda saklanmis taslagi ses asamasina devam ettirmek icin `finish_draft`
+secenegi bir kez kullanilabilir; yeniden soz uretmez ve alti istek sinirini korur.
 
 ## Resmi Kaynaklar
 
