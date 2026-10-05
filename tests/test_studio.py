@@ -94,7 +94,7 @@ class StudioTests(unittest.TestCase):
         producer = object.__new__(studio.Producer)
         producer.text_model = "gemini-3.8-flash"
         producer.request = Mock(side_effect=[InternalServerError(), type("Response", (), {
-            "output_text": example_brief().model_dump_json()})()])
+            "text": example_brief().model_dump_json()})()])
         with patch.object(studio.time, "sleep"):
             result = producer.structured("test", studio.Brief)
         self.assertEqual(result.title, "Empty Platform")
@@ -139,7 +139,7 @@ class StudioTests(unittest.TestCase):
         producer.client = Mock()
         with self.assertRaises(RuntimeError):
             producer.request("test", studio.Brief)
-        producer.client.interactions.create.assert_not_called()
+        producer.client.models.generate_content.assert_not_called()
         self.assertEqual(producer.calls, 6)
 
     def test_diagnostics_redact_secrets_and_urls(self):
