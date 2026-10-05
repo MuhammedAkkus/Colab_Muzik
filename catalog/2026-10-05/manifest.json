@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "status": "claimed",
+  "status": "failed",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
   "commercial_release": "not_approved",
@@ -12,6 +12,6 @@
   "quality_assessment": "Model estimate, not a professional guarantee",
   "error_type": "InternalServerError",
   "action": "Check free quota/model access. Paid fallback is disabled.",
-  "request_count": 1,
+  "request_count": 4,
   "repair_count": 1
 }
