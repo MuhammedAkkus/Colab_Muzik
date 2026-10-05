@@ -1,7 +1,7 @@
 {
   "free_project_confirmed": true,
   "monthly_budget_usd": 0,
-  "text_model": "gemini-3.8-flash",
+  "text_model": "gemini-3.5-flash",
   "music_model": "models/lyria-realtime-exp",
   "candidates": 2,
   "minimum_listening_score": 78,
