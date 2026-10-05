@@ -13,6 +13,7 @@ import wave
 import numpy as np
 
 import studio
+import diagnose
 
 
 def example_brief():
@@ -306,11 +307,56 @@ class StudioTests(unittest.TestCase):
         with patch.object(studio, "Producer", return_value=producer), \
                 patch.object(studio, "mastering", side_effect=encode), \
                 patch.dict("os.environ", {"GEMINI_API_KEY": "fixture-only"}):
-            self.assertEqual(studio.execute(folder, cfg, self.root), 2)
+            self.assertEqual(studio.execute(folder, cfg, self.root), 0)
         manifest = json.loads((folder / "manifest.json").read_text())
         self.assertEqual(manifest["status"], "awaiting_audio_review")
         self.assertTrue((folder / "preview.mp3").exists())
         self.assertFalse((folder / "instrumental.mp3").exists())
+
+    def test_preview_recovery_uses_no_api_and_never_claims_quality_approval(self):
+        day = self.root / "catalog" / "2026-10-05"
+        source = self.root / "diagnostic_source"
+        output = self.root / "diagnostic_archive"
+        for folder in (day, source):
+            studio.save_json(folder / "brief.json", example_brief().model_dump())
+        studio.save_json(day / "manifest.json", {"status": "generation_failed", "request_count": 6})
+        studio.save_json(day / "quality.json", [{"accepted": False, "error_type": "RuntimeError"}])
+        studio.save_json(day / "api_requests.json", [])
+        studio.save_json(source / "manifest.json", {"status": "audio_verified", "seconds": 163.2})
+        studio.save_json(source / "technical.json", {"passed": True})
+        studio.save_json(source / "mastering.json", {"encoded_master": {"input_i": "-14", "input_tp": "-1.5"}})
+        studio.save_json(source / "steering_1.json", {"events": []})
+        (source / "instrumental.mp3").write_bytes(b"fixture-only encoded data")
+        with patch.object(diagnose, "ffmpeg"), patch.object(diagnose, "Producer") as api:
+            diagnose.archive_preview(source, day, output, "2026-10-05")
+            api.assert_not_called()
+        state = json.loads((day / "manifest.json").read_text())
+        self.assertEqual(state["request_count"], 6)
+        self.assertEqual(state["status"], "awaiting_audio_review")
+        self.assertTrue((day / "preview.mp3").exists())
+        self.assertTrue((day / "pre_preview_recovery_manifest.json").exists())
+        self.assertFalse(json.loads((output / "manifest.json").read_text())["automatic_quality_approved"])
+
+    def test_bad_listening_score_still_rejects_recording(self):
+        folder = self.root / "2026-10-05"
+        studio.claim(folder)
+        (folder / "work").mkdir()
+        producer = Mock()
+        producer.calls = 4
+        producer.compose.return_value = example_brief()
+        producer.render = AsyncMock(return_value=(self.make_wav(), 5))
+        producer.listen.return_value = studio.ListeningReview(groove=50, instrument_realism=50,
+            hook=50, structure=50, mix=50, unwanted_vocals=False, observations=["fixture", "poor demo"])
+        def encode(source, destination, duration):
+            destination.write_bytes(b"fixture master")
+            return {"verified": True}
+        with patch.object(studio, "Producer", return_value=producer), \
+                patch.object(studio, "mastering", side_effect=encode), \
+                patch.dict("os.environ", {"GEMINI_API_KEY": "fixture-only"}):
+            self.assertEqual(studio.execute(folder, {**self.cfg, "candidates": 1}, self.root), 2)
+        state = json.loads((folder / "manifest.json").read_text())
+        self.assertEqual(state["status"], "quality_rejected")
+        self.assertFalse((folder / "preview.mp3").exists())
 
     @unittest.skipUnless(shutil.which("ffmpeg"), "FFmpeg unavailable")
     def test_real_master_encoding(self):
