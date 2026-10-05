@@ -30,7 +30,9 @@ Ayni Istanbul takvim gununde ikinci deneme otomatik olarak engellenir.
 7. En iyi kabul edilen MP3, sozler, plan, istemler ve kalite raporu GitHub'a commit edilir.
 
 `catalog/YYYY-MM-DD/` gunluk arsivdir. Basarisiz/kalitesiz uretimde de rapor
-kaydedilir; kabul edilmeyen sesler 7 gunluk Actions artifact icinde tutulur.
+kaydedilir; MP3 adaylar 7 gunluk Actions artifact icinde tutulur. Ham WAV
+dosyalari ve onceki gunlerin arsivi tekrar artifact'e yuklenmez; depolama
+ucretsiz kotada kalsin diye gunluk sikistirilmis dosyalarla sinirlidir.
 `ready_for_human_review` ticari yayin onayi degildir. Otomatik puanlar tahmindir.
 Mastering kotu bir besteyi veya yapay bir performansi duzeltemez.
 
@@ -44,7 +46,10 @@ Sonradan faturalandirma acilirsa calisma durdurulmalidir.
 GitHub Settings > Secrets and variables > Actions bolumunde `GEMINI_API_KEY`
 repository secret eklenir. Anahtar kodda, notebook ciktisinda veya repoda tutulmaz.
 Workflow fork pull request'lerinden secret kullanmaz. En fazla iki ses adayi,
-dort beste/editor/dinleme istegi; kota hatasinda ucretli fallback ve kor retry yok.
+normalde dort beste/editor/dinleme istegi; kurtarma dahil gunluk ust sinir alti.
+Yalnizca sunucu hatasinda ucretsiz katmani bulunan Gemini 3.5 Flash bir kere
+denenir; gercek model kullanimi `api_requests.json` icinde kaydedilir.
+Kota/kimlik hatasinda retry, ucretli fallback veya ucretli muzik istegi yoktur.
 Repo public oldugu icin kabul edilen muzik ve sozler de public olur.
 
 [GitHub secret ayarlari](https://github.com/MuhammedAkkus/Colab_Muzik/settings/secrets/actions)
@@ -83,7 +88,9 @@ python studio.py run
 Son komut anahtari ortam degiskeninden okur. `--catalog` ile farkli yerel arsiv
 secilebilir. `--date` yalnizca YYYY-MM-DD kabul eder. Gunluk bulut rezervasyonu
 API isteginden once commit edilir; runner kesilse de kor tekrar uretim yapilmaz.
-Kota/erisim hatasini duzeltmeden rezervasyonu elle silmeyin.
+Kota/erisim hatasini duzeltmeden rezervasyonu elle silmeyin. Beste henuz
+olusmadan sunucu hatasi alinirsa Run workflow > repair_failed ile sadece
+bir kurtarma denemesi yapilabilir; onceki istek sayaci korunur.
 
 ## Resmi Kaynaklar
 
