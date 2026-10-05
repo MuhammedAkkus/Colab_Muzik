@@ -1,6 +1,14 @@
 name: Music engine diagnostic
 on:
   workflow_dispatch:
+    inputs:
+      test:
+        description: 'Probe connection or render the preserved complete arrangement'
+        type: choice
+        options:
+          - probe
+          - arranged
+        default: probe
 permissions:
   contents: write
 concurrency:
@@ -23,7 +31,8 @@ jobs:
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python diagnose.py diagnostics/${{ github.run_id }}
+          TEST: ${{ inputs.test }}
+        run: python diagnose.py diagnostics/${{ github.run_id }} "$TEST"
       - name: Archive diagnostic evidence
         if: always()
         run: |
