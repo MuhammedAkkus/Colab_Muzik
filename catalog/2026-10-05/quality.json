@@ -1,0 +1,14 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "error_type": "RuntimeError",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "error_type": "RuntimeError",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  }
+]

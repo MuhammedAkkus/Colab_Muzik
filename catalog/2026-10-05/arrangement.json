@@ -1,0 +1,101 @@
+[
+  {
+    "name": "intro",
+    "arrangement": "A sparse, melancholic fingerpicked acoustic guitar in B minor sets a reflective mood. A faint ambient layer of distant city traffic and harbor sounds sits low in the mix.",
+    "chords": "Bm | Gmaj7 | Em9 | F#7sus4",
+    "density": 0.25,
+    "bars": 4,
+    "start": 0.0,
+    "end": 9.2308
+  },
+  {
+    "name": "verse_1",
+    "arrangement": "A dry, damp kick drum and a subtle rimshot enter on beats 2 and 4. A warm, melodic bass guitar outlines the roots, playing soft half-notes with no high-end transients.",
+    "chords": "Bm | Gmaj7 | Em7 | F#7",
+    "density": 0.35,
+    "bars": 8,
+    "start": 9.2308,
+    "end": 27.6923
+  },
+  {
+    "name": "pre_1",
+    "arrangement": "The drum groove drops out, replaced by a swelling analog pad that builds harmonic tension. The acoustic guitar shifts from fingerpicking to delicate, ringing arpeggios.",
+    "chords": "Gmaj7 | A6 | F#m7 | Bm7",
+    "density": 0.45,
+    "bars": 4,
+    "start": 27.6923,
+    "end": 36.9231
+  },
+  {
+    "name": "chorus_1",
+    "arrangement": "The arrangement opens up with a wide, strummed acoustic guitar and a steady, organic drum beat with a live snare. A clean, single-note electric guitar line doubles the vocal hook tail.",
+    "chords": "Gmaj7 | A | F#m7 | Bm | Gmaj7 | A | Em7 | F#7",
+    "density": 0.6,
+    "bars": 8,
+    "start": 36.9231,
+    "end": 55.3846
+  },
+  {
+    "name": "turnaround",
+    "arrangement": "A brief instrumental transition. The drums drop back to a simple kick-rim pattern while a warm, analog synth lead plays a brief, nostalgic counter-melody.",
+    "chords": "Bm | Gmaj7",
+    "density": 0.4,
+    "bars": 4,
+    "start": 55.3846,
+    "end": 64.6154
+  },
+  {
+    "name": "verse_2",
+    "arrangement": "The verse groove returns, but with a slightly more active bassline that moves melodically around the scale degrees. The rimshot is treated with a light spring reverb.",
+    "chords": "Bm | Gmaj7 | Em7 | F#7",
+    "density": 0.42,
+    "bars": 8,
+    "start": 64.6154,
+    "end": 83.0769
+  },
+  {
+    "name": "pre_2",
+    "arrangement": "Identical structure to Pre 1, but with an added shaker and swelling electric guitar volume swells to create a stronger sense of urgency leading into the chorus.",
+    "chords": "Gmaj7 | A6 | F#m7 | Bm7",
+    "density": 0.5,
+    "bars": 4,
+    "start": 83.0769,
+    "end": 92.3077
+  },
+  {
+    "name": "chorus_2",
+    "arrangement": "Full band expression. Double-tracked acoustic guitars provide a lush rhythmic foundation. The electric guitar hook is more prominent, panned slightly to the left.",
+    "chords": "Gmaj7 | A | F#m7 | Bm | Gmaj7 | A | Em7 | F#7",
+    "density": 0.65,
+    "bars": 8,
+    "start": 92.3077,
+    "end": 110.7692
+  },
+  {
+    "name": "bridge",
+    "arrangement": "The rhythm section drops out completely. A warm, sub-heavy Rhodes piano and a single fingerpicked acoustic guitar accompany the vocal. The bass plays low, sustaining root notes on Gmaj7.",
+    "chords": "Gmaj7 | Em7 | Bm7 | A6",
+    "density": 0.3,
+    "bars": 8,
+    "start": 110.7692,
+    "end": 129.2308
+  },
+  {
+    "name": "final_chorus",
+    "arrangement": "The dynamic peak of the track. Tambourine is added to the high end of the drum groove. The bassline locks tightly with the kick while playing melodic fills. High string pads lift the emotional weight.",
+    "chords": "Gmaj7 | A | F#m7 | Bm | Gmaj7 | A | Em7 | F#7 | Bm",
+    "density": 0.7,
+    "bars": 8,
+    "start": 129.2308,
+    "end": 147.6923
+  },
+  {
+    "name": "outro",
+    "arrangement": "The instruments fade away one by one, leaving only the solo fingerpicked acoustic guitar from the intro. The song ends on a final, unresolved Bm9 chord sustaining into silence.",
+    "chords": "Bm9 | Gmaj7 | Bm9",
+    "density": 0.25,
+    "bars": 4,
+    "start": 147.6923,
+    "end": 156.9231
+  }
+]
