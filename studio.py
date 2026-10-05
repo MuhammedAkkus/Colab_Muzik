@@ -103,7 +103,7 @@ def load_config(path):
         raise ValueError("This version requires a billing-disabled free project and zero budget")
     if cfg.get("music_model") != "models/lyria-realtime-exp":
         raise ValueError("Paid music models are disabled")
-    if cfg.get("text_model") != "gemini-3.8-flash":
+    if cfg.get("text_model") not in ("gemini-3.8-flash", "gemini-3.5-flash"):
         raise ValueError("Only the verified free-tier text model is allowed")
     if not 1 <= cfg.get("candidates", 0) <= 2:
         raise ValueError("At most two instrumental candidates are allowed per day")
@@ -254,10 +254,12 @@ class Producer:
         self.types = types
         self.client = genai.Client(api_key=key, http_options=types.HttpOptions(
             api_version="v1beta", timeout=120000,
-            # The Interactions bridge counts retries differently; exclude all actual error statuses.
-            retry_options=types.HttpRetryOptions(attempts=1, http_status_codes=[418])))
+            retry_options=types.HttpRetryOptions(attempts=1)))
         self.cfg, self.folder, self.catalog = cfg, folder, catalog
         self.calls = json.loads((folder / "manifest.json").read_text(encoding="utf-8")).get("request_count", 0)
+        if (folder / "api_requests.json").exists():
+            records = json.loads((folder / "api_requests.json").read_text(encoding="utf-8"))
+            self.calls = max(self.calls, max((r["request"] for r in records), default=0))
         self.text_model = cfg["text_model"]
         self.editor_complete = False
 
@@ -270,11 +272,15 @@ class Producer:
         records.append({"request": self.calls, "model": self.text_model,
                         "timestamp": datetime.now(ZoneInfo("UTC")).isoformat()})
         save_json(log_path, records)
-        return self.client.interactions.create(
-            model=self.text_model, input=items,
-            generation_config={"thinking_level": "low"},
-            response_format={"type": "text", "mime_type": "application/json",
-                             "schema": schema.model_json_schema()})
+        state_path = self.folder / "manifest.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["request_count"] = self.calls
+        save_json(state_path, state)
+        return self.client.models.generate_content(
+            model=self.text_model, contents=items,
+            config=self.types.GenerateContentConfig(
+                response_mime_type="application/json", response_schema=schema,
+                automatic_function_calling=self.types.AutomaticFunctionCallingConfig(disable=True)))
 
     def structured(self, prompt, schema, audio=None):
         items = prompt
@@ -282,8 +288,8 @@ class Producer:
         try:
             if audio:
                 uploaded = self.client.files.upload(file=str(audio))
-                items = [{"type": "text", "text": prompt},
-                         {"type": "audio", "uri": uploaded.uri, "mime_type": uploaded.mime_type}]
+                items = [prompt, self.types.Part.from_uri(
+                    file_uri=uploaded.uri, mime_type=uploaded.mime_type)]
             try:
                 response = self.request(items, schema)
             except Exception as exc:
@@ -293,7 +299,7 @@ class Producer:
                 self.text_model = "gemini-3.5-flash"
                 time.sleep(10)
                 response = self.request(items, schema)
-            return schema.model_validate_json(response.output_text)
+            return schema.model_validate_json(response.text)
         finally:
             if uploaded:
                 with contextlib.suppress(Exception):
