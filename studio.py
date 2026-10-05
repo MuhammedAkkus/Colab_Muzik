@@ -127,6 +127,23 @@ def lyric_text(brief):
     return "\n".join(line for lines in brief.lyrics.model_dump().values() for line in lines)
 
 
+def recover_draft(folder):
+    path = folder / "draft_brief.json"
+    if path.exists():
+        return Brief.model_validate_json(path.read_text(encoding="utf-8"))
+    prompt = (folder / "editing_prompt.txt").read_text(encoding="utf-8")
+    data, _ = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])
+    brief = Brief.model_validate(data)
+    save_json(path, brief.model_dump())
+    return brief
+
+
+def is_server_error(exc):
+    code = getattr(exc, "code", getattr(exc, "status_code", 0))
+    return (isinstance(code, int) and 500 <= code < 600) or type(exc).__name__ in (
+        "InternalServerError", "ServerError", "ServiceUnavailableError")
+
+
 def check_originality(brief, catalog, exclude):
     fresh = ngrams(lyric_text(brief))
     for path in sorted(catalog.glob("*/brief.json")):
@@ -226,15 +243,17 @@ class Producer:
         self.types = types
         self.client = genai.Client(api_key=key, http_options=types.HttpOptions(
             api_version="v1beta", timeout=120000,
-            retry_options=types.HttpRetryOptions(attempts=1)))
+            # The Interactions bridge counts retries differently; exclude all actual error statuses.
+            retry_options=types.HttpRetryOptions(attempts=1, http_status_codes=[418])))
         self.cfg, self.folder, self.catalog = cfg, folder, catalog
         self.calls = json.loads((folder / "manifest.json").read_text(encoding="utf-8")).get("request_count", 0)
         self.text_model = cfg["text_model"]
+        self.editor_complete = False
 
     def request(self, items, schema):
-        self.calls += 1
-        if self.calls > 6:
+        if self.calls >= 6:
             raise RuntimeError("Daily text/audio-analysis request limit reached")
+        self.calls += 1
         log_path = self.folder / "api_requests.json"
         records = json.loads(log_path.read_text(encoding="utf-8")) if log_path.exists() else []
         records.append({"request": self.calls, "model": self.text_model,
@@ -257,10 +276,7 @@ class Producer:
             try:
                 response = self.request(items, schema)
             except Exception as exc:
-                code = getattr(exc, "code", getattr(exc, "status_code", 0))
-                server_error = (isinstance(code, int) and 500 <= code < 600) or type(exc).__name__ in (
-                    "InternalServerError", "ServerError", "ServiceUnavailableError")
-                if not server_error or self.text_model != "gemini-3.8-flash":
+                if not is_server_error(exc) or self.text_model != "gemini-3.8-flash":
                     raise
                 # Both models have free tiers. Never retry quota/auth errors or use paid music.
                 self.text_model = "gemini-3.5-flash"
@@ -299,6 +315,7 @@ class Producer:
         )
         self.folder.joinpath("composition_prompt.txt").write_text(prompt, encoding="utf-8")
         brief = self.structured(prompt, Brief)
+        save_json(self.folder / "draft_brief.json", brief.model_dump())
         edit_prompt = (
             "Independently edit this original Turkish alternative-pop draft. Improve weak lines and "
             "prosody, remove filler and forced rhyme, sharpen emotional specificity and chorus recall. "
@@ -308,7 +325,14 @@ class Producer:
             + brief.model_dump_json() + " Required order: " + str([x[0] for x in FORM])
         )
         self.folder.joinpath("editing_prompt.txt").write_text(edit_prompt, encoding="utf-8")
-        edited = self.structured(edit_prompt, Brief)
+        try:
+            edited = self.structured(edit_prompt, Brief)
+            self.editor_complete = True
+        except Exception as exc:
+            if not is_server_error(exc):
+                raise
+            edited = brief
+            edited.editorial_notes += " Independent editor unavailable due to server error; draft requires human editing."
         check_originality(edited, self.catalog, self.folder)
         return edited
 
@@ -391,11 +415,21 @@ class Producer:
         return self.structured(prompt, ListeningReview, audio=mp3)
 
 
-def claim(folder, repair_failed=False):
+def claim(folder, repair_failed=False, finish_draft=False):
     folder.mkdir(parents=True, exist_ok=True)
     file = folder / "manifest.json"
     if file.exists():
         previous = json.loads(file.read_text(encoding="utf-8"))
+        if (finish_draft and previous.get("status") == "failed"
+                and previous.get("error_type") in ("InternalServerError", "ServerError", "ServiceUnavailableError")
+                and previous.get("request_count", 6) <= 4
+                and previous.get("finish_draft_count", 0) == 0 and not (folder / "quality.json").exists()
+                and ((folder / "draft_brief.json").exists() or (folder / "editing_prompt.txt").exists())):
+            recover_draft(folder)
+            save_json(folder / "pre_finish_draft_manifest.json", previous)
+            previous.update(status="claimed", finish_draft_count=1, resume_draft=True)
+            save_json(file, previous)
+            return True
         if (repair_failed and previous.get("status") == "failed"
                 and previous.get("error_type") in ("InternalServerError", "ServerError", "ServiceUnavailableError")
                 and previous.get("request_count", 6) <= 2
@@ -417,6 +451,8 @@ def execute(folder, cfg, catalog):
     if state["status"] != "claimed":
         print("Attempt already consumed; refusing automatic retry.")
         return 0
+    for field in ("error_type", "action"):
+        state.pop(field, None)
     state.update(status="running", models={"text": cfg["text_model"], "music": cfg["music_model"]},
                  rights_policy=cfg["rights_policy"], quality_assessment="Model estimate, not a professional guarantee")
     save_json(state_path, state)
@@ -426,7 +462,13 @@ def execute(folder, cfg, catalog):
         if not key:
             raise ValueError("GitHub/Colab secret GEMINI_API_KEY is missing")
         producer = Producer(key, cfg, folder, catalog)
-        brief = producer.compose()
+        if state.get("resume_draft"):
+            brief = recover_draft(folder)
+            brief.editorial_notes += " Recovered draft; independent editor did not complete. Human editing required."
+            check_originality(brief, catalog, folder)
+        else:
+            brief = producer.compose()
+        state["editor_status"] = "complete" if getattr(producer, "editor_complete", False) else "draft_only_human_editing_required"
         save_json(folder / "brief.json", brief.model_dump())
         save_json(folder / "arrangement.json", timeline(brief))
         lyrics = "# " + brief.title + "\n\nSeparate lyric sheet: not sung in the instrumental.\n"
@@ -497,6 +539,8 @@ def main():
     parser.add_argument("--date")
     parser.add_argument("--repair-failed", action="store_true",
                         help="One explicit recovery of a server failure before composition completed")
+    parser.add_argument("--finish-draft", action="store_true",
+                        help="Finish an existing draft after an editor server failure; never compose again")
     args = parser.parse_args()
     cfg = load_config(args.config)
     day = args.date or datetime.now(ZoneInfo(cfg["timezone"])).date().isoformat()
@@ -508,7 +552,7 @@ def main():
         print("Configuration valid: free-project-only, paid music disabled.")
         return 0
     if args.mode in ("claim", "run"):
-        fresh = claim(folder, repair_failed=args.repair_failed)
+        fresh = claim(folder, repair_failed=args.repair_failed, finish_draft=args.finish_draft)
         if args.mode == "claim":
             if os.environ.get("GITHUB_OUTPUT"):
                 with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
