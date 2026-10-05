@@ -38,6 +38,24 @@ ucretsiz kotada kalsin diye gunluk sikistirilmis dosyalarla sinirlidir.
 `quality.json` asamayi ve anahtarlar/URL'ler temizlenmis hata ayrintisini kaydeder.
 Mastering kotu bir besteyi veya yapay bir performansi duzeltemez.
 
+## Asama Sinirlari
+
+Soz yazimi, editor, ses motoru, teknik kontrol, mastering, dinleme ve arsiv
+ayri asamalardir. Editor sunucu hatasi taslagi kaybettirmez. Dinleme servisi
+calismazsa teknik olarak dogrulanmis MP3 `preview.mp3` olarak korunur ve
+`awaiting_audio_review` isaretlenir; kalite onayi verilmis gibi davranilmaz.
+`steering_N.json` her bolumun istemini, ayarlari ve alinan ses suresini kaydeder.
+Istek sayaci API cagrisindan once kalici yazilir. Arsiv push'undan once rebase,
+es zamanli kod guncellemesi yuzunden muzik kaydinin kaybolmasini onler.
+
+Actions > Music engine diagnostic elle calistirilan, gunluk zamanlamadan
+bagimsiz teknik testtir. `probe` 15 saniyelik ses baglantisini sinar;
+`arranged` mevcut gunluk taslagi tam uzunlukta render eder. `review`, source
+alanindaki sayisal test run ID'sinin mevcut MP3'unu degerlendirir; yeni muzik
+uretmez. Ayni test kaydi sadece bir kez puanlanabilir; gunluk alti metin/ses
+analiz istegi siniri korunur. Kabul edilen kurtarma gunluk katalogda, eski
+hata raporlari silinmeden saklanir. Bunlar otomatik retry dongusu degildir.
+
 ## Guvenli Kurulum
 
 Anahtar **faturalandirma baglanmamis ucretsiz bir Google AI Studio projesine**
@@ -49,8 +67,10 @@ GitHub Settings > Secrets and variables > Actions bolumunde `GEMINI_API_KEY`
 repository secret eklenir. Anahtar kodda, notebook ciktisinda veya repoda tutulmaz.
 Workflow fork pull request'lerinden secret kullanmaz. En fazla iki ses adayi,
 normalde dort beste/editor/dinleme istegi; kurtarma dahil gunluk ust sinir alti.
-Yalnizca sunucu hatasinda ucretsiz katmani bulunan Gemini 3.5 Flash bir kere
-denenir; gercek model kullanimi `api_requests.json` icinde kaydedilir.
+Metin/editor/dinleme Gemini 3.5 Flash ucretsiz katmaninda dogrudan SDK
+`generate_content` ile calisir. Yalnizca sunucu hatasinda diger izinli ucretsiz
+Flash modeline bir kez gecilir; gercek model kullanimi
+`api_requests.json` icinde kaydedilir.
 Kota/kimlik hatasinda retry, ucretli fallback veya ucretli muzik istegi yoktur.
 Repo public oldugu icin kabul edilen muzik ve sozler de public olur.
 
@@ -104,6 +124,7 @@ secenegi bir kez kullanilabilir; yeniden soz uretmez ve alti istek sinirini koru
 - [Guncel model fiyatlandirmasi](https://ai.google.dev/gemini-api/docs/pricing)
 - [Yapilandirilmis beste/editor ciktilari](https://ai.google.dev/gemini-api/docs/structured-output)
 - [Ses anlama ve dinleme analizi](https://ai.google.dev/gemini-api/docs/audio)
+- [Dogrudan Python SDK ve yapilandirilmis yanitlar](https://googleapis.github.io/python-genai/)
 - [Gemini kullanim kosullari](https://ai.google.dev/gemini-api/terms)
 
 Model/kota/fiyat bilgileri 2026-10-05'te kontrol edilmistir. Deneysel servis
