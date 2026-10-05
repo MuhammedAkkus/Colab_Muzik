@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 import wave
 
 import numpy as np
@@ -66,6 +66,55 @@ class StudioTests(unittest.TestCase):
         self.assertTrue(studio.claim(folder))
         self.assertFalse(studio.claim(folder))
         self.assertEqual(json.loads((folder / "manifest.json").read_text())["status"], "claimed")
+
+    def test_recovery_once_before_music_only(self):
+        folder = self.root / "2026-10-05"
+        studio.save_json(folder / "manifest.json", {"status": "failed", "error_type": "InternalServerError",
+                                                   "request_count": 1})
+        self.assertFalse(studio.claim(folder))
+        self.assertTrue(studio.claim(folder, repair_failed=True))
+        data = json.loads((folder / "manifest.json").read_text())
+        self.assertEqual(data["request_count"], 1)
+        data["status"] = "failed"
+        studio.save_json(folder / "manifest.json", data)
+        self.assertFalse(studio.claim(folder, repair_failed=True))
+
+    def test_quota_error_never_rearmed(self):
+        folder = self.root / "2026-10-05"
+        studio.save_json(folder / "manifest.json", {"status": "failed", "error_type": "ClientError",
+                                                   "request_count": 1})
+        self.assertFalse(studio.claim(folder, repair_failed=True))
+
+    def test_server_error_uses_only_verified_free_text_fallback(self):
+        class InternalServerError(Exception):
+            pass
+        producer = object.__new__(studio.Producer)
+        producer.text_model = "gemini-3.8-flash"
+        producer.request = Mock(side_effect=[InternalServerError(), type("Response", (), {
+            "output_text": example_brief().model_dump_json()})()])
+        with patch.object(studio.time, "sleep"):
+            result = producer.structured("test", studio.Brief)
+        self.assertEqual(result.title, "Empty Platform")
+        self.assertEqual(producer.text_model, "gemini-3.5-flash")
+        self.assertEqual(producer.request.call_count, 2)
+
+    def test_quota_is_not_retried_by_structured_call(self):
+        class ClientError(Exception):
+            code = 429
+        producer = object.__new__(studio.Producer)
+        producer.text_model = "gemini-3.8-flash"
+        producer.request = Mock(side_effect=ClientError())
+        with self.assertRaises(ClientError):
+            producer.structured("test", studio.Brief)
+        self.assertEqual(producer.request.call_count, 1)
+
+    def test_request_cap_before_network(self):
+        producer = object.__new__(studio.Producer)
+        producer.calls = 6
+        producer.client = Mock()
+        with self.assertRaises(RuntimeError):
+            producer.request("test", studio.Brief)
+        producer.client.interactions.create.assert_not_called()
 
     def test_fixed_arrangement_and_duration(self):
         brief = example_brief()
