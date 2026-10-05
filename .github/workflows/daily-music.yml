@@ -1,0 +1,81 @@
+name: Daily alternative pop studio
+on:
+  schedule:
+    - cron: '17 6 * * *' # 09:17 Europe/Istanbul (UTC+3)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-music-catalog
+  cancel-in-progress: false
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install studio
+        run: |
+          python -m pip install -r requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+      - name: Validate and test without API requests
+        run: |
+          python studio.py validate
+          python -m unittest discover -s tests -v
+      - name: Configure archive identity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Check secret without printing it
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo 'Add repository secret GEMINI_API_KEY from a billing-disabled free project.'
+            exit 1
+          fi
+      - name: Reserve today's single attempt
+        id: claim
+        run: python studio.py claim
+      - name: Persist reservation before API requests
+        if: steps.claim.outputs.fresh == 'true'
+        run: |
+          git add catalog
+          git commit -m 'Reserve daily free music attempt [skip ci]'
+          git push origin HEAD:main
+      - name: Produce and evaluate
+        if: steps.claim.outputs.fresh == 'true'
+        id: production
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python studio.py generate --date '${{ steps.claim.outputs.day }}'
+      - name: Archive accepted audio, lyrics and production report
+        if: always() && steps.claim.outputs.fresh == 'true'
+        run: |
+          git add catalog
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive daily production and quality report [skip ci]'
+            git push origin HEAD:main
+          fi
+      - name: Preserve all candidates for listening and recovery
+        if: always() && steps.claim.outputs.fresh == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: music-production-${{ github.run_id }}
+          path: catalog/
+          retention-days: 7
+          if-no-files-found: warn
+          include-hidden-files: false
+      - name: Require attention for rejected/failed production
+        if: steps.production.outcome == 'failure'
+        run: |
+          echo 'No release-ready master accepted. Read catalog manifest/quality report and listen to artifact.'
+          exit 1
