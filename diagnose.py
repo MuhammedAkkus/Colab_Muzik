@@ -14,7 +14,7 @@ import wave
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from studio import Brief, Producer, load_config, mastering, meets_quality, safe_error, save_json, wav_qc
+from studio import Brief, Producer, ffmpeg, load_config, mastering, meets_quality, safe_error, save_json, wav_qc
 
 
 async def probe(producer, folder):
@@ -54,10 +54,57 @@ async def probe(producer, folder):
     save_json(folder / "mastering.json", mastering(wav, folder / "probe.mp3", 15))
 
 
+def archive_preview(source, day, folder, day_name):
+    source_state = json.loads((source / "manifest.json").read_text())
+    qc = json.loads((source / "technical.json").read_text())
+    master = json.loads((source / "mastering.json").read_text())
+    if source_state.get("status") != "audio_verified" or not qc.get("passed"):
+        raise ValueError("Only a verified full arrangement may be archived")
+    if source_state.get("seconds", 0) < 120:
+        raise ValueError("A short connection probe is not a complete musical product")
+    encoded = master["encoded_master"]
+    if abs(float(encoded["input_i"]) + 14) > 2 or float(encoded["input_tp"]) > -0.5:
+        raise ValueError("Encoded preview must pass mastering checks")
+    if (day / "instrumental.mp3").exists() or (day / "preview.mp3").exists():
+        raise ValueError("A saved daily recording must not be replaced")
+    brief = Brief.model_validate_json((source / "brief.json").read_text(encoding="utf-8"))
+    current_brief = Brief.model_validate_json((day / "brief.json").read_text(encoding="utf-8"))
+    if brief.model_dump() != current_brief.model_dump():
+        raise ValueError("Recovery must match the same preserved original brief")
+    ffmpeg("-i", source / "instrumental.mp3", "-f", "null", "-")
+    state = json.loads((day / "manifest.json").read_text())
+    save_json(day / "pre_preview_recovery_manifest.json", state)
+    shutil.copyfile(source / "instrumental.mp3", day / "preview.mp3")
+    shutil.copyfile(source / "mastering.json", day / "mastering.json")
+    shutil.copyfile(source / "steering_1.json", day / "recovered_steering.json")
+    record = {"candidate": "recovered_arrangement", "source": str(source), "technical": qc,
+              "mastering": master, "accepted": False, "stage": "awaiting_audio_review",
+              "review_status": "Free analysis services returned 503; no listening score assigned",
+              "file": "preview.mp3"}
+    quality = json.loads((day / "quality.json").read_text())
+    save_json(day / "quality.json", quality + [record])
+    requests = json.loads((day / "api_requests.json").read_text())
+    indexed = {r["request"]: r for r in requests}
+    for path in sorted(Path("diagnostics").glob("*/api_requests.json")):
+        for request in json.loads(path.read_text()):
+            request_day = datetime.fromisoformat(request["timestamp"]).astimezone(ZoneInfo("Europe/Istanbul")).date().isoformat()
+            if request_day == day_name and request["request"] <= state.get("request_count", 0):
+                indexed.setdefault(request["request"], request)
+    save_json(day / "api_requests.json", [indexed[n] for n in sorted(indexed)])
+    state.update(status="awaiting_audio_review", pipeline_status="completed_with_review_pending",
+                 title=brief.title, recovery_source=str(source), output_file="preview.mp3",
+                 audio_sha256=hashlib.sha256((day / "preview.mp3").read_bytes()).hexdigest(),
+                 action="Listen to the verified original preview; automatic criticism is unavailable.")
+    save_json(day / "manifest.json", state)
+    save_json(folder / "manifest.json", {"status": "preview_archived", "technical_passed": True,
+                                        "automatic_quality_approved": False, "production_day": day_name})
+    print("Complete verified original audio archived; human listening review pending")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("folder", type=Path)
-    parser.add_argument("test", choices=["probe", "arranged", "review"], default="probe", nargs="?")
+    parser.add_argument("test", choices=["probe", "arranged", "review", "archive_preview"], default="probe", nargs="?")
     parser.add_argument("source", default="", nargs="?")
     parser.add_argument("--day")
     parser.add_argument("--retry-review-from")
@@ -74,6 +121,11 @@ def main():
             raise ValueError("Production day must be YYYY-MM-DD")
         datetime.strptime(day_name, "%Y-%m-%d")
         day = Path("catalog") / day_name
+        if mode == "archive_preview":
+            if not re.fullmatch(r"\d+", args.source):
+                raise ValueError("Source must be a numeric diagnostic run ID")
+            archive_preview(Path("diagnostics") / args.source, day, folder, day_name)
+            return 0
         if mode == "review":
             if not re.fullmatch(r"\d+", args.source):
                 raise ValueError("Review source must be a numeric diagnostic run ID")
