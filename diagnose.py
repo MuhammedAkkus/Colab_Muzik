@@ -1,5 +1,6 @@
 """Explicit, bounded music-engine test; independent from daily production claims."""
 
+import argparse
 import asyncio
 import contextlib
 import hashlib
@@ -10,6 +11,8 @@ import re
 import shutil
 import sys
 import wave
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from studio import Brief, Producer, load_config, mastering, meets_quality, safe_error, save_json, wav_qc
 
@@ -52,27 +55,50 @@ async def probe(producer, folder):
 
 
 def main():
-    folder = Path(sys.argv[1])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("folder", type=Path)
+    parser.add_argument("test", choices=["probe", "arranged", "review"], default="probe", nargs="?")
+    parser.add_argument("source", default="", nargs="?")
+    parser.add_argument("--day")
+    parser.add_argument("--retry-review-from")
+    args = parser.parse_args()
+    folder = args.folder
     folder.mkdir(parents=True, exist_ok=True)
     save_json(folder / "manifest.json", {"status": "testing", "request_count": 0})
     producer = None
     try:
         cfg = load_config(Path("config.json"))
-        mode = sys.argv[2] if len(sys.argv) > 2 else "probe"
+        mode = args.test
+        day_name = args.day or datetime.now(ZoneInfo(cfg["timezone"])).date().isoformat()
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", day_name):
+            raise ValueError("Production day must be YYYY-MM-DD")
+        datetime.strptime(day_name, "%Y-%m-%d")
+        day = Path("catalog") / day_name
         if mode == "review":
-            if len(sys.argv) != 4 or not re.fullmatch(r"\d+", sys.argv[3]):
+            if not re.fullmatch(r"\d+", args.source):
                 raise ValueError("Review source must be a numeric diagnostic run ID")
-            source = Path("diagnostics") / sys.argv[3]
+            source = Path("diagnostics") / args.source
             source_state = json.loads((source / "manifest.json").read_text())
             if source_state["status"] != "audio_verified":
                 raise ValueError("Review requires a previously verified complete recording")
             brief = Brief.model_validate_json((source / "brief.json").read_text(encoding="utf-8"))
-            day = Path("catalog/2026-10-05")
+            if source_state.get("production_day") and source_state["production_day"] != day_name:
+                raise ValueError("The supplied production day must match the diagnostic recording")
             state = json.loads((day / "manifest.json").read_text())
             if (day / "instrumental.mp3").exists():
                 raise ValueError("Existing daily master must not be replaced by a diagnostic")
             digest = hashlib.sha256((source / "instrumental.mp3").read_bytes()).hexdigest()
-            if digest in state.get("reviewed_diagnostic_audio", []):
+            retry_review = bool(args.retry_review_from)
+            if retry_review:
+                if not re.fullmatch(r"\d+", args.retry_review_from):
+                    raise ValueError("Recovery must reference a numeric failed review run")
+                failure = json.loads((Path("diagnostics") / args.retry_review_from / "manifest.json").read_text())
+                if (failure.get("error_type") != "ServerError" or failure.get("request_count") != 5
+                        or state.get("request_count") != 5 or state.get("audio_review_recovery_count", 0)
+                        or digest not in state.get("reviewed_diagnostic_audio", [])):
+                    raise ValueError("Only one explicit recovery of the documented server outage is allowed")
+                state["audio_review_recovery_count"] = 1
+            elif digest in state.get("reviewed_diagnostic_audio", []):
                 raise ValueError("This diagnostic recording already had its single review attempt")
             previous_calls = state.get("request_count", 0)
             if previous_calls >= 6:
@@ -82,6 +108,8 @@ def main():
             save_json(day / "manifest.json", state)
             save_json(folder / "manifest.json", {"status": "reviewing", "request_count": previous_calls})
             producer = Producer(os.environ["GEMINI_API_KEY"], cfg, folder, Path("catalog"))
+            if retry_review:
+                producer.text_model = "gemini-3.8-flash"
             review = producer.listen(source / "instrumental.mp3", brief)
             qc = json.loads((source / "technical.json").read_text())
             approved = meets_quality(qc, review, cfg)
@@ -112,7 +140,7 @@ def main():
             return 0
         producer = Producer(os.environ["GEMINI_API_KEY"], cfg, folder, Path("catalog"))
         if mode == "arranged":
-            brief = Brief.model_validate_json(Path("catalog/2026-10-05/brief.json").read_text(encoding="utf-8"))
+            brief = Brief.model_validate_json((day / "brief.json").read_text(encoding="utf-8"))
             save_json(folder / "brief.json", brief.model_dump())
             wav, duration = asyncio.run(asyncio.wait_for(producer.render(brief, 1), timeout=360))
             qc = wav_qc(wav, duration)
@@ -123,7 +151,8 @@ def main():
         else:
             duration = 15
             asyncio.run(asyncio.wait_for(probe(producer, folder), timeout=100))
-        save_json(folder / "manifest.json", {"status": "audio_verified", "seconds": duration, "release": "diagnostic_only"})
+        save_json(folder / "manifest.json", {"status": "audio_verified", "seconds": duration,
+                                            "production_day": day_name, "release": "diagnostic_only"})
         print("Real music stream and encoded MP3 verified")
         return 0
     except Exception as exc:
