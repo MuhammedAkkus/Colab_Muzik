@@ -542,6 +542,7 @@ def execute(folder, cfg, catalog):
             candidates.append(record)
             save_json(folder / "quality.json", candidates)
         approved = [c for c in candidates if c["accepted"]]
+        pending = [c for c in candidates if c.get("file") and not c.get("listening")]
         if approved:
             best = max(approved, key=lambda c: c["score"])
             master = folder / "instrumental.mp3"
@@ -554,7 +555,6 @@ def execute(folder, cfg, catalog):
             state.update(status="ready_for_human_review", title=brief.title,
                          selected_candidate=best["candidate"], audio_sha256=digest)
         else:
-            pending = [c for c in candidates if c.get("file") and not c.get("listening")]
             if pending:
                 shutil.copyfile(folder / "work" / pending[0]["file"], folder / "preview.mp3")
             status = ("awaiting_audio_review" if pending else "quality_rejected"
@@ -566,7 +566,8 @@ def execute(folder, cfg, catalog):
         state["request_count"] = producer.calls
         save_json(state_path, state)
         print(f"Production status: {state['status']}")
-        return 0 if approved else 2
+        # A completed, verified recording survives an unavailable optional critic.
+        return 0 if approved or pending else 2
     except Exception as exc:
         state.update(status="failed", error_type=type(exc).__name__,
                      error_message=safe_error(exc),
