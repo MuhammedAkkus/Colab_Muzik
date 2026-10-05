@@ -293,10 +293,10 @@ class Producer:
             try:
                 response = self.request(items, schema)
             except Exception as exc:
-                if not is_server_error(exc) or self.text_model != "gemini-3.8-flash":
+                if not is_server_error(exc) or self.calls >= 6:
                     raise
                 # Both models have free tiers. Never retry quota/auth errors or use paid music.
-                self.text_model = "gemini-3.5-flash"
+                self.text_model = "gemini-3.5-flash" if self.text_model == "gemini-3.8-flash" else "gemini-3.8-flash"
                 time.sleep(10)
                 response = self.request(items, schema)
             return schema.model_validate_json(response.text)
