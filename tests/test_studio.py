@@ -93,12 +93,24 @@ class StudioTests(unittest.TestCase):
             pass
         producer = object.__new__(studio.Producer)
         producer.text_model = "gemini-3.8-flash"
+        producer.calls = 0
         producer.request = Mock(side_effect=[InternalServerError(), type("Response", (), {
             "text": example_brief().model_dump_json()})()])
         with patch.object(studio.time, "sleep"):
             result = producer.structured("test", studio.Brief)
         self.assertEqual(result.title, "Empty Platform")
         self.assertEqual(producer.text_model, "gemini-3.5-flash")
+        self.assertEqual(producer.request.call_count, 2)
+
+    def test_server_fallback_also_works_from_primary_35(self):
+        class ServerError(Exception):
+            code = 503
+        producer = object.__new__(studio.Producer)
+        producer.text_model, producer.calls = "gemini-3.5-flash", 4
+        producer.request = Mock(side_effect=[ServerError(), SimpleNamespace(text=example_brief().model_dump_json())])
+        with patch.object(studio.time, "sleep"):
+            producer.structured("fixture", studio.Brief)
+        self.assertEqual(producer.text_model, "gemini-3.8-flash")
         self.assertEqual(producer.request.call_count, 2)
 
     def test_quota_is_not_retried_by_structured_call(self):
