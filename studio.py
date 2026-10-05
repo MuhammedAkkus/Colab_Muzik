@@ -362,6 +362,12 @@ class Producer:
             music_generation_mode=self.types.MusicGenerationMode.QUALITY)
         destination = self.folder / "work" / f"candidate_{candidate}.wav"
         destination.parent.mkdir(parents=True, exist_ok=True)
+        steering_path = self.folder / f"steering_{candidate}.json"
+        evidence = {"base_prompt": base, "events": log, "timeline": schedule,
+                    "config": {**config_fields, "scale": config_fields["scale"].value,
+                               "music_generation_mode": config_fields["music_generation_mode"].value},
+                    "stage": "connecting", "received_audio_seconds": 0}
+        save_json(steering_path, evidence)
 
         async with self.client.aio.live.music.connect(model=self.cfg["music_model"]) as session:
             async def steer(index, blend=1.0):
@@ -372,12 +378,17 @@ class Producer:
                         text=schedule[index - 1]["arrangement"], weight=1 - blend))
                 prompts.append(self.types.WeightedPrompt(
                     text=f"{sec['arrangement']} Harmony: {sec['chords']}", weight=blend))
+                evidence.update(stage="sending_controls", section=sec["name"],
+                                prompts=[p.model_dump() for p in prompts])
+                save_json(steering_path, evidence)
                 await session.set_weighted_prompts(prompts=prompts)
                 previous_density = schedule[max(0, index - 1)]["density"]
                 density = previous_density * (1 - blend) + sec["density"] * blend
                 await session.set_music_generation_config(config=self.types.LiveMusicGenerationConfig(
                     **config_fields, density=density))
                 log.append({"audio_time": len(chunks) / 192000, "section": sec["name"], "blend": blend})
+                evidence["stage"] = "receiving_audio"
+                save_json(steering_path, evidence)
 
             await steer(0)
             await session.play()
@@ -387,7 +398,8 @@ class Producer:
                 if getattr(message, "filtered_prompt", None):
                     filtered = message.filtered_prompt
                     save_json(self.folder / f"filter_{candidate}.json", {
-                        "reason": getattr(filtered, "filtered_reason", "Unavailable")})
+                        "reason": getattr(filtered, "filtered_reason", "Unavailable"),
+                        "prompt": getattr(filtered, "text", None)})
                     raise RuntimeError("Generation prompt was filtered; candidate rejected")
                 content = getattr(message, "server_content", None)
                 if not content:
@@ -397,6 +409,8 @@ class Producer:
                 for chunk in content.audio_chunks or []:
                     chunks.extend(chunk.data)
                 seconds = len(chunks) / 192000
+                evidence["received_audio_seconds"] = seconds
+                save_json(steering_path, evidence)
                 next_index = min(len(schedule) - 1, section_index + 1)
                 if next_index != section_index and seconds >= schedule[next_index]["start"]:
                     section_index = next_index
@@ -409,8 +423,8 @@ class Producer:
             output.setsampwidth(2)
             output.setframerate(48000)
             output.writeframes(bytes(chunks[:target_bytes]))
-        save_json(self.folder / f"steering_{candidate}.json", {"base_prompt": base, "events": log,
-                                                               "timeline": schedule})
+        evidence["stage"] = "complete"
+        save_json(steering_path, evidence)
         return destination, schedule[-1]["end"]
 
     def listen(self, mp3, brief):
@@ -506,12 +520,13 @@ def execute(folder, cfg, catalog):
                     mp3 = folder / "work" / f"candidate_{number}.mp3"
                     record["stage"] = "mastering"
                     record["mastering"] = mastering(wav, mp3, duration)
+                    record["file"] = mp3.name
+                    save_json(folder / "quality.json", candidates + [record])
                     record["stage"] = "listening_review"
                     review = producer.listen(mp3, brief)
                     record["listening"] = review.model_dump()
                     record["score"] = review.average()
                     record["accepted"] = meets_quality(qc, review, cfg)
-                    record["file"] = mp3.name
                     record["stage"] = "evaluated"
             except Exception as exc:
                 # Do not serialize raw API errors/URLs: they can contain credentials or input data.
@@ -533,9 +548,15 @@ def execute(folder, cfg, catalog):
             state.update(status="ready_for_human_review", title=brief.title,
                          selected_candidate=best["candidate"], audio_sha256=digest)
         else:
-            status = "quality_rejected" if any(c.get("technical") or c.get("listening") for c in candidates) else "generation_failed"
+            pending = [c for c in candidates if c.get("file") and not c.get("listening")]
+            if pending:
+                shutil.copyfile(folder / "work" / pending[0]["file"], folder / "preview.mp3")
+            status = ("awaiting_audio_review" if pending else "quality_rejected"
+                      if any(c.get("technical") or c.get("listening") for c in candidates)
+                      else "generation_failed")
             state.update(status=status, title=brief.title,
-                         action="Listen to candidates in the workflow artifact. No master was accepted.")
+                         action="Technically verified preview needs listening review." if pending else
+                         "Listen to candidates in the workflow artifact. No master was accepted.")
         state["request_count"] = producer.calls
         save_json(state_path, state)
         print(f"Production status: {state['status']}")
