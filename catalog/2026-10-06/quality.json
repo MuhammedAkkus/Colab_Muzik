@@ -1,0 +1,115 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 156.92310416666666,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -14.584208643373465,
+      "clipped_sample_fraction": 6.638070742981999e-08,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.17",
+        "input_tp": "0.92",
+        "input_lra": "3.70",
+        "input_thresh": "-24.18",
+        "output_i": "-13.13",
+        "output_tp": "-1.50",
+        "output_lra": "2.20",
+        "output_thresh": "-23.14",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.87"
+      },
+      "encoded_master": {
+        "input_i": "-14.01",
+        "input_tp": "-1.27",
+        "input_lra": "2.20",
+        "input_thresh": "-24.03",
+        "output_i": "-13.74",
+        "output_tp": "-1.00",
+        "output_lra": "2.00",
+        "output_thresh": "-23.75",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.26"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 66,
+      "instrument_realism": 58,
+      "hook": 65,
+      "structure": 75,
+      "mix": 62,
+      "unwanted_vocals": false,
+      "observations": [
+        "0:00 - The acoustic guitar intro has a distinctly synthetic decay and mechanical picking, lacking natural human micro-variations.",
+        "0:24 - The entry of the percussion feels stiff and heavily quantized, giving the groove a rigid, drum-machine feel rather than an organic acoustic pocket.",
+        "0:48 - The lead electric guitar playing the hook melody has a flat, sterile tone that lacks realistic finger-slide noise or realistic amp dynamics.",
+        "1:35 - The bridge strips back nicely, but the electric piano sound is overly bright and digital, missing the warm tape-like warble or mechanical noise of a real Rhodes.",
+        "1:55 - During the final chorus, the mix becomes muddy and crowded in the low-mids, with the bass, guitars, and keys competing for the same frequency space."
+      ]
+    },
+    "score": 65.2
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 156.92310416666666,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -13.572374933231758,
+      "clipped_sample_fraction": 5.310456594385599e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-13.95",
+        "input_tp": "0.08",
+        "input_lra": "2.20",
+        "input_thresh": "-23.97",
+        "output_i": "-14.12",
+        "output_tp": "-1.50",
+        "output_lra": "2.00",
+        "output_thresh": "-24.13",
+        "normalization_type": "dynamic",
+        "target_offset": "0.12"
+      },
+      "encoded_master": {
+        "input_i": "-14.03",
+        "input_tp": "-1.32",
+        "input_lra": "2.10",
+        "input_thresh": "-24.05",
+        "output_i": "-14.32",
+        "output_tp": "-1.45",
+        "output_lra": "1.80",
+        "output_thresh": "-24.34",
+        "normalization_type": "dynamic",
+        "target_offset": "0.32"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "listening": {
+      "groove": 52,
+      "instrument_realism": 38,
+      "hook": 55,
+      "structure": 50,
+      "mix": 58,
+      "unwanted_vocals": false,
+      "observations": [
+        "The 'acoustic' guitar in the intro (0:01 - 0:15) sounds highly programmed, lacking natural fret noise, fingerboard squeaks, or human velocity variation.",
+        "At 0:31, a highly artificial, MIDI-sounding synth brass/wind lead enters, which completely clashes with the melancholic, acoustic atmosphere requested in the brief.",
+        "The groove is rigidly quantized to the grid throughout, giving it a robotic, step-sequenced feel rather than a natural, unquantized human pocket.",
+        "The transition at 1:03 drops off abruptly into a sparse pattern, failing to deliver a cohesive, organic transition between the song sections."
+      ]
+    },
+    "score": 50.6
+  }
+]

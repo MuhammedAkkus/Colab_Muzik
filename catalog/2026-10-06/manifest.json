@@ -1,7 +1,17 @@
 {
   "date": "2026-10-06",
-  "status": "claimed",
+  "status": "quality_rejected",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
-  "commercial_release": "not_approved"
+  "commercial_release": "not_approved",
+  "models": {
+    "text": "gemini-3.5-flash",
+    "music": "models/lyria-realtime-exp"
+  },
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
+  "quality_assessment": "Model estimate, not a professional guarantee",
+  "editor_status": "draft_only_human_editing_required",
+  "title": "Mutfak Tezgahı",
+  "action": "Listen to candidates in the workflow artifact. No master was accepted.",
+  "request_count": 6
 }
