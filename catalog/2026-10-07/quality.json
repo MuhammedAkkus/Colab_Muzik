@@ -1,0 +1,103 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 163.2,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -13.427839677609935,
+      "clipped_sample_fraction": 3.829656862745098e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.77",
+        "input_tp": "1.67",
+        "input_lra": "4.50",
+        "input_thresh": "-24.80",
+        "output_i": "-13.81",
+        "output_tp": "-1.50",
+        "output_lra": "4.20",
+        "output_thresh": "-23.82",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.19"
+      },
+      "encoded_master": {
+        "input_i": "-14.02",
+        "input_tp": "-1.39",
+        "input_lra": "4.40",
+        "input_thresh": "-24.05",
+        "output_i": "-13.78",
+        "output_tp": "-1.00",
+        "output_lra": "3.80",
+        "output_thresh": "-23.79",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.22"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 52,
+      "instrument_realism": 45,
+      "hook": 58,
+      "structure": 65,
+      "mix": 58,
+      "unwanted_vocals": false,
+      "observations": [
+        "0:00 - 0:27: The opening piano and pad textures sound highly static and artificial, lacking the organic warmth and decay of a physical upright piano.",
+        "0:28 - 0:56: The fingerpicked acoustic guitar is completely devoid of realistic articulation, sounding like a flat, highly quantized MIDI sampler without any natural velocity variations.",
+        "0:57 - 1:25: The drum entry is rigidly snapped to the grid, giving a mechanical feel that completely misses the human pocket and organic groove of a live rhythm section.",
+        "0:57 - 1:45: The lead instrument performing the melodic hook sounds like a basic digital synth pluck rather than a convincing electric guitar with delay.",
+        "1:26 - 2:00: The overall mix lacks spatial depth and warmth, with high-mid frequencies sounding harsh and cluttered when the drum and synth layers stack up."
+      ]
+    },
+    "score": 55.6
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "listening_review",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 163.2,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -14.788057031618616,
+      "clipped_sample_fraction": 1.914828431372549e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-13.16",
+        "input_tp": "0.07",
+        "input_lra": "6.00",
+        "input_thresh": "-23.20",
+        "output_i": "-13.70",
+        "output_tp": "-1.50",
+        "output_lra": "5.10",
+        "output_thresh": "-23.74",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.30"
+      },
+      "encoded_master": {
+        "input_i": "-14.03",
+        "input_tp": "-1.10",
+        "input_lra": "5.20",
+        "input_thresh": "-24.08",
+        "output_i": "-13.74",
+        "output_tp": "-1.00",
+        "output_lra": "4.50",
+        "output_thresh": "-23.77",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.26"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "error_type": "ServerError",
+    "error_message": "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  }
+]

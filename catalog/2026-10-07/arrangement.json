@@ -1,0 +1,101 @@
+[
+  {
+    "name": "intro",
+    "arrangement": "Sparse and delicate. A fingerpicked acoustic guitar in B minor plays a gentle arpeggio, accompanied by single, quiet notes on an upright piano in a highly ambient space.",
+    "chords": "Bm - Gmaj7 - Em9 - F#7sus4",
+    "density": 0.28,
+    "bars": 4,
+    "start": 0.0,
+    "end": 9.6
+  },
+  {
+    "name": "verse_1",
+    "arrangement": "A subtle, organic kick pulse on beats 1 and 3, paired with soft rim clicks on 4. A warm, melodic bassline enters, sliding smoothly between chord roots to support the close, dry vocal.",
+    "chords": "Bm - A - Gmaj7 - F#m7",
+    "density": 0.42,
+    "bars": 8,
+    "start": 9.6,
+    "end": 28.8
+  },
+  {
+    "name": "pre_1",
+    "arrangement": "Dynamic tension begins to build. A sub-bass swell introduces low-end warmth, while the piano plays ascending arpeggios and a soft shaker is introduced to drive the rhythm forward.",
+    "chords": "Em7 - F#7 - Gmaj7 - A6",
+    "density": 0.52,
+    "bars": 4,
+    "start": 28.8,
+    "end": 38.4
+  },
+  {
+    "name": "chorus_1",
+    "arrangement": "Full alternative-pop arrangement. Steady, open acoustic guitar strumming combined with a live, warm snare hitting on 2 and 4. A clean electric guitar plays the signature two-bar melodic hook in the background.",
+    "chords": "Bm - G - D - A",
+    "density": 0.65,
+    "bars": 8,
+    "start": 38.4,
+    "end": 57.6
+  },
+  {
+    "name": "turnaround",
+    "arrangement": "The drums drop out, leaving only a soft hi-hat chick. The acoustic guitar holds sustained chords as the electric guitar's hook fades out with a warm tape delay effect.",
+    "chords": "Bm - Gmaj7",
+    "density": 0.35,
+    "bars": 4,
+    "start": 57.6,
+    "end": 67.2
+  },
+  {
+    "name": "verse_2",
+    "arrangement": "Maintains a slightly higher energy than Verse 1. Rim clicks are replaced with a soft snare cross-stick, and the bassline plays subtle melodic fills in its upper register to complement the moving story.",
+    "chords": "Bm - A - Gmaj7 - F#m7",
+    "density": 0.46,
+    "bars": 8,
+    "start": 67.2,
+    "end": 86.4
+  },
+  {
+    "name": "pre_2",
+    "arrangement": "The build-up repeats but with a low, rolling tom pattern and an expansive, warm synthesizer pad to maximize the anticipation.",
+    "chords": "Em7 - F#7 - Gmaj7 - A6",
+    "density": 0.55,
+    "bars": 4,
+    "start": 86.4,
+    "end": 96.0
+  },
+  {
+    "name": "chorus_2",
+    "arrangement": "Identical to Chorus 1 in structure, but bolstered by ambient, swelling electric guitar textures in the stereo sides to create a wider, more enveloping soundstage.",
+    "chords": "Bm - G - D - A",
+    "density": 0.68,
+    "bars": 8,
+    "start": 96.0,
+    "end": 115.2
+  },
+  {
+    "name": "bridge",
+    "arrangement": "A stark contrast. The acoustic guitar and drums stop completely. A warm Rhodes electric piano plays jazz-influenced chords under an intimate, dry, spoken-word-like vocal delivery.",
+    "chords": "Cmaj7 - Bm7 - Am7 - F#7",
+    "density": 0.3,
+    "bars": 8,
+    "start": 115.2,
+    "end": 134.4
+  },
+  {
+    "name": "final_chorus",
+    "arrangement": "The emotional climax. The full band returns with maximum energy, adding a subtle tambourine on the offbeats. The bassline locks tightly with the acoustic guitar, and the melodic hook is played with slightly more overdrive.",
+    "chords": "Bm - G - D - A",
+    "density": 0.7,
+    "bars": 8,
+    "start": 134.4,
+    "end": 153.6
+  },
+  {
+    "name": "outro",
+    "arrangement": "The energy dissipates. Drums and bass drop out, leaving only the delicate fingerpicked acoustic guitar from the intro. The piano plays a final, unresolved Bm chord that decays into silence.",
+    "chords": "Bm - Gmaj7 - Em9 - Bm",
+    "density": 0.25,
+    "bars": 4,
+    "start": 153.6,
+    "end": 163.2
+  }
+]
