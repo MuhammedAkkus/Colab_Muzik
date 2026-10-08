@@ -1,7 +1,17 @@
 {
   "date": "2026-10-08",
-  "status": "claimed",
+  "status": "failed",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
-  "commercial_release": "not_approved"
+  "commercial_release": "not_approved",
+  "models": {
+    "text": "gemini-3.5-flash",
+    "music": "models/lyria-realtime-exp"
+  },
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
+  "quality_assessment": "Model estimate, not a professional guarantee",
+  "error_type": "ServerError",
+  "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+  "action": "Check free quota/model access. Paid fallback is disabled.",
+  "request_count": 2
 }
