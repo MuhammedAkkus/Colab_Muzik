@@ -1,0 +1,115 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -1.484525214342109,
+      "rms_dbfs": -14.452084096270696,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-12.57",
+        "input_tp": "-0.39",
+        "input_lra": "2.00",
+        "input_thresh": "-22.60",
+        "output_i": "-13.71",
+        "output_tp": "-1.50",
+        "output_lra": "1.80",
+        "output_thresh": "-23.72",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.29"
+      },
+      "encoded_master": {
+        "input_i": "-14.00",
+        "input_tp": "-1.81",
+        "input_lra": "2.10",
+        "input_thresh": "-24.03",
+        "output_i": "-13.71",
+        "output_tp": "-1.32",
+        "output_lra": "1.80",
+        "output_thresh": "-23.72",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.29"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 55,
+      "instrument_realism": 42,
+      "hook": 58,
+      "structure": 50,
+      "mix": 60,
+      "unwanted_vocals": false,
+      "observations": [
+        "0:01 - The intro features highly quantized, digital pluck synths rather than the warm, intimate, fingerpicked acoustic guitar and real tape hiss described in the brief.",
+        "0:15 - The entry of the drums sounds stiff and completely sequenced on a grid, lacking the natural micro-timing and pocket of a human drummer.",
+        "0:35 - The bass element behaves like a static, synthesized sub-bass waveform without any organic sliding, fret noise, or acoustic resonance.",
+        "1:15 - The arrangement shifts towards a bright synth-pop electronic palette with synthetic leads, moving entirely away from the intimate, close-miked Turkish alternative pop aesthetic.",
+        "1:58 - The outro lacks a realistic piano decay, resolving abruptly on basic digital MIDI release envelopes instead of a rich, acoustic Bm chord decay."
+      ]
+    },
+    "score": 53.0
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.6147471213080167,
+      "rms_dbfs": -14.700138554351941,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-12.93",
+        "input_tp": "-0.59",
+        "input_lra": "2.70",
+        "input_thresh": "-22.95",
+        "output_i": "-13.39",
+        "output_tp": "-1.50",
+        "output_lra": "1.50",
+        "output_thresh": "-23.40",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.61"
+      },
+      "encoded_master": {
+        "input_i": "-14.00",
+        "input_tp": "-1.63",
+        "input_lra": "2.70",
+        "input_thresh": "-24.02",
+        "output_i": "-13.38",
+        "output_tp": "-1.24",
+        "output_lra": "1.50",
+        "output_thresh": "-23.39",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.62"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "listening": {
+      "groove": 62,
+      "instrument_realism": 48,
+      "hook": 76,
+      "structure": 86,
+      "mix": 68,
+      "unwanted_vocals": false,
+      "observations": [
+        "At 0:01, the track opens with highly synthetic pads and a quantized digital pluck instead of the requested dry, intimate fingerpicked acoustic guitar.",
+        "The chorus starting at 1:05 delivers a clear, recognizable melodic hook, but it is played on a generic electronic synth lead rather than a warm, ambient electric guitar.",
+        "The structural drop at 2:28 successfully marks the bridge, creating a stark and exposed space that aligns perfectly with the requested arrangement flow.",
+        "The rhythm section is completely computerized and lacks a live human pocket, making the overall groove feel overly stiff and clinical."
+      ]
+    },
+    "score": 68.0
+  }
+]

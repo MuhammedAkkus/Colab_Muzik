@@ -1,0 +1,107 @@
+{
+  "title": "Yarım Bodrum",
+  "story": "Set in a damp, semi-basement apartment in the backstreets of Beşiktaş, Istanbul. The narrative revolves around a couple whose relationship has withered in the dark, suffocating environment where the only view of the outside world is the feet of busy pedestrians passing by the high-up street-level window. Verse 1 establishes the setting through the smell of mold and the flickering light from the pavement. Verse 2 advances the timeline to the moment of departure, focusing on the sound of a broken suitcase zipper and footsteps ascending the stairs. The bridge shifts the perspective completely, as the narrator stands on the street above, looking down through the iron grates into their former home, realizing how small and hidden their shared lives actually were.",
+  "bpm": 102,
+  "key": "B minor",
+  "hook": "The two-bar vocal hook is written in B minor, utilizing scale degrees 5 (F#) - 1 (B) - 2 (C#) - 3 (D) in the first bar, and descending 2 (C#) - 1 (B) - b7 (A) - 1 (B) in the second. Rhythmically, it features a syncopated entry on the upbeat of beat 1, holding the peak flat-third (D) as a dotted quarter note, then resolving with a breathy, rapid descent on the eighth notes. The delivery requires a soft, chest-voice warmth with a sudden sigh-like release on the final tonic resolution.",
+  "vocal_direction": "Intimate, dry, and highly conversational, drawing inspiration from modern Turkish indie-pop. Avoid operatic vibrato or theatrical belt notes. The delivery must focus on the micro-tonal inflections of spoken Turkish, with breathy endings on the final vowels of each line to mimic sighing. The articulation of consonants like 'r' and 's' should be kept extremely natural, as if whispering to someone sitting across a small, quiet room.",
+  "lyrics": {
+    "verse_1": [
+      "Penceremiz kaldırım hizasında",
+      "Geçen ayakları sayarım her gün",
+      "Rutubet kokusu sinmiş duvara",
+      "Sarı bir ışık sızar tepemizden"
+    ],
+    "pre": [
+      "Yukarıda koca bir dünya döner",
+      "Bize sadece gölgesi kalır"
+    ],
+    "chorus": [
+      "Yarım bodrum katı burası sessiz",
+      "Güneşi görmeden büyüdü bu aşk",
+      "Şimdi adımların merdivende bak",
+      "Yavaşça yukarı tırmanıyor ses"
+    ],
+    "verse_2": [
+      "Eski valizin o kırık fermuarı",
+      "Zorla kapandı son kazağınla",
+      "Kaldırım taşında biriken yağmur",
+      "Cama vurur, vedasız gidiyorsun"
+    ],
+    "bridge": [
+      "Şimdi dışarıda, yukarıdayım ben",
+      "Demir parmaklığın ardından baktım",
+      "Küçücük bir oda, sönük bir lamba",
+      "İçinde kaybolan iki genç ömür"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse, dry fingerpicked acoustic guitar in B minor with subtle analog tape hiss. A warm, upright piano plays occasional low-register root notes to establish the dark, intimate atmosphere.",
+      "chords": "Bm - Gmaj7 - Em7 - F#7",
+      "density": 0.3
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Subtle, muffled kick drum on beats 1 and 3, accompanied by a soft rimshot on 4. A warm electric bass enters, locking to the kick but sliding melodically between chord roots. Clean electric guitar swells appear at the end of each line.",
+      "chords": "Bm - D - Em - F#7",
+      "density": 0.4
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "A deep sub-bass pad replaces the melodic bass. A gradual 16th-note shaker and soft snare roll build tension. Acoustic guitar starts a steady, muted 16th-note strumming pattern.",
+      "chords": "Gmaj7 - A - F#m7 - Bm",
+      "density": 0.5
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "The arrangement opens up with full, energetic acoustic guitar strumming. A live, dry snare hits on 2 and 4 with subtle ghost notes. An ambient electric guitar plays the lead melodic hook in the background.",
+      "chords": "Gmaj7 - A - Bm - D",
+      "density": 0.65
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Instantly drops back to the intro's fingerpicked acoustic guitar motif. A single, soft ride cymbal tap decays naturally. The bass plays a single, low B slide.",
+      "chords": "Bm - Em7 - F#7",
+      "density": 0.35
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Similar groove to verse 1, but with an added, off-beat electric piano chord pattern (Rhodes). The bass line becomes slightly more active, utilizing melodic fills in the upper register.",
+      "chords": "Bm - D - Em - F#7",
+      "density": 0.45
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Recreates the build of pre_1 but with an added reverse cymbal swell and a low-frequency synth tom fill leading into the chorus drop.",
+      "chords": "Gmaj7 - A - F#m7 - Bm",
+      "density": 0.55
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full acoustic strumming and active bass. A subtle, warm Hammond organ swell is added in the background to thicken the mid-range frequencies and elevate the emotional weight.",
+      "chords": "Gmaj7 - A - Bm - D",
+      "density": 0.68
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Strips back completely to create a stark contrast. A soft, tremolo-heavy Rhodes piano plays jazz-influenced extensions while a dry bass guitar handles the low end. No drums or acoustic guitars are present.",
+      "chords": "Em7 - A7 - Dmaj7 - Gmaj7 - Em - F#7",
+      "density": 0.3
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "The dynamic climax of the track. Full live drums with creative, sparse tom fills. The electric hook guitar is double-tracked and slightly grittier. Synthesisers provide a warm, swelling pad underneath.",
+      "chords": "Gmaj7 - A - Bm - D",
+      "density": 0.7
+    },
+    {
+      "name": "outro",
+      "arrangement": "The drum groove disappears, leaving only the decaying ring of the final chord. A single, fingerpicked acoustic guitar fades out slowly as a warm Rhodes chord holds. Resolves on a long, low Bm chord.",
+      "chords": "Gmaj7 - Em7 - Bm",
+      "density": 0.25
+    }
+  ],
+  "editorial_notes": "Prosody analysis shows that the 8-12 syllable count works perfectly with the natural cadence of colloquial Turkish. The choice of B minor provides a rich, melancholic harmonic canvas, preventing the song from sounding overly melodramatic. By using concrete nouns like 'fermuar' (zipper) and 'rutubet' (mold) instead of generic emotional words, the lyrical story feels tangible and lived-in. The harmonic transition in the bridge to Em7 and Dmaj7 injects a brief, bittersweet major-key color which highlights the narrator's shift in perspective as they stand outside on the street. The lack of rigid rhyme schemes avoids the common Turkish pop pitfall of sounding forced, allowing the performance to feel like a real conversation."
+}

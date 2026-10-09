@@ -1,0 +1,233 @@
+{
+  "base_prompt": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 102 BPM, 4/4. Lead motif: The signature hook is a bittersweet melodic motif in B minor, scaling from the dominant F# up to B, C#, and a sustained, syncopated D on the upbeat, followed by a sudden breathy fall back to B and A. It emphasizes a wistful, sigh-like cadence that mirrors the heavy atmosphere of a basement..",
+  "events": [
+    {
+      "audio_time": 0.0,
+      "section": "intro",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 10.0,
+      "section": "verse_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 12.0,
+      "section": "verse_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 30.0,
+      "section": "pre_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 32.0,
+      "section": "pre_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 38.0,
+      "section": "chorus_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 40.0,
+      "section": "chorus_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 58.0,
+      "section": "turnaround",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 60.0,
+      "section": "turnaround",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 66.0,
+      "section": "verse_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 68.0,
+      "section": "verse_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 86.0,
+      "section": "pre_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 88.0,
+      "section": "pre_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 96.0,
+      "section": "chorus_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 98.0,
+      "section": "chorus_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 114.0,
+      "section": "bridge",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 116.0,
+      "section": "bridge",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 132.0,
+      "section": "final_chorus",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 134.0,
+      "section": "final_chorus",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 152.0,
+      "section": "outro",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 154.0,
+      "section": "outro",
+      "blend": 1.0
+    }
+  ],
+  "timeline": [
+    {
+      "name": "intro",
+      "arrangement": "Starts with a dry, intimate fingerpicked acoustic guitar in B minor accompanied by real, low-fidelity tape hiss. A warm upright piano drops occasional low-register B notes to lock in the melancholic vibe.",
+      "chords": "Bm - Gmaj7 - Em7 - F#7",
+      "density": 0.3,
+      "bars": 4,
+      "start": 0.0,
+      "end": 9.4118
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "A muted, warm kick drum pulses softly on beats 1 and 3, paired with a subtle, dry rimshot on 4. An organic, melodic bass slides between chord roots. Gentle electric guitar swells color the tail of each line.",
+      "chords": "Bm - D - Em - F#7",
+      "density": 0.4,
+      "bars": 8,
+      "start": 9.4118,
+      "end": 28.2353
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Sub-bass pad replaces the active bass, adding a deep, tense rumble. A 16th-note shaker and a soft, building snare roll build anticipation. The acoustic guitar switches to a muted, rhythmic 16th-note pattern.",
+      "chords": "Gmaj7 - A - F#m7 - Bm",
+      "density": 0.5,
+      "bars": 4,
+      "start": 28.2353,
+      "end": 37.6471
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "The arrangement opens up with a warm, driving acoustic strumming pattern. A dry, organic snare hits on 2 and 4 with delicate ghost notes. A clean electric guitar plays the ambient melodic hook.",
+      "chords": "Gmaj7 - A - Bm - D",
+      "density": 0.65,
+      "bars": 8,
+      "start": 37.6471,
+      "end": 56.4706
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Instantly drops back to the sparse, fingerpicked acoustic guitar motif of the intro. A single, soft ride cymbal decays naturally, accompanied by a slow, sliding bass note resolving to B.",
+      "chords": "Bm - Em7 - F#7",
+      "density": 0.35,
+      "bars": 4,
+      "start": 56.4706,
+      "end": 65.8824
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Similar rhythm groove to verse 1, but augmented by a warm, off-beat Rhodes piano progression. The bass line becomes slightly more expressive, weaving high-register melodic countermelodies.",
+      "chords": "Bm - D - Em - F#7",
+      "density": 0.45,
+      "bars": 8,
+      "start": 65.8824,
+      "end": 84.7059
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Recreates the build of pre_1 but introduces a subtle reverse cymbal swell and a deep, low-frequency acoustic tom roll to maximize the dynamic transition into the second chorus.",
+      "chords": "Gmaj7 - A - F#m7 - Bm",
+      "density": 0.55,
+      "bars": 4,
+      "start": 84.7059,
+      "end": 94.1176
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full strummed acoustic guitar and active bass groove. A warm, subtle organ swell is introduced in the background to expand the mid-range and heighten the bittersweet tension of the track.",
+      "chords": "Gmaj7 - A - Bm - D",
+      "density": 0.68,
+      "bars": 8,
+      "start": 94.1176,
+      "end": 112.9412
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Drums and acoustic guitars cut out completely to create a stark, exposed space. A slow, heavily tremolo-treated Rhodes piano plays warm, jazzy extensions over a dry, deep bass guitar line.",
+      "chords": "Em7 - A7 - Dmaj7 - Gmaj7 - Em - F#7",
+      "density": 0.3,
+      "bars": 8,
+      "start": 112.9412,
+      "end": 131.7647
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "The dynamic peak. Full live drums with tasteful, driving tom fills. The main electric hook guitar is double-tracked and given a slightly grittier overdrive, supported by lush, swelling string synths.",
+      "chords": "Gmaj7 - A - Bm - D",
+      "density": 0.7,
+      "bars": 8,
+      "start": 131.7647,
+      "end": 150.5882
+    },
+    {
+      "name": "outro",
+      "arrangement": "All percussion drops out. A single fingerpicked acoustic guitar slowly fades out, accompanied by a sustaining Rhodes chord. The track resolves on a final, whispered breath and a long, low Bm piano chord.",
+      "chords": "Gmaj7 - Em7 - Bm",
+      "density": 0.25,
+      "bars": 4,
+      "start": 150.5882,
+      "end": 160.0
+    }
+  ],
+  "config": {
+    "bpm": 102,
+    "scale": "D_MAJOR_B_MINOR",
+    "brightness": 0.45,
+    "guidance": 3.5,
+    "temperature": 0.9,
+    "seed": 1918343906,
+    "music_generation_mode": "QUALITY"
+  },
+  "stage": "complete",
+  "received_audio_seconds": 160.0,
+  "section": "outro",
+  "prompts": [
+    {
+      "text": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 102 BPM, 4/4. Lead motif: The signature hook is a bittersweet melodic motif in B minor, scaling from the dominant F# up to B, C#, and a sustained, syncopated D on the upbeat, followed by a sudden breathy fall back to B and A. It emphasizes a wistful, sigh-like cadence that mirrors the heavy atmosphere of a basement..",
+      "weight": 1.5
+    },
+    {
+      "text": "All percussion drops out. A single fingerpicked acoustic guitar slowly fades out, accompanied by a sustaining Rhodes chord. The track resolves on a final, whispered breath and a long, low Bm piano chord. Harmony: Gmaj7 - Em7 - Bm",
+      "weight": 1.0
+    }
+  ]
+}

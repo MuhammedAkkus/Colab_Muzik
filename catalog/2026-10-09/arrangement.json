@@ -1,0 +1,101 @@
+[
+  {
+    "name": "intro",
+    "arrangement": "Starts with a dry, intimate fingerpicked acoustic guitar in B minor accompanied by real, low-fidelity tape hiss. A warm upright piano drops occasional low-register B notes to lock in the melancholic vibe.",
+    "chords": "Bm - Gmaj7 - Em7 - F#7",
+    "density": 0.3,
+    "bars": 4,
+    "start": 0.0,
+    "end": 9.4118
+  },
+  {
+    "name": "verse_1",
+    "arrangement": "A muted, warm kick drum pulses softly on beats 1 and 3, paired with a subtle, dry rimshot on 4. An organic, melodic bass slides between chord roots. Gentle electric guitar swells color the tail of each line.",
+    "chords": "Bm - D - Em - F#7",
+    "density": 0.4,
+    "bars": 8,
+    "start": 9.4118,
+    "end": 28.2353
+  },
+  {
+    "name": "pre_1",
+    "arrangement": "Sub-bass pad replaces the active bass, adding a deep, tense rumble. A 16th-note shaker and a soft, building snare roll build anticipation. The acoustic guitar switches to a muted, rhythmic 16th-note pattern.",
+    "chords": "Gmaj7 - A - F#m7 - Bm",
+    "density": 0.5,
+    "bars": 4,
+    "start": 28.2353,
+    "end": 37.6471
+  },
+  {
+    "name": "chorus_1",
+    "arrangement": "The arrangement opens up with a warm, driving acoustic strumming pattern. A dry, organic snare hits on 2 and 4 with delicate ghost notes. A clean electric guitar plays the ambient melodic hook.",
+    "chords": "Gmaj7 - A - Bm - D",
+    "density": 0.65,
+    "bars": 8,
+    "start": 37.6471,
+    "end": 56.4706
+  },
+  {
+    "name": "turnaround",
+    "arrangement": "Instantly drops back to the sparse, fingerpicked acoustic guitar motif of the intro. A single, soft ride cymbal decays naturally, accompanied by a slow, sliding bass note resolving to B.",
+    "chords": "Bm - Em7 - F#7",
+    "density": 0.35,
+    "bars": 4,
+    "start": 56.4706,
+    "end": 65.8824
+  },
+  {
+    "name": "verse_2",
+    "arrangement": "Similar rhythm groove to verse 1, but augmented by a warm, off-beat Rhodes piano progression. The bass line becomes slightly more expressive, weaving high-register melodic countermelodies.",
+    "chords": "Bm - D - Em - F#7",
+    "density": 0.45,
+    "bars": 8,
+    "start": 65.8824,
+    "end": 84.7059
+  },
+  {
+    "name": "pre_2",
+    "arrangement": "Recreates the build of pre_1 but introduces a subtle reverse cymbal swell and a deep, low-frequency acoustic tom roll to maximize the dynamic transition into the second chorus.",
+    "chords": "Gmaj7 - A - F#m7 - Bm",
+    "density": 0.55,
+    "bars": 4,
+    "start": 84.7059,
+    "end": 94.1176
+  },
+  {
+    "name": "chorus_2",
+    "arrangement": "Full strummed acoustic guitar and active bass groove. A warm, subtle organ swell is introduced in the background to expand the mid-range and heighten the bittersweet tension of the track.",
+    "chords": "Gmaj7 - A - Bm - D",
+    "density": 0.68,
+    "bars": 8,
+    "start": 94.1176,
+    "end": 112.9412
+  },
+  {
+    "name": "bridge",
+    "arrangement": "Drums and acoustic guitars cut out completely to create a stark, exposed space. A slow, heavily tremolo-treated Rhodes piano plays warm, jazzy extensions over a dry, deep bass guitar line.",
+    "chords": "Em7 - A7 - Dmaj7 - Gmaj7 - Em - F#7",
+    "density": 0.3,
+    "bars": 8,
+    "start": 112.9412,
+    "end": 131.7647
+  },
+  {
+    "name": "final_chorus",
+    "arrangement": "The dynamic peak. Full live drums with tasteful, driving tom fills. The main electric hook guitar is double-tracked and given a slightly grittier overdrive, supported by lush, swelling string synths.",
+    "chords": "Gmaj7 - A - Bm - D",
+    "density": 0.7,
+    "bars": 8,
+    "start": 131.7647,
+    "end": 150.5882
+  },
+  {
+    "name": "outro",
+    "arrangement": "All percussion drops out. A single fingerpicked acoustic guitar slowly fades out, accompanied by a sustaining Rhodes chord. The track resolves on a final, whispered breath and a long, low Bm piano chord.",
+    "chords": "Gmaj7 - Em7 - Bm",
+    "density": 0.25,
+    "bars": 4,
+    "start": 150.5882,
+    "end": 160.0
+  }
+]
