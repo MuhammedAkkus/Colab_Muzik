@@ -1,0 +1,107 @@
+{
+  "title": "Yeşil Çuha",
+  "story": "Set inside a quiet, narrow watchmaker's workshop in a historical Istanbul arcade near Tünel. The narrator spends his evening surrounded by ticking vintage clocks, repairing a pocket watch left behind by a former partner who never returned to claim it. Instead of dramatic weeping, the narrative focuses on the physical work: brass gears, green felt cover on the workbench, magnifying lenses, and the clatter of the shutting iron shutter. Verse 2 advances the story as he cleans the watch, boxes it away in a yellow cardboard box, and realizes she won't come back. The bridge shifts perspective from blaming time or distance to accepting that the expectations were flawed from the start.",
+  "bpm": 102,
+  "key": "B minor",
+  "hook": "The chorus hook is built on scale degrees 5-3-2-1 in B minor (F#-D-C#-B). It begins with a stressed quarter note on F# on beat 1, stepping down in eighth-note syncopation (D - C#) on beat 2-and, resolving smoothly to B on beat 3 with a breathy, lingering sustain into beat 4. Vocal phrasing uses a gentle chest-to-head voice transition on 'zaman durur', keeping the melodic arc grounded and natural.",
+  "vocal_direction": "Sing with a close, conversational tone as if whispering across a narrow workbench. Keep the delivery unforced and relaxed, avoiding dramatic vibrato in the verses. In the chorus, open up into a warm chest voice while letting line endings breath naturally with airy soft decrescendo. Maintain natural Turkish conversational cadences without artificial lengthening of vowels.",
+  "lyrics": {
+    "verse_1": [
+      "Yeşil çuha üstünde pirinç dişliler",
+      "Masada duruyor küçük merceğim",
+      "Duvarda yetmiş tane ayarsız saat",
+      "Hepsi başka bir zamana vuruyor"
+    ],
+    "pre": [
+      "Dışarıda akan o hızlı kalabalık",
+      "Bu dar pasajın kapısına uğramaz"
+    ],
+    "chorus": [
+      "Yelkovan döner, zaman durur burada",
+      "Bıraktığın o köstekli saat masada",
+      "Bir tık tık sesi kalır loş köşede",
+      "Biz seninle aynı günde takıldık"
+    ],
+    "verse_2": [
+      "Babanın yadigarı camı çatlak saat",
+      "Tamir ettim ama gelip almadın",
+      "Çekmeceye koydum sarı kutusunu",
+      "Kepengi indirirken akşam oldu yine"
+    ],
+    "bridge": [
+      "Meğer zaman bozuk değilmiş hiç",
+      "Yanlış olan bizim kurduğumuz düşler",
+      "Şimdi pasajın dışı başka bir mevsim",
+      "Benim elimde kalan bu paslı zemberek"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Quiet, fingerpicked steel-string acoustic guitar playing a delicate motif over sustained upright piano chords. Minimal room ambience with a soft ticking clock warmth in the background.",
+      "chords": "Bm - Gmaj7 - F#m7 - Bm",
+      "density": 0.25
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Sparse arrangement with clean warm bass driving the pulse alongside a subtle kick and wood-rim shot pattern. Soft acoustic guitar arpeggios ground the intimate vocals.",
+      "chords": "Bm - A - Gmaj7 - F#7",
+      "density": 0.35
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Gradual build featuring swelling reversed piano textures, a gentle crescendo on floor tom, and melodic bass steps rising into the chorus entry.",
+      "chords": "Em7 - F#m7 - Gmaj7 - A",
+      "density": 0.45
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full open acoustic guitar strumming, organic live snare with soft brushes/ghost notes, melodic electric hook guitar counter-phrase, and warm supportive bass.",
+      "chords": "Bm - G - D - A",
+      "density": 0.6
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Brief breather with fingerpicked guitar repeating the main intro hook over a pulsing bass note and light ride cymbal taps.",
+      "chords": "Bm - Gmaj7 - F#7sus4 - F#7",
+      "density": 0.35
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Subtle drum pattern continues with rimshots and light shaker. Bass moves with a more active melodic line while acoustic guitar plays rhythmic muted strums.",
+      "chords": "Bm - A - Gmaj7 - F#7",
+      "density": 0.4
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Building intensity with layered acoustic guitars, swelling bass, and dynamic tom fills guiding the transition.",
+      "chords": "Em7 - F#m7 - Gmaj7 - A",
+      "density": 0.5
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full band drive featuring strummed acoustic guitars, prominent electric guitar lead melodies, punchy live snare, and rooted melodic bass line.",
+      "chords": "Bm - G - D - A",
+      "density": 0.65
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Strips back dramatically. Piano with unexpected harmonic depth via Em9 to Cmaj7 shift, ambient swelling guitar pads, no drums, lingering vocal breathing room.",
+      "chords": "Em9 - Cmaj7 - G - F#7alt",
+      "density": 0.3
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Expands dynamically with double-tracked acoustic strums, soaring counter-melody on lead guitar, rich bass movement, and wide live drums while maintaining alternative-pop warmth.",
+      "chords": "Bm - G - D - A",
+      "density": 0.7
+    },
+    {
+      "name": "outro",
+      "arrangement": "Instrumentation fades out section by section, leaving fingerpicked acoustic guitar and a final resolving piano chord that slowly decays into quiet room tone.",
+      "chords": "Gmaj7 - F#7sus4 - Bm",
+      "density": 0.25
+    }
+  ],
+  "editorial_notes": "Prosody aligns well with spoken Turkish conversational rhythms, avoiding unnatural accent placements on unstressed suffixes. The visual imagery of green felt, brass gears, and ticking clocks grounds the narrative without resorting to generic breakup metaphors. The hook melody relies on a clean stepwise descend that feels intuitive and memorable. The harmonic shift in the bridge to Em9 and Cmaj7 provides a refreshing modal contrast before returning to the home key of B minor."
+}

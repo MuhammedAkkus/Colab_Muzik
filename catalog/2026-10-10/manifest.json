@@ -1,7 +1,17 @@
 {
   "date": "2026-10-10",
-  "status": "claimed",
+  "status": "awaiting_audio_review",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
-  "commercial_release": "not_approved"
+  "commercial_release": "not_approved",
+  "models": {
+    "text": "gemini-3.5-flash",
+    "music": "models/lyria-realtime-exp"
+  },
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
+  "quality_assessment": "Model estimate, not a professional guarantee",
+  "editor_status": "complete",
+  "title": "Yeşil Çuha",
+  "action": "Technically verified preview needs listening review.",
+  "request_count": 6
 }

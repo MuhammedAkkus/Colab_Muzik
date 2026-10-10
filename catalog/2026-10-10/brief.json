@@ -1,0 +1,107 @@
+{
+  "title": "Yeşil Çuha",
+  "story": "Set inside a narrow, dust-speckled watchmaker workshop in a historical arcade off İstiklal near Tünel. The narrator spends late autumn evenings bent over a green felt workbench, adjusting the delicate escapement of an heirloom pocket watch abandoned by an ex-partner months ago. Rather than leaning on overt melodrama, the song roots itself in tactile craftsmanship: brass gears, screwdrivers, oil droppers, crackled acrylic crystals, and the reverberating clang of iron rolling shutters closing up at dusk. In verse two, the repair finishes and the watch is wrapped in tissue paper and placed inside a small yellow cardboard box, cementing the realization that no footsteps will echo down the arcade corridor to retrieve it. The bridge yields quiet maturity, acknowledging that their rift wasn't lost time or bad luck, but mismatched commitments from the start.",
+  "bpm": 102,
+  "key": "B minor",
+  "hook": "The chorus hook centers on a descending motif across scale degrees 5-3-2-1 in B minor (F#-D-C#-B). It strikes an accented F#4 on beat 1 on 'Yelkovan', falls across eighth-note syncopation on 'zaman durur' (D4 to C#4), and settles onto B3 with an airy chest-voice resonance on 'burada'. A subtle upper auxiliary flick (B3-C#4-B3) on 'yeşil çuhada' gives the second phrase an immediate, melancholic lilt.",
+  "vocal_direction": "Deliver verses in a dry, intimate close-mic register with conversational breath support, avoiding showy vibrato or dramatic belting. Keep consonants crisp and natural to Istanbul Turkish cadence without drawing out terminal vowels. In the chorus, lean slightly into warm chest-resonant projection while easing into soft head-voice decrescendos on phrase endings.",
+  "lyrics": {
+    "verse_1": [
+      "Yeşil çuha üstünde pirinç dişliler",
+      "Gözümde tek büyüteç, cımbız elimin ucunda",
+      "Duvarda asılı onlarca dilsiz kadran",
+      "Biri üçü vuruyor, biri dün gecede"
+    ],
+    "pre": [
+      "Tünel yokuşundan inen o telaşlı kalabalık",
+      "Bu loş dükkânın kapısından içeri bakmaz"
+    ],
+    "chorus": [
+      "Yelkovan döner de zaman durur burada",
+      "Bıraktığın köstekli saat yeşil çuhada",
+      "Akrep sustu, yollar tükendi çoktan",
+      "Biz aynı dakikada kaldık ikimiz"
+    ],
+    "verse_2": [
+      "Çatlak mika camını parlattım dün sabah",
+      "Sarı karton kutuda bekliyor hâlâ",
+      "Pasajın lambaları sönerken tek tek",
+      "Demir kepengi çekerim kendi üstüme"
+    ],
+    "bridge": [
+      "Kusur zemberekte değilmiş, biz acele ettik",
+      "Yanlış ayarlanmış iki ayrı ömür bu",
+      "Pasajın dışında tramvaylar geçip giderken",
+      "Avucumda soğuyan bir pirinç gövde kaldı"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Gentle steel-string acoustic guitar picks the syncopated root motif, paired with a soft felt upright piano chord pad. Muted room ambiance with low-volume mechanical clock ticks tucked into the stereo field.",
+      "chords": "Bm - Gmaj7 - F#m7 - Bm",
+      "density": 0.25
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Upright bass enters with warm, rounded root-fifth movement. Subtle wooden rim-clicks mark beat three alongside dry acoustic guitar arpeggios, leaving vocal space wide and dry.",
+      "chords": "Bm - A - Gmaj7 - F#7",
+      "density": 0.35
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "A soft brushed snare rolls in; reversed piano swells create harmonic tension as the bass walks stepwise from E to A beneath the climbing pre-chorus lines.",
+      "chords": "Em7 - F#m7 - Gmaj7 - A",
+      "density": 0.45
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full rhythm section enters with punchy, dampened kick and brushed snare. Open acoustic strumming wide in the stereo image supports a melodic electric guitar answering line after each vocal phrase.",
+      "chords": "Bm - G - D - A",
+      "density": 0.6
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Acoustic guitar and bass strip back down to a four-bar breath. Clean electric guitar plays a single-note echo of the main hook with tasteful analog delay.",
+      "chords": "Bm - Gmaj7 - F#7sus4 - F#7",
+      "density": 0.35
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Light sixteenth-note shaker layered with wooden rim-clicks. Bass plays a more syncopated counter-rhythm against muted electric guitar stabs on upbeats.",
+      "chords": "Bm - A - Gmaj7 - F#7",
+      "density": 0.4
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Dynamic build with crescendoing floor tom patterns, doubled acoustic strums, and expressive bass glides pushing into the second chorus entry.",
+      "chords": "Em7 - F#m7 - Gmaj7 - A",
+      "density": 0.5
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full instrumentation with prominent electric counter-melody, doubled acoustic guitars, driving bass line, and crisp drum fills reinforcing chorus recall.",
+      "chords": "Bm - G - D - A",
+      "density": 0.65
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Sudden drop to near-silence. Sustained piano chords modulate briefly with ambient guitar volume swells and sub-bass resonance, leaving the introspective vocal completely exposed.",
+      "chords": "Em9 - Cmaj7 - G - F#7alt",
+      "density": 0.3
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Climactic dynamic peak with layered backing hums, ringing open-string guitars, rhythmic drum accents, and soaring top-end electric lead fills before a sudden half-time cadence.",
+      "chords": "Bm - G - D - A",
+      "density": 0.72
+    },
+    {
+      "name": "outro",
+      "arrangement": "Drums cut out; fingerpicked acoustic guitar repeats the opening progression alongside slow-decaying piano notes, concluding on an unresolved Bmadd9 with soft ticking fading into silence.",
+      "chords": "Gmaj7 - F#7sus4 - Bmadd9",
+      "density": 0.28
+    }
+  ],
+  "editorial_notes": "The revised lyrics eliminate childish fillers and generic rhymes while highlighting tactile imagery tailored to horology. Prosody in the pre-chorus and chorus now cleanly matches Turkish spoken stress patterns, preventing unnatural elongation of grammatical suffixes. The bridge's modal loan chord (Cmaj7 as Neapolitan-flavored relative to B minor) delivers an effective harmonic lift without destabilizing the song's alternative-pop accessibility. One remaining compositional trade-off is the lyrical restraint in the final chorus: keeping the core four lines identical rather than altering the final line prioritizes immediate singability over narrative progression, requiring the arrangement and dynamic lift to supply the emotional peak."
+}

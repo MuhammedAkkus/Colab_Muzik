@@ -1,0 +1,101 @@
+[
+  {
+    "name": "intro",
+    "arrangement": "Gentle steel-string acoustic guitar picks the syncopated root motif, paired with a soft felt upright piano chord pad. Muted room ambiance with low-volume mechanical clock ticks tucked into the stereo field.",
+    "chords": "Bm - Gmaj7 - F#m7 - Bm",
+    "density": 0.25,
+    "bars": 4,
+    "start": 0.0,
+    "end": 9.4118
+  },
+  {
+    "name": "verse_1",
+    "arrangement": "Upright bass enters with warm, rounded root-fifth movement. Subtle wooden rim-clicks mark beat three alongside dry acoustic guitar arpeggios, leaving vocal space wide and dry.",
+    "chords": "Bm - A - Gmaj7 - F#7",
+    "density": 0.35,
+    "bars": 8,
+    "start": 9.4118,
+    "end": 28.2353
+  },
+  {
+    "name": "pre_1",
+    "arrangement": "A soft brushed snare rolls in; reversed piano swells create harmonic tension as the bass walks stepwise from E to A beneath the climbing pre-chorus lines.",
+    "chords": "Em7 - F#m7 - Gmaj7 - A",
+    "density": 0.45,
+    "bars": 4,
+    "start": 28.2353,
+    "end": 37.6471
+  },
+  {
+    "name": "chorus_1",
+    "arrangement": "Full rhythm section enters with punchy, dampened kick and brushed snare. Open acoustic strumming wide in the stereo image supports a melodic electric guitar answering line after each vocal phrase.",
+    "chords": "Bm - G - D - A",
+    "density": 0.6,
+    "bars": 8,
+    "start": 37.6471,
+    "end": 56.4706
+  },
+  {
+    "name": "turnaround",
+    "arrangement": "Acoustic guitar and bass strip back down to a four-bar breath. Clean electric guitar plays a single-note echo of the main hook with tasteful analog delay.",
+    "chords": "Bm - Gmaj7 - F#7sus4 - F#7",
+    "density": 0.35,
+    "bars": 4,
+    "start": 56.4706,
+    "end": 65.8824
+  },
+  {
+    "name": "verse_2",
+    "arrangement": "Light sixteenth-note shaker layered with wooden rim-clicks. Bass plays a more syncopated counter-rhythm against muted electric guitar stabs on upbeats.",
+    "chords": "Bm - A - Gmaj7 - F#7",
+    "density": 0.4,
+    "bars": 8,
+    "start": 65.8824,
+    "end": 84.7059
+  },
+  {
+    "name": "pre_2",
+    "arrangement": "Dynamic build with crescendoing floor tom patterns, doubled acoustic strums, and expressive bass glides pushing into the second chorus entry.",
+    "chords": "Em7 - F#m7 - Gmaj7 - A",
+    "density": 0.5,
+    "bars": 4,
+    "start": 84.7059,
+    "end": 94.1176
+  },
+  {
+    "name": "chorus_2",
+    "arrangement": "Full instrumentation with prominent electric counter-melody, doubled acoustic guitars, driving bass line, and crisp drum fills reinforcing chorus recall.",
+    "chords": "Bm - G - D - A",
+    "density": 0.65,
+    "bars": 8,
+    "start": 94.1176,
+    "end": 112.9412
+  },
+  {
+    "name": "bridge",
+    "arrangement": "Sudden drop to near-silence. Sustained piano chords modulate briefly with ambient guitar volume swells and sub-bass resonance, leaving the introspective vocal completely exposed.",
+    "chords": "Em9 - Cmaj7 - G - F#7alt",
+    "density": 0.3,
+    "bars": 8,
+    "start": 112.9412,
+    "end": 131.7647
+  },
+  {
+    "name": "final_chorus",
+    "arrangement": "Climactic dynamic peak with layered backing hums, ringing open-string guitars, rhythmic drum accents, and soaring top-end electric lead fills before a sudden half-time cadence.",
+    "chords": "Bm - G - D - A",
+    "density": 0.72,
+    "bars": 8,
+    "start": 131.7647,
+    "end": 150.5882
+  },
+  {
+    "name": "outro",
+    "arrangement": "Drums cut out; fingerpicked acoustic guitar repeats the opening progression alongside slow-decaying piano notes, concluding on an unresolved Bmadd9 with soft ticking fading into silence.",
+    "chords": "Gmaj7 - F#7sus4 - Bmadd9",
+    "density": 0.28,
+    "bars": 4,
+    "start": 150.5882,
+    "end": 160.0
+  }
+]

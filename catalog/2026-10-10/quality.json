@@ -1,0 +1,102 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -14.25546819122024,
+      "clipped_sample_fraction": 5.208333333333334e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-12.74",
+        "input_tp": "0.13",
+        "input_lra": "3.00",
+        "input_thresh": "-22.76",
+        "output_i": "-13.61",
+        "output_tp": "-1.50",
+        "output_lra": "2.30",
+        "output_thresh": "-23.63",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.39"
+      },
+      "encoded_master": {
+        "input_i": "-14.03",
+        "input_tp": "-1.47",
+        "input_lra": "2.40",
+        "input_thresh": "-24.07",
+        "output_i": "-14.14",
+        "output_tp": "-1.38",
+        "output_lra": "2.30",
+        "output_thresh": "-24.16",
+        "normalization_type": "dynamic",
+        "target_offset": "0.14"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 68,
+      "instrument_realism": 66,
+      "hook": 64,
+      "structure": 70,
+      "mix": 68,
+      "unwanted_vocals": false,
+      "observations": [
+        "0:00 - 0:16: Acoustic guitar establishes the requested B minor harmony and tempo.",
+        "0:54 - 1:13: Dynamic lift with full kit and acoustic strumming defines the chorus.",
+        "2:10 - 2:27: Bridge dynamic drops cleanly into a sparse arrangement before the final hook.",
+        "2:32 - 2:39: Abrupt ending cuts off the expected decaying outro prematurely."
+      ]
+    },
+    "score": 67.2
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "listening_review",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -15.208649978170232,
+      "clipped_sample_fraction": 1.3020833333333334e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-13.99",
+        "input_tp": "0.05",
+        "input_lra": "2.30",
+        "input_thresh": "-24.02",
+        "output_i": "-13.67",
+        "output_tp": "-1.50",
+        "output_lra": "1.40",
+        "output_thresh": "-23.69",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.33"
+      },
+      "encoded_master": {
+        "input_i": "-14.03",
+        "input_tp": "-1.50",
+        "input_lra": "1.40",
+        "input_thresh": "-24.06",
+        "output_i": "-14.07",
+        "output_tp": "-1.40",
+        "output_lra": "1.30",
+        "output_thresh": "-24.08",
+        "normalization_type": "dynamic",
+        "target_offset": "0.07"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "error_type": "ServerError",
+    "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  }
+]
