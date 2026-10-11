@@ -1,0 +1,107 @@
+{
+  "title": "Kırmızı Ampul",
+  "story": "Sirkeci'de yüzyıllık bir iş hanının arka cepheye bakan rutubetli katında, amatör bir karanlık oda atölyesinde geçen şarkı; bitmiş bir ilişkinin son izleriyle yüzleşmeyi konu alır. Anlatıcı, kırmızı emniyet lambasının zayıf ışığında çinko küvetteki kimyasal banyo suyunu sallarken, solüsyonun içinde yavaşça beliren eski portreye bakar. Melodramatik feryatlar yerine mekanın somut duyusal gerçekliği öne çıkar: keskin fiksatör kokusu, tahta maşaların emaye kenarlara çarpması ve damlayan suyun sesi. İkinci kıtada baskı işlemi tamamlanıp fotoğraflar teldeki tahta mandallara asılır ve tepe lambasının düğmesine basılarak beyaz ışık yakılır; büyü bozulur ve fotoğraftaki çizikler ile ilişkinin yıpranmışlığı apaçık ortaya çıkar. Köprüde ise hanın altından geçen tramvayın titreşimi anlatıcıyı daldığı hipnozdan uyandırır; zamanın fotoğraflarda dondurulamayacağı ve hayatın akıp gittiği gerçeği olgun bir kabullenişle karşılanır.",
+  "bpm": 102,
+  "key": "B minor",
+  "hook": "The two-bar melodic hook enters on the upbeat of bar 1 starting on scale degree 1 (B4), leaps cleanly to 5 (F#4), falls to 4 (E4) on a dotted quarter note, then steps gracefully down through 3 (D4) to 2 (C#4) with a smooth downward melisma on the syllables 'si-li-nip'. Bar 2 lands squarely on tonic 1 (B3) on beat 1 with a sustained half note, followed by an unresolved rise from 3 (D4) to 2 (C#4) on beat 4, releasing on an exhale.",
+  "vocal_direction": "Sing in an intimate, close-mic baritone-tenor register with dry, unhyped front-of-mouth articulation. Verse 1 requires conversational pacing and restrained vibrato, almost murmured like internal thoughts. Chorus lines need a focused chest-dominant mix on the upper leaps, releasing open vowels without aggressive belting. The bridge softens to an airy, falsetto-adjacent tone before returning to grounded warmth in the final chorus.",
+  "lyrics": {
+    "verse_1": [
+      "Kırmızı ampulün loş gölgesinde",
+      "Çinko küvette sallanır banyo suyu",
+      "Tahta maşayla tuttum bir kenardan",
+      "Yavaşça belirir yüzün kağıtta"
+    ],
+    "pre": [
+      "Fiksatör kokusu sinmiş üstüme",
+      "Ne yapsam çıkmıyor bu keskin koku"
+    ],
+    "chorus": [
+      "Gölgede kalanlar silinip gitti",
+      "Gümüş rengi suda biriktik öylece",
+      "Biz bu karanlıkta fazla bekledik",
+      "Işığı yakınca kül oldu resmin"
+    ],
+    "verse_2": [
+      "İncecik tele asıldı mandallar",
+      "Damlalar süzülür beton zemine",
+      "Düğmeye dokundum, yandı beyaz ışık",
+      "Çizikler içinde her iki suret"
+    ],
+    "bridge": [
+      "Aşağıdan geçer Sirkeci tramvayı",
+      "Camlar titrerken susar bu koca han",
+      "Sandım ki bir kare tutar ömrümüzü",
+      "Oysa biz çoktan akıp gitmişiz"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked acoustic steel-string guitar with delicate hammer-ons on the B string, accompanied by an upright felt piano playing sparse bass roots and sustained upper dyad intervals.",
+      "chords": "Bm - Gmaj7 - Bm - Gmaj7",
+      "density": 0.28
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Subtle muted kick on beats 1 and 3, dry side-stick rimshot on beat 3, round melodic electric bass playing roots and fifths, accompanied by the fingerpicked acoustic guitar.",
+      "chords": "Bm - Em7 - F#m7 - Bm",
+      "density": 0.38
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Bowed double bass drone enters; palm-muted electric guitar pulses eighth notes as light ride cymbal bell taps build gradual dynamic momentum toward the chorus.",
+      "chords": "Gmaj7 - A - Em9 - F#7sus4 - F#7",
+      "density": 0.48
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full acoustic strumming spreads stereo wide; live snare hits on 2 and 4 with crisp wire response; clean Telecaster plays the melodic hook counterpoint; bass locks in melodic motion.",
+      "chords": "Bm - A - Gmaj7 - Em7 - F#m7",
+      "density": 0.62
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Two-measure breath; rhythm section drops out leaving fingerpicked acoustic guitar hovering on a suspended 9th and a soft brushed cymbal swell.",
+      "chords": "Bm - Gmaj7",
+      "density": 0.35
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Drums re-enter with subtle snare ghost notes; electric bass plays active passing notes; single-coil electric guitar provides subtle spring-reverbed chord stabs.",
+      "chords": "Bm - Em7 - F#m7 - Bm",
+      "density": 0.44
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Warm analog organ pad swells underneath; floor tom eighth-note pulse drives urgency while acoustic guitar opens from palm mute into ringing arpeggios.",
+      "chords": "Gmaj7 - A - Em9 - F#7",
+      "density": 0.52
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full band texture with open hi-hat wash; lead electric guitar adds gritty chime behind vocal phrases; bass pushes subtle upper-octave syncopations.",
+      "chords": "Bm - A - Gmaj7 - Em7 - F#m7",
+      "density": 0.65
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Stripped down texture centering on intimate upright felt piano and bowed cello; introduces a bittersweet Neapolitan Cmaj7 chord substitution for emotional lift before dropping to a dry dominant stop.",
+      "chords": "Em9 - Bm7 - Cmaj7 - F#7",
+      "density": 0.32
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Climactic return of the band with doubled acoustic strums, wide ride cymbal, driving live kick and snare, and soaring Telecaster obligato weaving through vocal pauses.",
+      "chords": "Bm - A - Gmaj7 - Em7 - F#m7 - Bm",
+      "density": 0.68
+    },
+    {
+      "name": "outro",
+      "arrangement": "Rhythm section completely drops; a solitary fingerpicked acoustic guitar lingers over resolving chords as felt piano sustains a final unresolved Bm(add9) into tape hiss.",
+      "chords": "Gmaj7 - F#m7 - Bm(add9)",
+      "density": 0.26
+    }
+  ],
+  "editorial_notes": "Prosody flows effortlessly in natural spoken Turkish, maintaining strict 10 to 12 syllable lines with breatheable open-vowel phrase endings ('gölgesinde', 'resmin', 'ışık'). The narrative progression avoids generic romantic angst by grounding the arc in tactile darkroom mechanics: developing the image in verse 1, revealing imperfections under harsh white light in verse 2, and contextualizing personal grief against the rumbling Sirkeci tramway in the bridge. Harmonically, the minor progression avoids repetitive predictability by utilizing an evocative Cmaj7 Neapolitan coloration in the bridge before resolving naturally to the dominant F#7. Independent editor unavailable due to server error; draft requires human editing."
+}

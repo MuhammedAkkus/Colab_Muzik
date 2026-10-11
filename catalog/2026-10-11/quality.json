@@ -1,0 +1,114 @@
+[
+  {
+    "candidate": 1,
+    "accepted": true,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.5050517799449759,
+      "rms_dbfs": -16.245881042719258,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.92",
+        "input_tp": "-0.45",
+        "input_lra": "4.10",
+        "input_thresh": "-24.95",
+        "output_i": "-13.48",
+        "output_tp": "-1.50",
+        "output_lra": "3.10",
+        "output_thresh": "-23.50",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.52"
+      },
+      "encoded_master": {
+        "input_i": "-14.02",
+        "input_tp": "-1.41",
+        "input_lra": "3.30",
+        "input_thresh": "-24.05",
+        "output_i": "-14.00",
+        "output_tp": "-1.19",
+        "output_lra": "3.00",
+        "output_thresh": "-24.02",
+        "normalization_type": "dynamic",
+        "target_offset": "0.00"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 86,
+      "instrument_realism": 85,
+      "hook": 82,
+      "structure": 85,
+      "mix": 85,
+      "unwanted_vocals": false,
+      "observations": [
+        "The rhythm section establishes a fluid, organic pocket with clean drum rimshots, subtle bass motion, and steady acoustic fingerpicking beginning at 0:41.",
+        "Instrument articulations are highly realistic, featuring expressive pick attacks and dynamic tone on the clean lead guitar at 0:12 and 1:40.",
+        "The arrangement executes a well-defined dynamic arc, building from a sparse acoustic intro to full-band chorus sections before resolving into a quiet acoustic outro at 2:35."
+      ]
+    },
+    "score": 84.6
+  },
+  {
+    "candidate": 2,
+    "accepted": true,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.9323080905393205,
+      "rms_dbfs": -16.7952581525778,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-15.23",
+        "input_tp": "-0.77",
+        "input_lra": "5.10",
+        "input_thresh": "-25.28",
+        "output_i": "-13.08",
+        "output_tp": "-1.50",
+        "output_lra": "4.40",
+        "output_thresh": "-23.12",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.92"
+      },
+      "encoded_master": {
+        "input_i": "-14.01",
+        "input_tp": "-1.40",
+        "input_lra": "4.50",
+        "input_thresh": "-24.07",
+        "output_i": "-13.64",
+        "output_tp": "-1.00",
+        "output_lra": "4.50",
+        "output_thresh": "-23.69",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.36"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "listening": {
+      "groove": 84,
+      "instrument_realism": 85,
+      "hook": 82,
+      "structure": 86,
+      "mix": 85,
+      "unwanted_vocals": false,
+      "observations": [
+        "0:00 - Crisp fingerpicked acoustic guitar intro establishes a clear, musical foundation with strong acoustic realism.",
+        "0:42 - Smooth dynamic transition into an active groove driven by a tight, pocketed bassline and dry snare rimshot response.",
+        "1:01 - Clear recurring melodic guitar motif acts as a strong thematic anchor across chorus sections.",
+        "1:55 - Bridge section creates effective structural contrast by stripping back drum density to highlight intimate electric piano tones.",
+        "2:23 - Final chorus return delivers full dynamic energy with excellent mix separation and transparent stereo imaging."
+      ]
+    },
+    "score": 84.4
+  }
+]

@@ -1,7 +1,18 @@
 {
   "date": "2026-10-11",
-  "status": "claimed",
+  "status": "ready_for_human_review",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
-  "commercial_release": "not_approved"
+  "commercial_release": "not_approved",
+  "models": {
+    "text": "gemini-3.5-flash",
+    "music": "models/lyria-realtime-exp"
+  },
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
+  "quality_assessment": "Model estimate, not a professional guarantee",
+  "editor_status": "draft_only_human_editing_required",
+  "title": "Kırmızı Ampul",
+  "selected_candidate": 1,
+  "audio_sha256": "38cdfbf9ac200eeb3d342d39ba7c39f19f6cfa5768a3f23880c483abb31bdb78",
+  "request_count": 6
 }

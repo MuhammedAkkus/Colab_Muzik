@@ -1,0 +1,233 @@
+{
+  "base_prompt": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 102 BPM, 4/4. Lead motif: The two-bar melodic hook enters on the upbeat of bar 1 starting on scale degree 1 (B4), leaps cleanly to 5 (F#4), falls to 4 (E4) on a dotted quarter note, then steps gracefully down through 3 (D4) to 2 (C#4) with a smooth downward melisma on the syllables 'si-li-nip'. Bar 2 lands squarely on tonic 1 (B3) on beat 1 with a sustained half note, followed by an unresolved rise from 3 (D4) to 2 (C#4) on beat 4, releasing on an exhale..",
+  "events": [
+    {
+      "audio_time": 0.0,
+      "section": "intro",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 10.0,
+      "section": "verse_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 12.0,
+      "section": "verse_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 30.0,
+      "section": "pre_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 32.0,
+      "section": "pre_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 38.0,
+      "section": "chorus_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 40.0,
+      "section": "chorus_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 58.0,
+      "section": "turnaround",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 60.0,
+      "section": "turnaround",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 66.0,
+      "section": "verse_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 68.0,
+      "section": "verse_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 86.0,
+      "section": "pre_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 88.0,
+      "section": "pre_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 96.0,
+      "section": "chorus_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 98.0,
+      "section": "chorus_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 114.0,
+      "section": "bridge",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 116.0,
+      "section": "bridge",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 132.0,
+      "section": "final_chorus",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 134.0,
+      "section": "final_chorus",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 152.0,
+      "section": "outro",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 154.0,
+      "section": "outro",
+      "blend": 1.0
+    }
+  ],
+  "timeline": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked acoustic steel-string guitar with delicate hammer-ons on the B string, accompanied by an upright felt piano playing sparse bass roots and sustained upper dyad intervals.",
+      "chords": "Bm - Gmaj7 - Bm - Gmaj7",
+      "density": 0.28,
+      "bars": 4,
+      "start": 0.0,
+      "end": 9.4118
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Subtle muted kick on beats 1 and 3, dry side-stick rimshot on beat 3, round melodic electric bass playing roots and fifths, accompanied by the fingerpicked acoustic guitar.",
+      "chords": "Bm - Em7 - F#m7 - Bm",
+      "density": 0.38,
+      "bars": 8,
+      "start": 9.4118,
+      "end": 28.2353
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Bowed double bass drone enters; palm-muted electric guitar pulses eighth notes as light ride cymbal bell taps build gradual dynamic momentum toward the chorus.",
+      "chords": "Gmaj7 - A - Em9 - F#7sus4 - F#7",
+      "density": 0.48,
+      "bars": 4,
+      "start": 28.2353,
+      "end": 37.6471
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full acoustic strumming spreads stereo wide; live snare hits on 2 and 4 with crisp wire response; clean Telecaster plays the melodic hook counterpoint; bass locks in melodic motion.",
+      "chords": "Bm - A - Gmaj7 - Em7 - F#m7",
+      "density": 0.62,
+      "bars": 8,
+      "start": 37.6471,
+      "end": 56.4706
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Two-measure breath; rhythm section drops out leaving fingerpicked acoustic guitar hovering on a suspended 9th and a soft brushed cymbal swell.",
+      "chords": "Bm - Gmaj7",
+      "density": 0.35,
+      "bars": 4,
+      "start": 56.4706,
+      "end": 65.8824
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Drums re-enter with subtle snare ghost notes; electric bass plays active passing notes; single-coil electric guitar provides subtle spring-reverbed chord stabs.",
+      "chords": "Bm - Em7 - F#m7 - Bm",
+      "density": 0.44,
+      "bars": 8,
+      "start": 65.8824,
+      "end": 84.7059
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Warm analog organ pad swells underneath; floor tom eighth-note pulse drives urgency while acoustic guitar opens from palm mute into ringing arpeggios.",
+      "chords": "Gmaj7 - A - Em9 - F#7",
+      "density": 0.52,
+      "bars": 4,
+      "start": 84.7059,
+      "end": 94.1176
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full band texture with open hi-hat wash; lead electric guitar adds gritty chime behind vocal phrases; bass pushes subtle upper-octave syncopations.",
+      "chords": "Bm - A - Gmaj7 - Em7 - F#m7",
+      "density": 0.65,
+      "bars": 8,
+      "start": 94.1176,
+      "end": 112.9412
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Stripped down texture centering on intimate upright felt piano and bowed cello; introduces a bittersweet Neapolitan Cmaj7 chord substitution for emotional lift before dropping to a dry dominant stop.",
+      "chords": "Em9 - Bm7 - Cmaj7 - F#7",
+      "density": 0.32,
+      "bars": 8,
+      "start": 112.9412,
+      "end": 131.7647
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Climactic return of the band with doubled acoustic strums, wide ride cymbal, driving live kick and snare, and soaring Telecaster obligato weaving through vocal pauses.",
+      "chords": "Bm - A - Gmaj7 - Em7 - F#m7 - Bm",
+      "density": 0.68,
+      "bars": 8,
+      "start": 131.7647,
+      "end": 150.5882
+    },
+    {
+      "name": "outro",
+      "arrangement": "Rhythm section completely drops; a solitary fingerpicked acoustic guitar lingers over resolving chords as felt piano sustains a final unresolved Bm(add9) into tape hiss.",
+      "chords": "Gmaj7 - F#m7 - Bm(add9)",
+      "density": 0.26,
+      "bars": 4,
+      "start": 150.5882,
+      "end": 160.0
+    }
+  ],
+  "config": {
+    "bpm": 102,
+    "scale": "D_MAJOR_B_MINOR",
+    "brightness": 0.45,
+    "guidance": 3.5,
+    "temperature": 0.9,
+    "seed": 441785307,
+    "music_generation_mode": "QUALITY"
+  },
+  "stage": "complete",
+  "received_audio_seconds": 160.0,
+  "section": "outro",
+  "prompts": [
+    {
+      "text": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 102 BPM, 4/4. Lead motif: The two-bar melodic hook enters on the upbeat of bar 1 starting on scale degree 1 (B4), leaps cleanly to 5 (F#4), falls to 4 (E4) on a dotted quarter note, then steps gracefully down through 3 (D4) to 2 (C#4) with a smooth downward melisma on the syllables 'si-li-nip'. Bar 2 lands squarely on tonic 1 (B3) on beat 1 with a sustained half note, followed by an unresolved rise from 3 (D4) to 2 (C#4) on beat 4, releasing on an exhale..",
+      "weight": 1.5
+    },
+    {
+      "text": "Rhythm section completely drops; a solitary fingerpicked acoustic guitar lingers over resolving chords as felt piano sustains a final unresolved Bm(add9) into tape hiss. Harmony: Gmaj7 - F#m7 - Bm(add9)",
+      "weight": 1.0
+    }
+  ]
+}
