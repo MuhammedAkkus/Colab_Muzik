@@ -1,0 +1,90 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "listening_review",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.5718915936554916,
+      "rms_dbfs": -15.434878450765545,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.66",
+        "input_tp": "-0.52",
+        "input_lra": "2.00",
+        "input_thresh": "-24.68",
+        "output_i": "-13.69",
+        "output_tp": "-1.50",
+        "output_lra": "1.60",
+        "output_thresh": "-23.70",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.31"
+      },
+      "encoded_master": {
+        "input_i": "-14.02",
+        "input_tp": "-1.46",
+        "input_lra": "1.60",
+        "input_thresh": "-24.05",
+        "output_i": "-13.95",
+        "output_tp": "-1.36",
+        "output_lra": "1.50",
+        "output_thresh": "-23.97",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.05"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "error_type": "ServerError",
+    "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "listening_review",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.10936528575823785,
+      "rms_dbfs": -14.066694890142028,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.50",
+        "input_tp": "-0.03",
+        "input_lra": "3.30",
+        "input_thresh": "-24.52",
+        "output_i": "-13.18",
+        "output_tp": "-1.50",
+        "output_lra": "2.20",
+        "output_thresh": "-23.19",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.82"
+      },
+      "encoded_master": {
+        "input_i": "-14.01",
+        "input_tp": "-1.43",
+        "input_lra": "2.40",
+        "input_thresh": "-24.03",
+        "output_i": "-13.58",
+        "output_tp": "-1.00",
+        "output_lra": "1.90",
+        "output_thresh": "-23.59",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.42"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "error_type": "ServerError",
+    "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  }
+]

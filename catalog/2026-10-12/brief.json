@@ -1,0 +1,107 @@
+{
+  "title": "Teğel İpi",
+  "story": "Set in a quiet tailoring workshop on a backstreet of Pangaltı in late autumn. The narrator works under humming fluorescent tubes surrounded by tailoring chalk, fabric scraps, and the heavy hiss of an industrial gravity-feed steam iron. Rather than an abstract breakup, the song centers on an unfinished charcoal wool overcoat commissioned by an ex-partner before the separation and left abandoned on the hanger. In Verse 2, the narrative moves forward as the tailor relinquishes lingering hope, takes a seam ripper to cut the temporary white basting stitches, dismantles the basted sleeves, and folds the salvaged raw wool into kraft paper. The bridge looks through the steam-streaked window onto the hurried crowd along Ergenekon Caddesi, coming to peace with the truth that relationships often unravel not out of malice, but because two lives simply failed to share a matching measurement.",
+  "bpm": 102,
+  "key": "B minor",
+  "hook": "Two-bar melodic hook over Bm to Gmaj7 in 4/4 time at 102 BPM on the lyric 'Beyaz teğel ipi çektim söküldü'. Bar 1 opens directly on beat 1 with scale degree 1 (B3) for 'Be-', leaps up to degree 3 (D4) on beat 1-and for '-yaz', sustains degree 4 (E4) across beat 2 on 'te-ğel', then ascends cleanly to degree 5 (F#4) on beat 3 on 'i-pi', settling back to degree 3 (D4) on beat 4. Bar 2 delivers melodic resolution: degree 4 (E4) on beat 1, stepping down to degree 2 (C#4) on beat 2 on 'çek-tim', and landing on tonic degree 1 (B3) across beats 3 and 4 on 'sö-kül-dü' with open, unforced resonance.",
+  "vocal_direction": "Intimate chest-voice delivery in the verses with crisp consonants, natural conversational pacing, and minimal vibrato. The pre-chorus tightens dynamically with breath-supported mid-register tension. The chorus expands into a resonant, unbelted mixed voice with grounded phrasing, honoring natural Turkish vowel lengths without melismatic distortion. The bridge drops back to a dry, close-mic spoken-singing dynamic before the final chorus lifts with full emotional presence and controlled vocal grit.",
+  "lyrics": {
+    "verse_1": [
+      "Masada tebeşir, sabun kokusu",
+      "Ağır buharlı ütü tıslar arkada",
+      "Kömür grisi paltonun kolunda",
+      "Beyaz dikişler duruyor öylece"
+    ],
+    "pre": [
+      "Pangaltı buğulanır akşam inerken",
+      "Sarı flüoresan titrer tavanda"
+    ],
+    "chorus": [
+      "Beyaz teğel ipi çektim söküldü",
+      "Kumaşta incecik bir iğne izi",
+      "Ne astar tuttuk ne dikiş tuttuk",
+      "İki yakamız kavuşmadı bir türlü"
+    ],
+    "verse_2": [
+      "Sökme bıçağıyla kestim kol ucunu",
+      "Askıdan indirdim yarım bedeni",
+      "Kırmızı anahtarla sustu o buhar",
+      "Sarıp rafa kaldırdım ham yünü"
+    ],
+    "bridge": [
+      "Ergenekon Caddesi telaşla akar",
+      "Herkes kendi dar kalıbına sığar",
+      "Kusur bedende değilmiş meğer",
+      "Üstümüze oturmayan bir güz bu"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse upright piano arpeggios layered with delicate fingerpicked acoustic guitar in drop-D tuning, leaving deliberate breath and silence between chords.",
+      "chords": "Bm - Gmaj7 - Em9 - F#7sus4",
+      "density": 0.28
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Upright piano root notes sustained quietly under muted acoustic guitar eighth notes. Soft kick drum on beats 1 and 3, dry wooden rim clicks on 2 and 4, anchored by a warm, round electric bass.",
+      "chords": "Bm - D/A - Gmaj7 - Em7",
+      "density": 0.38
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Drums enter with soft eighth-note closed hi-hats. Bass walks up stepwise through inversions while a warm analog synth pad gradually swells under the acoustic guitar.",
+      "chords": "Em7 - F#m7 - Gmaj7 - Asus4 - A",
+      "density": 0.48
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full rhythm section enters: open acoustic strumming, dry vintage snare, melodic bass following the kick pattern, and a clean electric guitar line with light tape chorus doubling the hook contour.",
+      "chords": "Bm - Gmaj7 - D - A",
+      "density": 0.62
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Drums pull back to rim click and kick. Electric guitar restates the core two-bar melodic motif over sustained piano and melodic bass fills.",
+      "chords": "Bm - Gmaj7",
+      "density": 0.44
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Kick, rim click, and active bass re-enter immediately to maintain story tempo, supported by dry muted electric guitar chops accentuating the off-beats.",
+      "chords": "Bm - D/A - Gmaj7 - Em7",
+      "density": 0.42
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Snare shifts from rim click to ghosted center hits; floor tom pulses on beats 2 and 4, while doubled acoustic guitars lead an ascending harmonic build.",
+      "chords": "Em7 - F#m7 - Gmaj7 - Asus4 - A",
+      "density": 0.52
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full organic groove returns with wider stereo acoustic guitars, active melodic bass counterpoint, and high-register guitar fills answering vocal cadences.",
+      "chords": "Bm - Gmaj7 - D - A",
+      "density": 0.65
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Sudden drop in instrumentation shifting to a Neapolitan Cmaj7 color; drums strip down to subtle ride cymbal washes and felt mallets, framing close-mic vocal intimacy.",
+      "chords": "Cmaj7 - Bm7 - Em9 - F#7b9",
+      "density": 0.35
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Dynamic peak with thick acoustic strumming, punchy live kit, driving bass lines, ambient guitar swells, and tight doubled vocal unison on the central hook line.",
+      "chords": "Bm - Gmaj7 - D - A - Bm - Gmaj7 - Em7 - F#7",
+      "density": 0.68
+    },
+    {
+      "name": "outro",
+      "arrangement": "Rhythm section recedes into natural room reverb decay. Upright piano and fingerpicked guitar resolve slowly over a sustained low B pedal tone, fading on a suspended Bmadd9.",
+      "chords": "Gmaj7 - Em9 - Bmadd9",
+      "density": 0.3
+    }
+  ],
+  "editorial_notes": "Prosody adjustments: In the pre-chorus, 'Pangaltı akşamı çökerken cama' was revised to 'Pangaltı buğulanır akşam inerken', curing the metrical clunkiness and improving conversational vocal cadence. The chorus line 'Ne astar tuttun ne dikiş tuttun' was amended to the plural first-person 'Ne astar tuttuk ne dikiş tuttuk', balancing relational culpability and grounding the metaphor. In Verse 2, 'Sökücü jiletle' was replaced by tailoring terminology 'Sökme bıçağıyla', enhancing lyrical authenticity without disrupting scansion. Remaining limitation: The cadence of the bridge's final line ('Üstümüze oturmayan bir güz bu') leans on a syncopated early landing to fit the 4/4 bar cleanly, requiring the singer to treat 'güz bu' as a short spondee rather than dragging out the vowel."
+}
