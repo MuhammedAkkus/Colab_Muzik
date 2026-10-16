@@ -1,0 +1,107 @@
+{
+  "title": "Çekek Yeri",
+  "story": "Set on a chilly late October dusk at an open-air boat slipway along the Golden Horn in Ayvansaray. The narrator stands in damp sawdust, scraping dried barnacles and peeling marine paint from the hull of a wooden rowboat that was once bought and repaired together with an estranged partner. Concrete physical details ground the scene: the pungent scent of pine tar, the cold iron blade of the scraper, and the brackish tide licking the slipway ramp. In Verse 2, the narrative advances into physical action: the narrator stops scraping, folds a stiff blue plastic tarpaulin over the gunwales, and knots a wet hemp rope to a rusty ground stake, officially putting the project to rest for winter. The bridge shifts perspective upward and outward toward the distant traffic on the Haliç bridge, finding quiet closure in the truth that the boat was simply unsuited for the currents they attempted to cross.",
+  "bpm": 102,
+  "key": "B minor",
+  "hook": "Bar 1 begins on an eighth-note upbeat into beat 1 with an ascending leap from F#4 to B4 and C#5, peaking on D5 on beat 2 before a sixteenth-note triplet descent (C#5-B4-A4) landing on F#4 on beat 4. Bar 2 lands on an expressive minor sixth G4 on beat 1, resolving down stepwise through F#4 and E4 to settle gently on D4 on beat 4 with subtle chest-voice vibrato.",
+  "vocal_direction": "Intimate, low-register chest voice in the verses with clear proximity effect and unforced conversational cadence. The chorus opens into a resonant chest-mix delivery with subtle emotional friction on the high D5 peak. The bridge drops back to a soft, reflective, almost spoken delivery, emphasizing breath and consonants before the final chorus expands.",
+  "lyrics": {
+    "verse_1": [
+      "Ayvansaray'da çekek yerinde",
+      "Raspa altında dökülen boya",
+      "Islak talaşta katran kokusu",
+      "Omurga tahtası çekmiş ayazı"
+    ],
+    "pre": [
+      "Haliç'e indi akşamın sisi",
+      "Ayak sesin yok tahta iskelede"
+    ],
+    "chorus": [
+      "Sığ sularda bile battık ikimiz",
+      "Ağır gelirdik bu durgun suya",
+      "Karaya çektik o son hevesi",
+      "Çekek yerinde unuttuk gitti"
+    ],
+    "verse_2": [
+      "Mavi brandayı çektim üstüne",
+      "Düğümlü urganı bağladım taşa",
+      "Paslı bıçağı sildim üstüme",
+      "Çamurlu botta bir avuç midye"
+    ],
+    "bridge": [
+      "Köprünün ışığı vurur çamura",
+      "Koca bir şehir akıyor öteye",
+      "Suç ne dalgada ne bu tahtada",
+      "Biz kıyıya erken varmışız sadece"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked acoustic guitar in B minor with an upright felt piano softly echoing high chord extensions (F#5 and D5). Subtle analogue room tape hiss in the stereo background.",
+      "chords": "Bm - Gmaj7 - Em7 - F#sus4",
+      "density": 0.28
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Soft kick on beats 1 and 3 paired with a dry wooden rim click on 2 and 4. Flatwound electric bass plays rounded root-to-fifth lines, supporting continuous fingerpicked acoustic guitar.",
+      "chords": "Bm - Bm/A - Gmaj7 - Em9",
+      "density": 0.38
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Bowed upright bass creates a warm low-end swell. Shaker enters on running eighth notes while acoustic guitar shifts from fingerpicking to light palm-muted strums.",
+      "chords": "Em7 - F#m7 - Gmaj7 - Asus4 A",
+      "density": 0.48
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Open strummed steel-string acoustic guitars spread wide. Dry, low-tuned snare hits on beats 2 and 4. Clean electric guitar on neck pickup doubles the vocal hook melody with light spring reverb.",
+      "chords": "Bm - G - D - A",
+      "density": 0.62
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Drums drop to a single decaying crash cymbal. Electric guitar plays the tail of the hook melody over a solitary fingerpicked acoustic guitar figure.",
+      "chords": "Bm - Gmaj7",
+      "density": 0.35
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Drum kit resumes a muted rim-click groove. Bass line becomes more melodic with descending fills. A vintage Rhodes piano enters softly with low-register reedy pads.",
+      "chords": "Bm - Bm/A - Gmaj7 - Em9",
+      "density": 0.44
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Kick moves to steady quarter notes with floor tom accents on beat 4. Electric guitar adds swelling volume-pedal chords while bowed strings increase harmonic tension.",
+      "chords": "Em7 - F#m7 - Gmaj7 - Asus4 A",
+      "density": 0.54
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full acoustic rhythm section with driving snare backbeat and eighth-note hi-hat. Overdriven electric guitar doubles the lead hook. Bass guitar locks tightly into the kick with walking octaves.",
+      "chords": "Bm - G - D - A",
+      "density": 0.65
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Dynamic strip-down: drums drop out entirely except for a distant mallet roll on a dark ride cymbal. Piano and fingerpicked guitar hold fragile chords while Cmaj7 adds a fleeting Neapolitan color.",
+      "chords": "Em9 - Bm7 - Cmaj7 - F#7sus4 F#7",
+      "density": 0.36
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Full band climax. Open ride cymbal and punchy live snare drive the groove. Layered acoustic strums and twin telecaster guitars articulate the hook with vocal harmonies supporting lines 3 and 4.",
+      "chords": "Bm - G - D - A - Bm - G - Em7 - F#sus4",
+      "density": 0.68
+    },
+    {
+      "name": "outro",
+      "arrangement": "Drums decrescendo to a solitary heartbeat kick. Electric guitar echoes the opening hook motif in rubato phrasing, resolving into a ringing Bm(add9) acoustic chord that fades into room air.",
+      "chords": "Gmaj7 - Em9 - Bm(add9)",
+      "density": 0.3
+    }
+  ],
+  "editorial_notes": "Prosody critique: The lines maintain a stable 10-to-12 syllable footprint with naturally stressed Turkish grammatical endings that prevent awkward downbeat stresses. The open-vowel endings ('boya', 'suya', 'hevesi', 'gitti') afford comfortable vocal sustain and breath management. Narrative progression: Verse 1 establishes stationary sensory work (scraping, tar, cold keel), while Verse 2 actively shifts into decisive closure (covering the boat with blue tarp, binding the rope to an anchor stone, packing away tools). The bridge broadens spatial perception from the narrow slipway ramp to the city bridge lights. Harmonic structure: Remaining solidly anchored in B minor, the chorus leverages a reliable Bm-G-D-A progression for singable pop lift, while the bridge uses Cmaj7 as a Neapolitan/bII substitution to inject modal melancholy right as the narrator reflects on arrival. Independent editor unavailable due to server error; draft requires human editing."
+}

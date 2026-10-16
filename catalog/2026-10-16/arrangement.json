@@ -1,0 +1,101 @@
+[
+  {
+    "name": "intro",
+    "arrangement": "Sparse fingerpicked acoustic guitar in B minor with an upright felt piano softly echoing high chord extensions (F#5 and D5). Subtle analogue room tape hiss in the stereo background.",
+    "chords": "Bm - Gmaj7 - Em7 - F#sus4",
+    "density": 0.28,
+    "bars": 4,
+    "start": 0.0,
+    "end": 9.4118
+  },
+  {
+    "name": "verse_1",
+    "arrangement": "Soft kick on beats 1 and 3 paired with a dry wooden rim click on 2 and 4. Flatwound electric bass plays rounded root-to-fifth lines, supporting continuous fingerpicked acoustic guitar.",
+    "chords": "Bm - Bm/A - Gmaj7 - Em9",
+    "density": 0.38,
+    "bars": 8,
+    "start": 9.4118,
+    "end": 28.2353
+  },
+  {
+    "name": "pre_1",
+    "arrangement": "Bowed upright bass creates a warm low-end swell. Shaker enters on running eighth notes while acoustic guitar shifts from fingerpicking to light palm-muted strums.",
+    "chords": "Em7 - F#m7 - Gmaj7 - Asus4 A",
+    "density": 0.48,
+    "bars": 4,
+    "start": 28.2353,
+    "end": 37.6471
+  },
+  {
+    "name": "chorus_1",
+    "arrangement": "Open strummed steel-string acoustic guitars spread wide. Dry, low-tuned snare hits on beats 2 and 4. Clean electric guitar on neck pickup doubles the vocal hook melody with light spring reverb.",
+    "chords": "Bm - G - D - A",
+    "density": 0.62,
+    "bars": 8,
+    "start": 37.6471,
+    "end": 56.4706
+  },
+  {
+    "name": "turnaround",
+    "arrangement": "Drums drop to a single decaying crash cymbal. Electric guitar plays the tail of the hook melody over a solitary fingerpicked acoustic guitar figure.",
+    "chords": "Bm - Gmaj7",
+    "density": 0.35,
+    "bars": 4,
+    "start": 56.4706,
+    "end": 65.8824
+  },
+  {
+    "name": "verse_2",
+    "arrangement": "Drum kit resumes a muted rim-click groove. Bass line becomes more melodic with descending fills. A vintage Rhodes piano enters softly with low-register reedy pads.",
+    "chords": "Bm - Bm/A - Gmaj7 - Em9",
+    "density": 0.44,
+    "bars": 8,
+    "start": 65.8824,
+    "end": 84.7059
+  },
+  {
+    "name": "pre_2",
+    "arrangement": "Kick moves to steady quarter notes with floor tom accents on beat 4. Electric guitar adds swelling volume-pedal chords while bowed strings increase harmonic tension.",
+    "chords": "Em7 - F#m7 - Gmaj7 - Asus4 A",
+    "density": 0.54,
+    "bars": 4,
+    "start": 84.7059,
+    "end": 94.1176
+  },
+  {
+    "name": "chorus_2",
+    "arrangement": "Full acoustic rhythm section with driving snare backbeat and eighth-note hi-hat. Overdriven electric guitar doubles the lead hook. Bass guitar locks tightly into the kick with walking octaves.",
+    "chords": "Bm - G - D - A",
+    "density": 0.65,
+    "bars": 8,
+    "start": 94.1176,
+    "end": 112.9412
+  },
+  {
+    "name": "bridge",
+    "arrangement": "Dynamic strip-down: drums drop out entirely except for a distant mallet roll on a dark ride cymbal. Piano and fingerpicked guitar hold fragile chords while Cmaj7 adds a fleeting Neapolitan color.",
+    "chords": "Em9 - Bm7 - Cmaj7 - F#7sus4 F#7",
+    "density": 0.36,
+    "bars": 8,
+    "start": 112.9412,
+    "end": 131.7647
+  },
+  {
+    "name": "final_chorus",
+    "arrangement": "Full band climax. Open ride cymbal and punchy live snare drive the groove. Layered acoustic strums and twin telecaster guitars articulate the hook with vocal harmonies supporting lines 3 and 4.",
+    "chords": "Bm - G - D - A - Bm - G - Em7 - F#sus4",
+    "density": 0.68,
+    "bars": 8,
+    "start": 131.7647,
+    "end": 150.5882
+  },
+  {
+    "name": "outro",
+    "arrangement": "Drums decrescendo to a solitary heartbeat kick. Electric guitar echoes the opening hook motif in rubato phrasing, resolving into a ringing Bm(add9) acoustic chord that fades into room air.",
+    "chords": "Gmaj7 - Em9 - Bm(add9)",
+    "density": 0.3,
+    "bars": 4,
+    "start": 150.5882,
+    "end": 160.0
+  }
+]
