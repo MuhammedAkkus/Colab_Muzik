@@ -1,0 +1,114 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 156.92310416666666,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -15.378991507358782,
+      "clipped_sample_fraction": 2.6552282971927995e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-13.90",
+        "input_tp": "0.28",
+        "input_lra": "3.30",
+        "input_thresh": "-23.92",
+        "output_i": "-13.34",
+        "output_tp": "-1.50",
+        "output_lra": "2.40",
+        "output_thresh": "-23.35",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.66"
+      },
+      "encoded_master": {
+        "input_i": "-14.01",
+        "input_tp": "-1.38",
+        "input_lra": "2.40",
+        "input_thresh": "-24.03",
+        "output_i": "-14.14",
+        "output_tp": "-1.00",
+        "output_lra": "2.30",
+        "output_thresh": "-24.15",
+        "normalization_type": "dynamic",
+        "target_offset": "0.14"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 66,
+      "instrument_realism": 67,
+      "hook": 64,
+      "structure": 66,
+      "mix": 67,
+      "unwanted_vocals": false,
+      "observations": [
+        "At 0:13, the rhythm section establishes a steady, organic pocket between the kick and walking bass line.",
+        "The melodic theme introduced around 0:39 delivers the chorus motif with natural acoustic guitar and piano phrasing.",
+        "A clean dynamic breakdown occurs at 1:42, effectively contrasting the denser preceding sections.",
+        "The mix balances the acoustic instruments cleanly through the final build at 2:06 to the outro."
+      ]
+    },
+    "score": 66.0
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 156.92310416666666,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -14.244136083135974,
+      "clipped_sample_fraction": 7.301877817280199e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-12.38",
+        "input_tp": "0.06",
+        "input_lra": "3.10",
+        "input_thresh": "-22.41",
+        "output_i": "-13.19",
+        "output_tp": "-1.50",
+        "output_lra": "2.10",
+        "output_thresh": "-23.20",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.81"
+      },
+      "encoded_master": {
+        "input_i": "-14.00",
+        "input_tp": "-1.54",
+        "input_lra": "3.10",
+        "input_thresh": "-24.03",
+        "output_i": "-13.19",
+        "output_tp": "-1.00",
+        "output_lra": "2.10",
+        "output_thresh": "-23.20",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.81"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "listening": {
+      "groove": 68,
+      "instrument_realism": 70,
+      "hook": 66,
+      "structure": 69,
+      "mix": 71,
+      "unwanted_vocals": false,
+      "observations": [
+        "0:00 - 0:13: Subtle atmospheric Foley and fingerpicked acoustic guitar establish the intro setting.",
+        "0:14 - 0:31: Upright bass and dry percussion settle into a stable mid-tempo pocket for verse 1.",
+        "0:50 - 1:08: Electric guitar introduces the primary melodic hook during the chorus section.",
+        "2:14 - 2:32: Dynamic drop in the bridge establishes harmonic contrast before the final cadence."
+      ]
+    },
+    "score": 68.8
+  }
+]

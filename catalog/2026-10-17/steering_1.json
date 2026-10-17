@@ -1,0 +1,233 @@
+{
+  "base_prompt": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 104 BPM, 4/4. Lead motif: Two-bar melodic motif in B natural minor (4/4 time): Bar 1 begins on the pickup 'and' of beat 4 with scale degree 5 (F#4), leaping up to tonic 1 (B4) on beat 1. On beat 2-and, it steps down through 7 (A4) to flat-6 (G4), held with a gentle dip over beat 3 before releasing to 5 (F#4) on beat 4. Bar 2 enters on beat 2 with flat-3 (D4) stepping up to 4 (E4), then resolving to lower tonic 1 (B3) on beat 3 with a breathy fall, phrased across open Turkish vowels on the lyric 'Hangi cilt tutar sökülen yeri'..",
+  "events": [
+    {
+      "audio_time": 0.0,
+      "section": "intro",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 10.0,
+      "section": "verse_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 12.0,
+      "section": "verse_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 28.0,
+      "section": "pre_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 30.0,
+      "section": "pre_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 38.0,
+      "section": "chorus_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 40.0,
+      "section": "chorus_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 56.0,
+      "section": "turnaround",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 58.0,
+      "section": "turnaround",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 66.0,
+      "section": "verse_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 68.0,
+      "section": "verse_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 84.0,
+      "section": "pre_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 86.0,
+      "section": "pre_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 94.0,
+      "section": "chorus_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 96.0,
+      "section": "chorus_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 112.0,
+      "section": "bridge",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 114.0,
+      "section": "bridge",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 130.0,
+      "section": "final_chorus",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 132.0,
+      "section": "final_chorus",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 148.0,
+      "section": "outro",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 150.0,
+      "section": "outro",
+      "blend": 1.0
+    }
+  ],
+  "timeline": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse upright piano playing an ostinato in octaves around B2-B3 with delicate fingerpicked nylon-string guitar outlines. Soft vinyl dust crackle and subtle mechanical wood-creak Foley in the stereo field.",
+      "chords": "Bm - Gmaj7 - Em9 - F#m7",
+      "density": 0.26,
+      "bars": 4,
+      "start": 0.0,
+      "end": 9.2308
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "A dry, unadorned close-mic kick drum on beats 1 and 3 with an acoustic rim click on beat 4. An organic upright bass enters with smooth legato walking lines between B1 and E2. Fingerpicked acoustic guitar keeps the pulse steady.",
+      "chords": "Bm - Bm/A - Gmaj7 - Em7",
+      "density": 0.36,
+      "bars": 8,
+      "start": 9.2308,
+      "end": 27.6923
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Muted electric rhythm guitar enters with palm-muted eighth notes. Kick doubles to a pulsing heartbeat pattern while a bowed double bass swells beneath to lift tension toward the chorus.",
+      "chords": "Gmaj7 - A - Em9 - F#7sus4 - F#7",
+      "density": 0.48,
+      "bars": 4,
+      "start": 27.6923,
+      "end": 36.9231
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full acoustic guitar strumming across the stereo spread, crisp live snare on 2 and 4 with vintage plate reverb. Clean Fender Telecaster plays the melodic hook in thirds, mirrored by the bass locking tightly to the kick drum.",
+      "chords": "Bm - Gmaj7 - D - A/C# - Em7 - F#m7 - Bm",
+      "density": 0.62,
+      "bars": 8,
+      "start": 36.9231,
+      "end": 55.3846
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Drums strip down to rim click and hi-hat; electric guitar rings out its final sustained B note over gentle piano arpeggios, resetting the intimate workshop room ambiance.",
+      "chords": "Bm - Gmaj7 - Em7 - F#m7",
+      "density": 0.4,
+      "bars": 4,
+      "start": 55.3846,
+      "end": 64.6154
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Kick and rim pattern resumes with subtle sixteenth-note brushed snare shuffles. Bass introduces descending chromatic passing tones, while an ambient slide guitar adds subtle, weeping harmonic swells in the background.",
+      "chords": "Bm - Bm/A - Gmaj7 - Em7",
+      "density": 0.43,
+      "bars": 8,
+      "start": 64.6154,
+      "end": 83.0769
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Building tom-tom accents join the palm-muted electric guitar. Bass climbs aggressively up to the octave, and an analog mono synth pad opens its low-pass filter to expand the sonic ceiling.",
+      "chords": "Gmaj7 - A - Em9 - F#7sus4 - F#7",
+      "density": 0.52,
+      "bars": 4,
+      "start": 83.0769,
+      "end": 92.3077
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Driving open acoustic strumming, full kit with open hi-hat slosh on offbeats, wide dual-tracked electric guitars playing rhythmic stabs, and upright piano hammering quarter-note chord roots.",
+      "chords": "Bm - Gmaj7 - D - A/C# - Em7 - F#m7 - Bm",
+      "density": 0.65,
+      "bars": 8,
+      "start": 92.3077,
+      "end": 110.7692
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Drums abruptly pull out, leaving a solitary, slightly detuned upright piano and bowed double bass playing a modal C#m7b5 to F#7b9 progression. Vocal takes front stage with intimate dryness before a rising snare roll re-engages the groove.",
+      "chords": "Em9 - Dmaj7 - C#m7b5 - F#7b9 - Gmaj7 - Em7 - F#7sus4",
+      "density": 0.38,
+      "bars": 8,
+      "start": 110.7692,
+      "end": 129.2308
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Peak dynamic bloom without synthetic excess: full live kit playing driving backbeat, layered 12-string acoustic guitars, soaring Telecaster hook, and rich vocal double-tracking on the title hook line.",
+      "chords": "Bm - Gmaj7 - D - A/C# - Em7 - F#m7 - Gmaj7 - A - Bm",
+      "density": 0.69,
+      "bars": 8,
+      "start": 129.2308,
+      "end": 147.6923
+    },
+    {
+      "name": "outro",
+      "arrangement": "Kit fades rapidly leaving only fingerpicked acoustic guitar, decaying piano chords, and a final, lingering Bm(add9) natural harmonic on the bass as the mechanical clockwork texture of the room softly dissipates.",
+      "chords": "Bm - Gmaj7 - Em9 - Bm(add9)",
+      "density": 0.28,
+      "bars": 4,
+      "start": 147.6923,
+      "end": 156.9231
+    }
+  ],
+  "config": {
+    "bpm": 104,
+    "scale": "D_MAJOR_B_MINOR",
+    "brightness": 0.45,
+    "guidance": 3.5,
+    "temperature": 0.9,
+    "seed": 978804643,
+    "music_generation_mode": "QUALITY"
+  },
+  "stage": "complete",
+  "received_audio_seconds": 158.0,
+  "section": "outro",
+  "prompts": [
+    {
+      "text": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 104 BPM, 4/4. Lead motif: Two-bar melodic motif in B natural minor (4/4 time): Bar 1 begins on the pickup 'and' of beat 4 with scale degree 5 (F#4), leaping up to tonic 1 (B4) on beat 1. On beat 2-and, it steps down through 7 (A4) to flat-6 (G4), held with a gentle dip over beat 3 before releasing to 5 (F#4) on beat 4. Bar 2 enters on beat 2 with flat-3 (D4) stepping up to 4 (E4), then resolving to lower tonic 1 (B3) on beat 3 with a breathy fall, phrased across open Turkish vowels on the lyric 'Hangi cilt tutar sökülen yeri'..",
+      "weight": 1.5
+    },
+    {
+      "text": "Kit fades rapidly leaving only fingerpicked acoustic guitar, decaying piano chords, and a final, lingering Bm(add9) natural harmonic on the bass as the mechanical clockwork texture of the room softly dissipates. Harmony: Bm - Gmaj7 - Em9 - Bm(add9)",
+      "weight": 1.0
+    }
+  ]
+}
