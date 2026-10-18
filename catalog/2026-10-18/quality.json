@@ -1,0 +1,101 @@
+[
+  {
+    "candidate": 1,
+    "accepted": true,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 163.2,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -12.977266844585307,
+      "clipped_sample_fraction": 3.829656862745098e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-11.12",
+        "input_tp": "0.13",
+        "input_lra": "5.90",
+        "input_thresh": "-21.16",
+        "output_i": "-12.54",
+        "output_tp": "-1.50",
+        "output_lra": "2.50",
+        "output_thresh": "-22.56",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.46"
+      },
+      "encoded_master": {
+        "input_i": "-14.01",
+        "input_tp": "-2.72",
+        "input_lra": "5.90",
+        "input_thresh": "-24.04",
+        "output_i": "-12.53",
+        "output_tp": "-1.00",
+        "output_lra": "2.50",
+        "output_thresh": "-22.54",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.47"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 85,
+      "instrument_realism": 82,
+      "hook": 80,
+      "structure": 85,
+      "mix": 83,
+      "unwanted_vocals": false,
+      "observations": [
+        "At 0:12, the steady kick drum, rimclick, and resonant bassline enter smoothly, establishing a cohesive band pocket at 100 BPM.",
+        "The lead electric guitar introduces a distinct two-bar melodic hook motif at 0:42, which cleanly doubles as the vocal melody substitute throughout the chorus sections.",
+        "At 2:00, the track transitions effectively into a bridge section with reduced drum density and altered harmonic color before building into the final chorus at 2:19."
+      ]
+    },
+    "score": 83.0
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "listening_review",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 163.2,
+      "peak_dbfs": -0.00026507636037961915,
+      "rms_dbfs": -14.732546962148373,
+      "clipped_sample_fraction": 1.2765522875816995e-07,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-13.04",
+        "input_tp": "0.05",
+        "input_lra": "4.90",
+        "input_thresh": "-23.06",
+        "output_i": "-12.87",
+        "output_tp": "-1.50",
+        "output_lra": "3.20",
+        "output_thresh": "-22.88",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.13"
+      },
+      "encoded_master": {
+        "input_i": "-13.99",
+        "input_tp": "-1.43",
+        "input_lra": "3.30",
+        "input_thresh": "-24.02",
+        "output_i": "-13.82",
+        "output_tp": "-1.00",
+        "output_lra": "3.00",
+        "output_thresh": "-23.83",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.18"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "error_type": "ServerError",
+    "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  }
+]

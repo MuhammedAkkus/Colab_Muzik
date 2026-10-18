@@ -1,7 +1,18 @@
 {
   "date": "2026-10-18",
-  "status": "claimed",
+  "status": "ready_for_human_review",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
-  "commercial_release": "not_approved"
+  "commercial_release": "not_approved",
+  "models": {
+    "text": "gemini-3.5-flash",
+    "music": "models/lyria-realtime-exp"
+  },
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
+  "quality_assessment": "Model estimate, not a professional guarantee",
+  "editor_status": "complete",
+  "title": "Soğuk Yama",
+  "selected_candidate": 1,
+  "audio_sha256": "fff762fb8260085055725a52bdee13100527def61a5287ccf334cd050488d77b",
+  "request_count": 6
 }

@@ -1,0 +1,101 @@
+[
+  {
+    "name": "intro",
+    "arrangement": "Sparse fingerpicked acoustic guitar establishing the main Bm progression alongside subtle, warm piano chord sustain.",
+    "chords": "Bm G D A",
+    "density": 0.25,
+    "bars": 4,
+    "start": 0.0,
+    "end": 9.6
+  },
+  {
+    "name": "verse_1",
+    "arrangement": "Subtle rimclick and steady dampened kick enter. Melodic acoustic bassline tracks the kick closely, paired with muted fingerpicked acoustic guitar.",
+    "chords": "Bm G D A",
+    "density": 0.35,
+    "bars": 8,
+    "start": 9.6,
+    "end": 28.8
+  },
+  {
+    "name": "pre_1",
+    "arrangement": "Builds momentum with arpeggiated muted electric guitar tone, dynamic snare crescendos, and a rising bass trajectory.",
+    "chords": "Em F#m G A",
+    "density": 0.48,
+    "bars": 4,
+    "start": 28.8,
+    "end": 38.4
+  },
+  {
+    "name": "chorus_1",
+    "arrangement": "Opens up into wide acoustic strumming, full live snare rimshot groove, active bass, and a clean electric lead guitar carrying the two-bar hook motif.",
+    "chords": "Bm G D A",
+    "density": 0.62,
+    "bars": 8,
+    "start": 38.4,
+    "end": 57.6
+  },
+  {
+    "name": "turnaround",
+    "arrangement": "Short two-bar instrumental restating the hook melody with light kick drum and soft rhythm guitar.",
+    "chords": "Bm G D A",
+    "density": 0.4,
+    "bars": 4,
+    "start": 57.6,
+    "end": 67.2
+  },
+  {
+    "name": "verse_2",
+    "arrangement": "Rhythm continues with subtle shaker additions. Bassline moves counter-melodically against sparse palm-muted acoustic picking pattern.",
+    "chords": "Bm G D A",
+    "density": 0.38,
+    "bars": 8,
+    "start": 67.2,
+    "end": 86.4
+  },
+  {
+    "name": "pre_2",
+    "arrangement": "Builds dynamic intensity with warm organ pad swells, rolling snare rim accents, and driving bass note transitions.",
+    "chords": "Em F#m G A",
+    "density": 0.52,
+    "bars": 4,
+    "start": 86.4,
+    "end": 96.0
+  },
+  {
+    "name": "chorus_2",
+    "arrangement": "Full acoustic strumming, pronounced live snare beat, driving melodic bassline, and lead hook guitar doubling vocal phrasing in octaves.",
+    "chords": "Bm G D A",
+    "density": 0.65,
+    "bars": 8,
+    "start": 96.0,
+    "end": 115.2
+  },
+  {
+    "name": "bridge",
+    "arrangement": "Strips back cleanly with a shift in harmonic color: mellow Rhodes electric piano and soft nylon string guitar, backed by warm bass playing root-fifth swells.",
+    "chords": "G A F#m Bm",
+    "density": 0.42,
+    "bars": 8,
+    "start": 115.2,
+    "end": 134.4
+  },
+  {
+    "name": "final_chorus",
+    "arrangement": "Expands into maximum energy without genre shift: full live drum kit with open hi-hats, layered acoustic guitars, and ringing electric ambient chords.",
+    "chords": "Bm G D A",
+    "density": 0.7,
+    "bars": 8,
+    "start": 134.4,
+    "end": 153.6
+  },
+  {
+    "name": "outro",
+    "arrangement": "Resolves down to fingerpicked acoustic guitar and decaying piano chord sustain, fading softly on a final Bm resonance.",
+    "chords": "Bm G Em Bm",
+    "density": 0.3,
+    "bars": 4,
+    "start": 153.6,
+    "end": 163.2
+  }
+]
