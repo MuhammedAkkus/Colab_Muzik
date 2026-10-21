@@ -1,0 +1,107 @@
+{
+  "title": "Kösele Taban",
+  "story": "Set in a quiet basement cobbler shop along the seaside train line in Samatya, Istanbul. The artisan narrator works late into the evening beneath an unshaded incandescent bulb, surrounded by aged wooden shoe lasts, brass tacks, wax threads, and the pungent smell of rubber cement. He undertakes the quiet labor of repairing a pair of split leather boots left behind by a former lover. As he repairs the worn welt and secures the heel, the manual craft becomes an act of acceptance rather than yearning. In the bridge, the rumble of a passing train and the distant crash of Marmara waves against the seawall underscore the realization that their strides naturally diverged. He packs the repaired boots into an unmarked box and places them on the highest shelf, letting the shared past settle into stillness.",
+  "bpm": 102,
+  "key": "D minor",
+  "hook": "Syncopated two-bar motif in D minor. Bar 1 begins on the 'and' of beat 1 with an assertive leap from A4 to D5, stepping down across C5, Bb4, and sustaining A4 across beat 4. Bar 2 drops to F4 on beat 2 before resolving down to D4 with an airy vibrato decay over beats 3 and 4.",
+  "vocal_direction": "Deliver the verses in a dry, intimate chest-dominant voice with speech-like phrasing, lingering on consonants and allowing natural pauses between lines. In the chorus, open up into a resonant head-mix on the repeated vowel lines without shouting or forced throat tension. Maintain gentle breathiness in the bridge to evoke exhaustion and quiet clarity before opening to full chest-mix resonance on the final chorus.",
+  "lyrics": {
+    "verse_1": [
+      "Samatya'da kuytu bir bodrum katı",
+      "Tezgâhta çatlamış kösele taban",
+      "Genzi yakan keskin solüsyon kokusu",
+      "Dikişi bırakmış o eski derman"
+    ],
+    "pre": [
+      "Ahşap kalıp tutmuyor bu yorgun formu",
+      "Raylardan bir uğultu vurur tezgâha"
+    ],
+    "chorus": [
+      "Vura vura pirinç çiviyi çaktım topuğa",
+      "Yine de tutmuyor bu küskün kösele",
+      "Biz aynı tempoyla basamadık yola",
+      "Her adım savruldu başka bir yere"
+    ],
+    "verse_2": [
+      "Mumlanmış sicimi geçirdim bizden",
+      "Açılan burnunu diktim usulca",
+      "Koydum karton kutunun içine öylece",
+      "Kaldırdım en üstteki tozlu rafa"
+    ],
+    "bridge": [
+      "Camlar zangırdar tren geçerken",
+      "Tuzlu rüzgâr dolar dar penceremden",
+      "Ne çekiç suçluydu ne taşlı yollar",
+      "Biz çoktan yorulduk aynı adımdan"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked steel-string acoustic guitar outlining the primary D minor motif, supported by a warm sub-bass drone and subtle ambient vinyl crackle.",
+      "chords": "Dm - Gm/D - Dm - Am/D",
+      "density": 0.26
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Upright muted bass enters with steady root-fifth alternation, accompanied by dry acoustic guitar fingerpicking and soft rim-shots on beats 2 and 4. Vocal remains dry and upfront.",
+      "chords": "Dm - Bb - C - Dm",
+      "density": 0.36
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Rhodes piano enters with sustained suspended voicings. Bass moves into continuous eighth notes while a closed hi-hat introduces a subtle driving groove.",
+      "chords": "Gm7 - C7 - Am7 - Dm",
+      "density": 0.46
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full dynamic lift featuring energetic acoustic strumming, live snare backbeat, warm bass guitar, and an electric guitar articulating the signature hook phrase.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.62
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Quick two-bar dynamic drop. Reverb wash lingers as the acoustic guitar plays a descending scalar cadence into silence.",
+      "chords": "Dm - C - Dm",
+      "density": 0.32
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Fingerpicked acoustic returns with added subtle percussion shakers and syncopated electric bass accents highlighting vocal phrasing gaps.",
+      "chords": "Dm - Bb - C - Dm",
+      "density": 0.4
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Intensified build with rising tom rolls, Rhodes tremolo, and swelling electric guitar swells resolving directly into the chorus downbeat.",
+      "chords": "Gm7 - C7 - Am7 - Dm",
+      "density": 0.52
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full rhythm section with open hi-hat patterns, doubled acoustic rhythm guitars, and vocal backing harmonies tracking the main hook in thirds.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.66
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Dramatic breakdown to solo Rhodes electric piano and sustained cello pedal tone. Vocals take on a breathy, exposed presence without rhythm section support.",
+      "chords": "Bbmaj7 - C - Am7 - Dm",
+      "density": 0.28
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Peak intensity with driving live drum kit, layered vocal unisons, soaring slide guitar countermelody, and rich electric bass foundation.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.72
+    },
+    {
+      "name": "outro",
+      "arrangement": "Arrangement thins to a lone fingerpicked acoustic guitar fading out beneath ambient atmospheric train sounds and a solitary concluding D minor chord.",
+      "chords": "Dm - Gm/D - Dm",
+      "density": 0.24
+    }
+  ],
+  "editorial_notes": "The lyrical revision eliminates clunky phrasing like 'bizim o son adımı' and forced rhyme schemes, replacing them with tactile cobbler terminology such as 'pirinç çiviyi' and 'mumlanmış sicim' that ground the metaphorical breakup directly in artisanal labor. Syllabic counts now fit balanced 11-to-12 syllable meters that match natural Turkish prosodic accents on unstressed suffixes. A remaining production limitation is ensuring the electric guitar lead hook does not mask the vocal articulation during the crowded final chorus; sound engineers should carve out 1.5 kHz to 3 kHz on the lead instrument during post-mix."
+}

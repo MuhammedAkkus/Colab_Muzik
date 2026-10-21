@@ -1,0 +1,54 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "render",
+    "error_type": "RuntimeError",
+    "error_message": "Generation prompt was filtered; candidate rejected",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  },
+  {
+    "candidate": 2,
+    "accepted": false,
+    "stage": "listening_review",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.27029495221489763,
+      "rms_dbfs": -14.710013172484398,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.61",
+        "input_tp": "0.19",
+        "input_lra": "4.80",
+        "input_thresh": "-24.66",
+        "output_i": "-12.83",
+        "output_tp": "-1.50",
+        "output_lra": "2.80",
+        "output_thresh": "-22.85",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.17"
+      },
+      "encoded_master": {
+        "input_i": "-13.99",
+        "input_tp": "-1.25",
+        "input_lra": "2.80",
+        "input_thresh": "-24.02",
+        "output_i": "-13.52",
+        "output_tp": "-1.00",
+        "output_lra": "2.50",
+        "output_thresh": "-23.54",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.48"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "error_type": "ServerError",
+    "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "action": "Check quota/model availability and local logs; no paid fallback or retry"
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "title": "Kösele Taban",
+  "story": "Set in a quiet, basement shoe repair shop in Samatya, Istanbul. The narrator works under a low-hanging bulb surrounded by wooden shoe lasts, leather scraps, cobbler's hammers, and the sharp tang of rubber cement. He attempts to restore a pair of worn leather boots left behind by a former partner. Verse 1 paints the atmosphere of the workshop and the peeling leather sole. Verse 2 advances the story as he hand-stitches the leather with waxed thread, places the boots into a cardboard box, and lifts them onto a high shelf to close the chapter. The bridge shifts the perspective to the sound of the Marmaray train passing nearby and the waves against the shore, realizing that two lives simply outgrew the same footstep.",
+  "bpm": 102,
+  "key": "D minor",
+  "hook": "Two-bar phrase in D minor. Bar 1: Starts on beat 2 with an ascending jump A4 to D5, stepping down syncopated on C5 (eighth note), Bb4 (eighth note), and A4 (quarter note on beat 4). Bar 2: Drops to F4 on beat 1, resolving softly to D4 on beat 2 with a warm, breathy sustained tone across beats 3 and 4.",
+  "vocal_direction": "Intimate, dry chest-voice in verses with natural conversational cadence and clear pauses at line breaks. Transition smoothly to an open, resonant head-mix in the chorus on 'Vura vura', allowing the Turkish vowels 'a' and 'e' to open cleanly without strained compression. Soften dynamics in the bridge into a breathy tone.",
+  "lyrics": {
+    "verse_1": [
+      "Samatya'da loş bir tamirci dükkânı",
+      "Tezgâhta yıpranmış kösele taban",
+      "Sarı solüsyonun keskin kokusu",
+      "Derinin dikişi sökülmüş yavaştan"
+    ],
+    "pre": [
+      "Ahşap kalıba sığmaz artık bu deri",
+      "Tren sesleri geçer rayların üstünden"
+    ],
+    "chorus": [
+      "Vura vura çiviyi çaktım topuğa",
+      "Yine de tutmuyor bu yırtık taban",
+      "Biz aynı adımla yürüyemedik",
+      "Yollar ayrıldı çoktan bu sokakta"
+    ],
+    "verse_2": [
+      "Mumlanmış ipi geçirdim iğneden",
+      "Bizim o son adımı diktim kenara",
+      "Çıkarıp koydum kutusuna sessizce",
+      "Rafa kaldırdım o siyah çizmeyi"
+    ],
+    "bridge": [
+      "Marmaray geçerken titrer camlar",
+      "Aşağıda deniz köpürür taşlara",
+      "Suç ne basılan yolda ne çivide",
+      "Ayaklarımız başka yere bastı"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked steel-string acoustic guitar playing Dm motif with subtle ambient piano notes sustaining in the background. Gentle room reverb.",
+      "chords": "Dm - Gm/D - Dm - Am/D",
+      "density": 0.28
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Warm muted electric bass enters with fingerpicked guitar. Subtle kick drum on beat 1 and 3, soft rim click on 2 and 4. Vocal is dry and centered.",
+      "chords": "Dm - Bb - C - Dm",
+      "density": 0.38
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Building dynamic layer with soft ride cymbal swells, bass moving to steady eighth notes, and a warm Rhodes electric piano pad reinforcing chords.",
+      "chords": "Gm - C - Am - Dm",
+      "density": 0.48
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full open acoustic guitar strumming, energetic live snare backbeat, melodic electric hook guitar counter-phrase playing the signature motif.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.62
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Snare reverb tails off while acoustic guitar drops back to fingerpicking motif. Bass holds a quiet root note decay.",
+      "chords": "Dm - C - Dm",
+      "density": 0.35
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Bass becomes slightly more melodic with syncopated fills. Acoustic guitar continues fingerpicking, soft shaker added to maintain forward motion.",
+      "chords": "Dm - Bb - C - Dm",
+      "density": 0.42
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Build up with subtle snare rolls and bass walking up scale steps D-E-F-G into the chorus open hit. Acoustic strum grows louder.",
+      "chords": "Gm - C - Am - Dm",
+      "density": 0.52
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full acoustic strumming, active bass line locking with kick, live drum kit with open hi-hats, and lead guitar hook doubled by a warm synth pad.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.65
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Strips back completely to warm electric piano chords and pedal bass note. Harmonic shift to Bbmaj7 creating an introspective color space. No drums.",
+      "chords": "Bbmaj7 - C - Am7 - Dm",
+      "density": 0.32
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Explosion into full arrangement with open acoustic strum, dynamic live drums, swelling lead guitar hook, and subtle backing vocal harmonies.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.7
+    },
+    {
+      "name": "outro",
+      "arrangement": "Guitars fade down into fingerpicked acoustic motif. Piano holds a single sustaining D minor chord that slowly decays into room air.",
+      "chords": "Dm - Gm/D - Dm",
+      "density": 0.25
+    }
+  ],
+  "editorial_notes": "The prosody of Kösele Taban relies on natural Turkish spoken cadence, utilizing 11 and 12-syllable lines that rest comfortably on the downbeats without awkward syncopation of compound words. The story avoids melodramatic tropes by anchoring emotional weight in concrete cobbling actions—hammering brass nails and applying rubber cement. The chorus hook in D minor (A4-D5-C5-Bb4-A4-F4-D4) offers a clear, memorable melodic signature that contrasts with the speech-like verses. Harmonically, the transition to Bbmaj7 in the bridge provides an effective color shift before returning to the home key of D minor for the final payoff."
+}

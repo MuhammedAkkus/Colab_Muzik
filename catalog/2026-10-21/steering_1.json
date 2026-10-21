@@ -1,0 +1,202 @@
+{
+  "base_prompt": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key D minor, 102 BPM, 4/4. Lead motif: Syncopated two-bar motif in D minor. Bar 1 begins on the 'and' of beat 1 with an assertive leap from A4 to D5, stepping down across C5, Bb4, and sustaining A4 across beat 4. Bar 2 drops to F4 on beat 2 before resolving down to D4 with an airy vibrato decay over beats 3 and 4..",
+  "events": [
+    {
+      "audio_time": 0.0,
+      "section": "intro",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 10.0,
+      "section": "verse_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 12.0,
+      "section": "verse_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 30.0,
+      "section": "pre_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 32.0,
+      "section": "pre_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 38.0,
+      "section": "chorus_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 40.0,
+      "section": "chorus_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 58.0,
+      "section": "turnaround",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 60.0,
+      "section": "turnaround",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 66.0,
+      "section": "verse_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 68.0,
+      "section": "verse_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 86.0,
+      "section": "pre_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 88.0,
+      "section": "pre_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 96.0,
+      "section": "chorus_2",
+      "blend": 0.35
+    }
+  ],
+  "timeline": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked steel-string acoustic guitar outlining the primary D minor motif, supported by a warm sub-bass drone and subtle ambient vinyl crackle.",
+      "chords": "Dm - Gm/D - Dm - Am/D",
+      "density": 0.26,
+      "bars": 4,
+      "start": 0.0,
+      "end": 9.4118
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Upright muted bass enters with steady root-fifth alternation, accompanied by dry acoustic guitar fingerpicking and soft rim-shots on beats 2 and 4. Vocal remains dry and upfront.",
+      "chords": "Dm - Bb - C - Dm",
+      "density": 0.36,
+      "bars": 8,
+      "start": 9.4118,
+      "end": 28.2353
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Rhodes piano enters with sustained suspended voicings. Bass moves into continuous eighth notes while a closed hi-hat introduces a subtle driving groove.",
+      "chords": "Gm7 - C7 - Am7 - Dm",
+      "density": 0.46,
+      "bars": 4,
+      "start": 28.2353,
+      "end": 37.6471
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full dynamic lift featuring energetic acoustic strumming, live snare backbeat, warm bass guitar, and an electric guitar articulating the signature hook phrase.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.62,
+      "bars": 8,
+      "start": 37.6471,
+      "end": 56.4706
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Quick two-bar dynamic drop. Reverb wash lingers as the acoustic guitar plays a descending scalar cadence into silence.",
+      "chords": "Dm - C - Dm",
+      "density": 0.32,
+      "bars": 4,
+      "start": 56.4706,
+      "end": 65.8824
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Fingerpicked acoustic returns with added subtle percussion shakers and syncopated electric bass accents highlighting vocal phrasing gaps.",
+      "chords": "Dm - Bb - C - Dm",
+      "density": 0.4,
+      "bars": 8,
+      "start": 65.8824,
+      "end": 84.7059
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Intensified build with rising tom rolls, Rhodes tremolo, and swelling electric guitar swells resolving directly into the chorus downbeat.",
+      "chords": "Gm7 - C7 - Am7 - Dm",
+      "density": 0.52,
+      "bars": 4,
+      "start": 84.7059,
+      "end": 94.1176
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full rhythm section with open hi-hat patterns, doubled acoustic rhythm guitars, and vocal backing harmonies tracking the main hook in thirds.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.66,
+      "bars": 8,
+      "start": 94.1176,
+      "end": 112.9412
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Dramatic breakdown to solo Rhodes electric piano and sustained cello pedal tone. Vocals take on a breathy, exposed presence without rhythm section support.",
+      "chords": "Bbmaj7 - C - Am7 - Dm",
+      "density": 0.28,
+      "bars": 8,
+      "start": 112.9412,
+      "end": 131.7647
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Peak intensity with driving live drum kit, layered vocal unisons, soaring slide guitar countermelody, and rich electric bass foundation.",
+      "chords": "Dm - Bb - F - C",
+      "density": 0.72,
+      "bars": 8,
+      "start": 131.7647,
+      "end": 150.5882
+    },
+    {
+      "name": "outro",
+      "arrangement": "Arrangement thins to a lone fingerpicked acoustic guitar fading out beneath ambient atmospheric train sounds and a solitary concluding D minor chord.",
+      "chords": "Dm - Gm/D - Dm",
+      "density": 0.24,
+      "bars": 4,
+      "start": 150.5882,
+      "end": 160.0
+    }
+  ],
+  "config": {
+    "bpm": 102,
+    "scale": "F_MAJOR_D_MINOR",
+    "brightness": 0.45,
+    "guidance": 3.5,
+    "temperature": 0.9,
+    "seed": 1937376207,
+    "music_generation_mode": "QUALITY"
+  },
+  "stage": "receiving_audio",
+  "received_audio_seconds": 96.0,
+  "section": "chorus_2",
+  "prompts": [
+    {
+      "text": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key D minor, 102 BPM, 4/4. Lead motif: Syncopated two-bar motif in D minor. Bar 1 begins on the 'and' of beat 1 with an assertive leap from A4 to D5, stepping down across C5, Bb4, and sustaining A4 across beat 4. Bar 2 drops to F4 on beat 2 before resolving down to D4 with an airy vibrato decay over beats 3 and 4..",
+      "weight": 1.5
+    },
+    {
+      "text": "Intensified build with rising tom rolls, Rhodes tremolo, and swelling electric guitar swells resolving directly into the chorus downbeat.",
+      "weight": 0.65
+    },
+    {
+      "text": "Full rhythm section with open hi-hat patterns, doubled acoustic rhythm guitars, and vocal backing harmonies tracking the main hook in thirds. Harmony: Dm - Bb - F - C",
+      "weight": 0.35
+    }
+  ]
+}
