@@ -1,0 +1,114 @@
+[
+  {
+    "candidate": 1,
+    "accepted": false,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -0.3831396190735032,
+      "rms_dbfs": -13.900108108600387,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-14.02",
+        "input_tp": "-0.38",
+        "input_lra": "4.40",
+        "input_thresh": "-24.06",
+        "output_i": "-15.05",
+        "output_tp": "-1.50",
+        "output_lra": "3.00",
+        "output_thresh": "-25.08",
+        "normalization_type": "dynamic",
+        "target_offset": "1.05"
+      },
+      "encoded_master": {
+        "input_i": "-14.03",
+        "input_tp": "-1.34",
+        "input_lra": "3.10",
+        "input_thresh": "-24.07",
+        "output_i": "-14.54",
+        "output_tp": "-1.34",
+        "output_lra": "2.80",
+        "output_thresh": "-24.57",
+        "normalization_type": "dynamic",
+        "target_offset": "0.54"
+      }
+    },
+    "file": "candidate_1.mp3",
+    "listening": {
+      "groove": 52,
+      "instrument_realism": 48,
+      "hook": 45,
+      "structure": 48,
+      "mix": 55,
+      "unwanted_vocals": false,
+      "observations": [
+        "At 0:13, the entry of the synth bass and quantized rimshots creates a synthetic feel rather than an organic acoustic workshop soundscape.",
+        "At 1:08, the arrangement unexpectedly shifts into a bright, accordion-like synth lead and jaunty rhythm that strays significantly from the sombre mood described in the brief.",
+        "At 1:36 and 2:00, further genre drift occurs with latin/reggae synth plucks and general MIDI brass stabs, disrupting structural cohesion.",
+        "The requested two-bar descending/ascending vocal-style hook is missing, replaced by rambling instrumental synth leads."
+      ]
+    },
+    "score": 49.6
+  },
+  {
+    "candidate": 2,
+    "accepted": true,
+    "stage": "evaluated",
+    "technical": {
+      "passed": true,
+      "errors": [],
+      "duration_seconds": 160.0,
+      "peak_dbfs": -1.8309803286260242,
+      "rms_dbfs": -15.485103482582417,
+      "clipped_sample_fraction": 0.0,
+      "longest_quiet_seconds": 0
+    },
+    "mastering": {
+      "before": {
+        "input_i": "-15.11",
+        "input_tp": "-1.80",
+        "input_lra": "2.60",
+        "input_thresh": "-25.13",
+        "output_i": "-13.66",
+        "output_tp": "-1.50",
+        "output_lra": "2.30",
+        "output_thresh": "-23.67",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.34"
+      },
+      "encoded_master": {
+        "input_i": "-14.02",
+        "input_tp": "-1.34",
+        "input_lra": "2.40",
+        "input_thresh": "-24.04",
+        "output_i": "-14.31",
+        "output_tp": "-1.38",
+        "output_lra": "2.00",
+        "output_thresh": "-24.32",
+        "normalization_type": "dynamic",
+        "target_offset": "0.31"
+      }
+    },
+    "file": "candidate_2.mp3",
+    "listening": {
+      "groove": 82,
+      "instrument_realism": 76,
+      "hook": 78,
+      "structure": 84,
+      "mix": 80,
+      "unwanted_vocals": false,
+      "observations": [
+        "At 0:13, the groove establishes naturally as a gentle kick, rimshot, and bassline join the fingerpicked acoustic guitar.",
+        "The lead electric guitar introduces the melodic hook at 0:40 with clear articulation and natural reverb space.",
+        "At 2:12, the bridge effectively breaks dynamic density using warm electric piano chords and subtle guitar swells before building into the final chorus.",
+        "Mix balance is clean across the frequency spectrum, though acoustic guitar plucks exhibit mild synthetic sound qualities typical of high-end sample libraries."
+      ]
+    },
+    "score": 80.0
+  }
+]

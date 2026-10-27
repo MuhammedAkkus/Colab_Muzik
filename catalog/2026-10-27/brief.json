@@ -1,0 +1,107 @@
+{
+  "title": "Cam Macunu",
+  "story": "Set in a drafty glazier's workshop in Balat along a damp cobblestone slope during late October rain. The narrator works at a wooden bench covered in linseed oil, chalk powder, and glass shards, laboring to replace a cracked windowpane from a frame once belonging to a shared apartment. Rather than relying on romantic cliches, the song grounds itself in concrete workshop details: the high-pitched scrape of a diamond cutter, driving triangular zinc points into the wood, and smoothing chalk putty with a spatula. In Verse 2, narrative time moves forward as the physical job finishes: he wipes off smudges and fingerprints with a rag and sets the completed frame against the wall, accepting that mechanical repair cannot mend emotional distance. The bridge steps outward to the rain on the Balat slope and the distant ring of church bells, realizing that clarity only arrives after stepping past the fogged glass.",
+  "bpm": 102,
+  "key": "D minor",
+  "hook": "Two-bar melodic hook in D minor: Bar 1 begins on scale degree 5 (A4) with a dotted quarter note, descending on eighth notes through 4 (G4) and 3 (F4) to land on 1 (D4) on beat 4 with a vocal slide. Bar 2 leaps up to flat 7 (C5) on beat 1, resolving down to 5 (A4) on beat 2, holding beats 3-4 with a soft, breathy vocal decay on an open vowel.",
+  "vocal_direction": "Intimate, conversational delivery in chest voice during verses, keeping natural Turkish speech cadences with clear breath pauses. Transitions to a resonant, slightly breathy head-mix in the chorus and bridge. Accentuate crisp consonants (t, k, ç) while letting final vowels resolve naturally without artificial vibrato.",
+  "lyrics": {
+    "verse_1": [
+      "Balat'ta ıslak bir camcı dükkânı",
+      "Bezir yağı kokar ahşap tezgâhlar",
+      "Kırık bir çerçevenin gölgesinde",
+      "Tezgâha dökülür ince tozu camın"
+    ],
+    "pre": [
+      "Yokuştan süzülür güz yağmurları",
+      "Sokak lambası buğulanır dışarıda"
+    ],
+    "chorus": [
+      "Tutmuyor macun kurumuş köşede",
+      "Çatlayan camdan sızar soğuk rüzgâr",
+      "Biz aynı pencereden baksak da yar",
+      "Ayrı dünyaları gördük seninle"
+    ],
+    "verse_2": [
+      "Elmas uçla çizdim yeni paneli",
+      "Çinko çiviyi çaktım tahtasına",
+      "Spatula ucuyla sildim macunu",
+      "Nemli bir bezle sildim izlerini"
+    ],
+    "bridge": [
+      "Balat yokuşu ıslanır derinden",
+      "Çan sesi karışır yağmur sesine",
+      "Camı tamir etmek neye yarar ki",
+      "Bakışlar buğulanıp soğuduktan sonra"
+    ]
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse fingerpicked steel-string acoustic guitar carrying a gentle Dm - Bb motif with light piano ambient accent tones.",
+      "chords": "Dm Bb Bb F",
+      "density": 0.25
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Subtle kick drum on beats 1 and 3, muffled wooden rimshots on 2 and 4, accompanied by a warm melodic bassline moving in quarter notes beneath quiet fingerpicked guitar.",
+      "chords": "Dm Gm C F",
+      "density": 0.35
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Building tension with swelling warm pad layers, driving eighth-note bass, crescendo on brushed snare, and rhythmic acoustic guitar strumming.",
+      "chords": "Gm Am Bb C",
+      "density": 0.5
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Full open acoustic guitar strumming, organic live snare with soft ghost notes, melodic bass locking with the kick, and electric guitar playing the two-bar hook melody.",
+      "chords": "Dm Bb C Am",
+      "density": 0.65
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Brief musical breather with lead electric guitar repeating the hook motif over warm acoustic strumming and soft kick/bass groove.",
+      "chords": "Dm Bb C F",
+      "density": 0.45
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Narrative rhythm continues with kick and rim, bass playing melodic scalar runs, subtle shaker entering on eighth notes to push time forward.",
+      "chords": "Dm Gm C F",
+      "density": 0.4
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Intensity swells with added acoustic strumming, snare crescendo, rolling bass movement, and rising synth texture.",
+      "chords": "Gm Am Bb C",
+      "density": 0.55
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Vibrant rhythm section with wide open acoustic strumming, active bassline, live snare hits, and prominent hook guitar answering vocal phrases.",
+      "chords": "Dm Bb C Am",
+      "density": 0.68
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Arrangement strips back significantly with a pedal point D bass, electric piano introducing harmonic color (Dm9 to Bbmaj7), and muted electric guitar swells.",
+      "chords": "Dm9 Bbmaj7 Gm9 Asus4",
+      "density": 0.3
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Maximum emotional weight with wide stereo acoustics, dynamic live drums, melodic bass counterpoint, and rich vocal harmonies without genre drift.",
+      "chords": "Dm Bb C Am",
+      "density": 0.7
+    },
+    {
+      "name": "outro",
+      "arrangement": "Music resolves gently into fingerpicked acoustic guitar and ambient piano decay, ending on a final sustained low D note.",
+      "chords": "Dm Bb Gm Dm",
+      "density": 0.25
+    }
+  ],
+  "editorial_notes": "Prosody and phrasing have been smoothed to match natural spoken Turkish stresses while retaining strict 4-line verse/chorus structure and 2-line pre-chorus layout. Forced rhymes were replaced with natural assonance that enhances the conversational tone. A remaining limitation is that the 4-bar chorus chord loop (Dm-Bb-C-Am) stays strictly diatonic, which provides immediate melodic recall but limits complex harmonic shifts until the bridge."
+}

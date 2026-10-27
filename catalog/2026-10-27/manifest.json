@@ -1,7 +1,18 @@
 {
   "date": "2026-10-27",
-  "status": "claimed",
+  "status": "ready_for_human_review",
   "cost_mode": "free_project_only",
   "output_type": "instrumental_with_separate_lyrics",
-  "commercial_release": "not_approved"
+  "commercial_release": "not_approved",
+  "models": {
+    "text": "gemini-3.5-flash",
+    "music": "models/lyria-realtime-exp"
+  },
+  "rights_policy": "No artist imitation, no quotations, no imported samples. Originality checks cover only this repository, not all existing works. Human review required before release.",
+  "quality_assessment": "Model estimate, not a professional guarantee",
+  "editor_status": "complete",
+  "title": "Cam Macunu",
+  "selected_candidate": 2,
+  "audio_sha256": "61d62faedc1f32de2b33fc11a8791256a3a2f8c269c7cb0a7e0039c71472a3d0",
+  "request_count": 4
 }
