@@ -1,0 +1,233 @@
+{
+  "base_prompt": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 104 BPM, 4/4. Lead motif: A two-bar motif played on a warm, muted Telecaster with spring reverb. Bar 1 begins on an eighth-note pickup on scale degree 5 (F#4), ascending 5-6-7-1 (F#4-G4-A4-B4) across beats 1 and 2, settling on B4 on beat 3 with slight finger vibrato. Bar 2 descends stepwise 1-7-6-5-3-2 (B4-A4-G4-F#4-D4-C#4) in dotted eighths and sixteenths, resolving with a micro-bend down to the tonic (B3)..",
+  "events": [
+    {
+      "audio_time": 0.0,
+      "section": "intro",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 10.0,
+      "section": "verse_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 12.0,
+      "section": "verse_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 28.0,
+      "section": "pre_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 30.0,
+      "section": "pre_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 38.0,
+      "section": "chorus_1",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 40.0,
+      "section": "chorus_1",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 56.0,
+      "section": "turnaround",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 58.0,
+      "section": "turnaround",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 66.0,
+      "section": "verse_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 68.0,
+      "section": "verse_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 84.0,
+      "section": "pre_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 86.0,
+      "section": "pre_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 94.0,
+      "section": "chorus_2",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 96.0,
+      "section": "chorus_2",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 112.0,
+      "section": "bridge",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 114.0,
+      "section": "bridge",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 130.0,
+      "section": "final_chorus",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 132.0,
+      "section": "final_chorus",
+      "blend": 1.0
+    },
+    {
+      "audio_time": 148.0,
+      "section": "outro",
+      "blend": 0.35
+    },
+    {
+      "audio_time": 150.0,
+      "section": "outro",
+      "blend": 1.0
+    }
+  ],
+  "timeline": [
+    {
+      "name": "intro",
+      "arrangement": "Sparse, warm fingerpicked upright piano introducing the tonic Bm motif with subtle room reverb. A gentle octave acoustic guitar join on beat 3 of bar 2.",
+      "chords": "Bm - Gmaj7 - Bm - Gmaj7",
+      "density": 0.25,
+      "bars": 4,
+      "start": 0.0,
+      "end": 9.2308
+    },
+    {
+      "name": "verse_1",
+      "arrangement": "Warm upright piano continues. Subtle, damp rimshot pattern enters on beat 4 alongside a round, warm electric bass playing rooted quarter notes with melodic stepwise fills.",
+      "chords": "Bm - G - D - A",
+      "density": 0.35,
+      "bars": 8,
+      "start": 9.2308,
+      "end": 27.6923
+    },
+    {
+      "name": "pre_1",
+      "arrangement": "Rhythm swells with soft brushed snare press-rolls. Bass lines become more active, moving up to G and A. High octave piano chords swell slightly with ambient delay.",
+      "chords": "Em - F#m - G - A",
+      "density": 0.45,
+      "bars": 4,
+      "start": 27.6923,
+      "end": 36.9231
+    },
+    {
+      "name": "chorus_1",
+      "arrangement": "Open strummed acoustic guitar enters on both channels. Full live snare on beats 2 and 4 with crisp hi-hat open-close pedal work. Clean electric guitar plays the signature two-bar melodic hook.",
+      "chords": "Bm - G - D - A",
+      "density": 0.65,
+      "bars": 8,
+      "start": 36.9231,
+      "end": 55.3846
+    },
+    {
+      "name": "turnaround",
+      "arrangement": "Drums drop to a single Kick-rim pattern. Piano repeats the opening motif twice while electric guitar lets its last note decay into spring reverb.",
+      "chords": "Bm - Gmaj7",
+      "density": 0.35,
+      "bars": 4,
+      "start": 55.3846,
+      "end": 64.6154
+    },
+    {
+      "name": "verse_2",
+      "arrangement": "Drums maintain a subtle 4-on-the-floor kick with rim clicks. Bass locks tightly to the kick drum while executing subtle slide fills into the root tones.",
+      "chords": "Bm - G - D - A",
+      "density": 0.4,
+      "bars": 8,
+      "start": 64.6154,
+      "end": 83.0769
+    },
+    {
+      "name": "pre_2",
+      "arrangement": "Building dynamic energy. Snare switches from rim to light center hits. Crescendo on the crash cymbal leading straight into the chorus explosion.",
+      "chords": "Em - F#m - G - A",
+      "density": 0.52,
+      "bars": 4,
+      "start": 83.0769,
+      "end": 92.3077
+    },
+    {
+      "name": "chorus_2",
+      "arrangement": "Full band arrangement with strummed acoustic guitars, driving bassline, active live snare, and prominent electric guitar hook doubling the vocal counter-melody.",
+      "chords": "Bm - G - D - A",
+      "density": 0.68,
+      "bars": 8,
+      "start": 92.3077,
+      "end": 110.7692
+    },
+    {
+      "name": "bridge",
+      "arrangement": "Strips back suddenly to dynamic minimalist texture. Lush harmonic color provided by Gmaj7 and F#7alt chords on organ/rhodes while bass plays solitary low notes.",
+      "chords": "Gmaj7 - F#7sus4 - F#7 - Bm",
+      "density": 0.3,
+      "bars": 8,
+      "start": 110.7692,
+      "end": 129.2308
+    },
+    {
+      "name": "final_chorus",
+      "arrangement": "Maximum emotional energy without altering the indie-pop aesthetic. Added tambourine layer, wider acoustic panning, and expressive drum fills around the hook guitar.",
+      "chords": "Bm - G - D - A",
+      "density": 0.7,
+      "bars": 8,
+      "start": 129.2308,
+      "end": 147.6923
+    },
+    {
+      "name": "outro",
+      "arrangement": "Instruments peel away one by one. Acoustic guitar strums slow down, leaving only the piano playing the unresolved Bm chord as room noise fades.",
+      "chords": "Bm - Gmaj7 - Bm",
+      "density": 0.28,
+      "bars": 4,
+      "start": 147.6923,
+      "end": 156.9231
+    }
+  ],
+  "config": {
+    "bpm": 104,
+    "scale": "D_MAJOR_B_MINOR",
+    "brightness": 0.45,
+    "guidance": 3.5,
+    "temperature": 0.9,
+    "seed": 391014070,
+    "music_generation_mode": "QUALITY"
+  },
+  "stage": "complete",
+  "received_audio_seconds": 158.0,
+  "section": "outro",
+  "prompts": [
+    {
+      "text": "Turkish alternative pop, intimate live studio band, instrumental only. Warm acoustic guitar, expressive piano, melodic electric bass, real drum kit, restrained clean electric guitar. Cohesive memorable recurring two-bar lead motif, human microtiming and touch, breathing room for a future singer. No EDM drop, no genre switch, no dense synth layers, no vocals or speech. Key B minor, 104 BPM, 4/4. Lead motif: A two-bar motif played on a warm, muted Telecaster with spring reverb. Bar 1 begins on an eighth-note pickup on scale degree 5 (F#4), ascending 5-6-7-1 (F#4-G4-A4-B4) across beats 1 and 2, settling on B4 on beat 3 with slight finger vibrato. Bar 2 descends stepwise 1-7-6-5-3-2 (B4-A4-G4-F#4-D4-C#4) in dotted eighths and sixteenths, resolving with a micro-bend down to the tonic (B3)..",
+      "weight": 1.5
+    },
+    {
+      "text": "Instruments peel away one by one. Acoustic guitar strums slow down, leaving only the piano playing the unresolved Bm chord as room noise fades. Harmony: Bm - Gmaj7 - Bm",
+      "weight": 1.0
+    }
+  ]
+}
